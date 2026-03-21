@@ -249,67 +249,159 @@
         line-height: 1.95;
       }
 
-      .hero-stage {
+      .featured-slider {
+        display: grid;
+        grid-template-columns: minmax(0, 1.65fr) minmax(320px, 0.75fr);
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .featured-media {
         position: relative;
-        border-radius: 32px;
         overflow: hidden;
+        border-radius: 32px;
         background: var(--panel);
         border: 1px solid var(--line);
         box-shadow: var(--shadow);
+        min-height: 68vh;
       }
 
-      .hero-stage img {
-        aspect-ratio: 16 / 8.6;
+      .featured-media img {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
       }
 
-      .hero-overlay {
+      .featured-overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.08) 45%, transparent 70%);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.08) 44%, transparent 72%);
         pointer-events: none;
       }
 
-      .hero-meta {
-        position: absolute;
-        left: 24px;
-        right: 24px;
-        bottom: 20px;
+      .featured-panel {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        gap: 16px;
-        align-items: end;
+        gap: 18px;
+        padding: 22px;
+        border-radius: 32px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+        border: 1px solid var(--line);
+        min-height: 68vh;
       }
 
-      .hero-meta-title {
-        font-size: clamp(1.3rem, 2vw, 1.85rem);
-        letter-spacing: -0.03em;
+      .featured-counter {
+        color: var(--muted);
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
       }
 
-      .hero-meta-note {
-        color: rgba(255, 255, 255, 0.78);
-        font-size: 0.8rem;
+      .featured-title {
+        font-size: clamp(2rem, 4vw, 3.4rem);
+        line-height: 0.92;
+        letter-spacing: -0.05em;
+        margin-top: 8px;
+      }
+
+      .featured-meta {
+        margin-top: 16px;
+        display: grid;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 0.78rem;
         text-transform: uppercase;
         letter-spacing: 0.16em;
       }
 
-      .hero-strip {
+      .featured-description {
+        color: var(--soft);
+        line-height: 1.95;
+        font-size: 0.98rem;
+      }
+
+      .featured-controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .arrow-group {
+        display: flex;
+        gap: 10px;
+      }
+
+      .feature-arrow {
+        width: 48px;
+        height: 48px;
+        border-radius: 999px;
+        border: 1px solid var(--line-strong);
+        background: rgba(255,255,255,0.02);
+        color: #fff;
+        cursor: pointer;
+        transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+      }
+
+      .feature-arrow:hover {
+        transform: scale(1.04);
+        border-color: rgba(255,255,255,0.28);
+        background: rgba(255,255,255,0.05);
+      }
+
+      .featured-link {
+        color: var(--soft);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+      }
+
+      .featured-thumbs {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 12px;
-        margin-top: 14px;
       }
 
-      .strip-thumb {
-        background: var(--panel-2);
-        border: 1px solid var(--line);
-        border-radius: 18px;
+      .thumb-button {
+        padding: 0;
+        border: 0;
+        background: none;
+        cursor: pointer;
+        text-align: left;
+      }
+
+      .thumb-frame {
         overflow: hidden;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        background: var(--panel-2);
       }
 
-      .strip-thumb img {
+      .thumb-frame img {
         aspect-ratio: 16 / 10;
         object-fit: cover;
+        transition: transform 0.7s ease, opacity 0.25s ease, border-color 0.25s ease;
+      }
+
+      .thumb-button.active .thumb-frame {
+        border-color: rgba(255,255,255,0.34);
+      }
+
+      .thumb-button:hover img,
+      .thumb-button.active img {
+        transform: scale(1.03);
+      }
+
+      .thumb-label {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       .section {
@@ -746,85 +838,38 @@
           </p>
         </div>
 
-        <figure class="hero-stage">
-          <img
-            src="Spanish Landscape.jpg"
-            alt="Panoramic landscape photograph by Alex Skaldsson showing open terrain and expansive light"
-            loading="eager"
-            fetchpriority="high"
-          />
-          <div class="hero-overlay"></div>
-          <figcaption class="hero-meta">
+        <section id="selected" class="featured-slider" aria-label="Featured works slider">
+          <figure class="featured-media">
+            <img id="featuredImage" src="Spanish Landscape.jpg" alt="Wide Spanish landscape photograph by Alex Skaldsson" loading="eager" fetchpriority="high" />
+            <div class="featured-overlay"></div>
+          </figure>
+
+          <aside class="featured-panel">
             <div>
-              <div class="hero-meta-title">Spanish Landscape</div>
-              <div class="hero-meta-note">Featured panoramic work</div>
-            </div>
-            <div class="hero-meta-note">Landscape photography · Spain</div>
-          </figcaption>
-        </figure>
-
-        <div class="hero-strip" aria-label="Preview strip">
-          <figure class="strip-thumb"><img src="French Mountains.jpg" alt="French mountain landscape preview" loading="lazy" /></figure>
-          <figure class="strip-thumb"><img src="Church Tower Spain.jpg" alt="Church tower in Spain preview" loading="lazy" /></figure>
-          <figure class="strip-thumb"><img src="Snowy Bliss.jpg" alt="Snow scene preview" loading="lazy" /></figure>
-          <figure class="strip-thumb"><img src="Spanish Mountain during Sunset.jpg" alt="Mountain sunset preview" loading="lazy" /></figure>
-        </div>
-      </section>
-
-      <section id="selected" class="section container" aria-labelledby="selected-title">
-        <div class="section-head">
-          <h2 id="selected-title" class="section-title">Selected works</h2>
-          <p class="section-copy">
-            For landscape portfolios, the strongest approach is not aggressive overlap. It is image hierarchy. This layout uses large panoramic features, careful sequencing, and a clean editorial system that lets the photographs do the talking.
-          </p>
-        </div>
-
-        <div class="panorama-stack">
-          <article class="panorama-card">
-            <div class="panorama-meta">
-              <div class="panorama-index">01</div>
-              <h3 class="panorama-title">Spanish Landscape</h3>
-              <div class="panorama-notes">
+              <div class="featured-counter" id="featuredCounter">01 / 06</div>
+              <h2 class="featured-title" id="featuredTitle">Spanish Landscape</h2>
+              <div class="featured-meta" id="featuredMeta">
+                <span>Landscape</span>
                 <span>Spain</span>
                 <span>6000 × 2546</span>
-                <span>Panoramic landscape</span>
               </div>
             </div>
-            <figure class="panorama-frame">
-              <img src="Spanish Landscape.jpg" alt="Wide Spanish landscape photograph by Alex Skaldsson" loading="lazy" />
-            </figure>
-          </article>
 
-          <article class="panorama-card">
-            <div class="panorama-meta">
-              <div class="panorama-index">02</div>
-              <h3 class="panorama-title">French Mountains</h3>
-              <div class="panorama-notes">
-                <span>France</span>
-                <span>4032 × 1349</span>
-                <span>Atmospheric mountain scene</span>
-              </div>
-            </div>
-            <figure class="panorama-frame">
-              <img src="French Mountains.jpg" alt="French mountain landscape with atmospheric light by Alex Skaldsson" loading="lazy" />
-            </figure>
-          </article>
+            <p class="featured-description" id="featuredDescription">
+              An expansive panoramic frame with enough negative space and distance to set the tone for the entire portfolio. This section is meant to work like a sideways gallery: one photograph at a time, with context living beside the image rather than beneath a long scroll.
+            </p>
 
-          <article class="panorama-card">
-            <div class="panorama-meta">
-              <div class="panorama-index">03</div>
-              <h3 class="panorama-title">Spanish Mountain during Sunset</h3>
-              <div class="panorama-notes">
-                <span>Spain</span>
-                <span>6000 × 3571</span>
-                <span>Mountain light</span>
+            <div class="featured-controls">
+              <div class="arrow-group">
+                <button class="feature-arrow" id="featurePrev" aria-label="Previous featured image">‹</button>
+                <button class="feature-arrow" id="featureNext" aria-label="Next featured image">›</button>
               </div>
+              <a class="featured-link js-lightbox" id="featuredOpen" href="Spanish Landscape.jpg" data-title="Spanish Landscape" data-meta="Landscape · Spain" aria-label="Open featured image larger">Open image</a>
             </div>
-            <figure class="panorama-frame">
-              <img src="Spanish Mountain during Sunset.jpg" alt="Spanish mountain landscape at sunset photographed by Alex Skaldsson" loading="lazy" />
-            </figure>
-          </article>
-        </div>
+
+            <div class="featured-thumbs" id="featuredThumbs"></div>
+          </aside>
+        </section>
       </section>
 
       <section id="portfolio" class="section container" aria-labelledby="portfolio-title">
@@ -986,6 +1031,103 @@
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
 
+      const featuredItems = [
+        {
+          src: 'Spanish Landscape.jpg',
+          title: 'Spanish Landscape',
+          alt: 'Wide Spanish landscape photograph by Alex Skaldsson',
+          meta: ['Landscape', 'Spain', '6000 × 2546'],
+          shortMeta: 'Landscape · Spain',
+          description: 'An expansive panoramic frame with enough negative space and distance to set the tone for the entire portfolio. This section is meant to work like a sideways gallery: one photograph at a time, with context living beside the image rather than beneath a long scroll.'
+        },
+        {
+          src: 'French Mountains.jpg',
+          title: 'French Mountains',
+          alt: 'French mountain landscape with atmospheric light by Alex Skaldsson',
+          meta: ['Mountains', 'France', '4032 × 1349'],
+          shortMeta: 'Mountains · France',
+          description: 'A compressed mountain horizon with soft light and atmospheric layering. It works especially well in this format because the width of the frame is treated as the main event rather than squeezed into a standard grid.'
+        },
+        {
+          src: 'Spanish Mountain during Sunset.jpg',
+          title: 'Spanish Mountain during Sunset',
+          alt: 'Spanish mountain landscape at sunset photographed by Alex Skaldsson',
+          meta: ['Sunset', 'Spain', '6000 × 3571'],
+          shortMeta: 'Sunset · Spain',
+          description: 'Warmer tones and shifting light create a stronger cinematic moment. The side description gives this image breathing room without interrupting the flow of the portfolio.'
+        },
+        {
+          src: 'Snowy Bliss.jpg',
+          title: 'Snowy Bliss',
+          alt: 'Snow-covered landscape photograph by Alex Skaldsson',
+          meta: ['Snow', 'Landscape', '4032 × 2268'],
+          shortMeta: 'Snow · Landscape',
+          description: 'A colder and quieter landscape that changes the temperature of the sequence. The viewer moves laterally through different moods instead of vertically through repeated blocks.'
+        },
+        {
+          src: 'Church Tower Spain.jpg',
+          title: 'Church Tower Spain',
+          alt: 'Church tower within a natural landscape in Spain',
+          meta: ['Place', 'Spain', '5467 × 3594'],
+          shortMeta: 'Place · Spain',
+          description: 'A solitary structure within the landscape adds a note of human presence without breaking the calm pacing of the portfolio.'
+        },
+        {
+          src: 'Lonely Tower.jpg',
+          title: 'Lonely Tower',
+          alt: 'Solitary tower photograph by Alex Skaldsson',
+          meta: ['Tower', 'Solitude', '6000 × 6672'],
+          shortMeta: 'Tower · Solitude',
+          description: 'This portrait-oriented image closes the featured sequence with a more vertical emphasis, giving the horizontal rhythm a clean point of contrast.'
+        }
+      ];
+
+      const featuredImage = document.getElementById('featuredImage');
+      const featuredTitle = document.getElementById('featuredTitle');
+      const featuredMeta = document.getElementById('featuredMeta');
+      const featuredDescription = document.getElementById('featuredDescription');
+      const featuredCounter = document.getElementById('featuredCounter');
+      const featuredOpen = document.getElementById('featuredOpen');
+      const thumbsWrap = document.getElementById('featuredThumbs');
+      const featurePrev = document.getElementById('featurePrev');
+      const featureNext = document.getElementById('featureNext');
+      let featuredIndex = 0;
+
+      featuredItems.forEach((item, index) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'thumb-button';
+        button.setAttribute('aria-label', 'Show ' + item.title);
+        button.innerHTML = `
+          <span class="thumb-frame"><img src="${item.src}" alt="${item.title} preview" loading="lazy" /></span>
+          <span class="thumb-label">${item.title}</span>
+        `;
+        button.addEventListener('click', () => setFeatured(index));
+        thumbsWrap.appendChild(button);
+      });
+
+      function setFeatured(index) {
+        featuredIndex = (index + featuredItems.length) % featuredItems.length;
+        const item = featuredItems[featuredIndex];
+        featuredImage.src = item.src;
+        featuredImage.alt = item.alt;
+        featuredTitle.textContent = item.title;
+        featuredDescription.textContent = item.description;
+        featuredCounter.textContent = String(featuredIndex + 1).padStart(2, '0') + ' / ' + String(featuredItems.length).padStart(2, '0');
+        featuredMeta.innerHTML = item.meta.map(part => `<span>${part}</span>`).join('');
+        featuredOpen.href = item.src;
+        featuredOpen.dataset.title = item.title;
+        featuredOpen.dataset.meta = item.shortMeta;
+
+        Array.from(thumbsWrap.children).forEach((button, buttonIndex) => {
+          button.classList.toggle('active', buttonIndex === featuredIndex);
+        });
+      }
+
+      featurePrev.addEventListener('click', () => setFeatured(featuredIndex - 1));
+      featureNext.addEventListener('click', () => setFeatured(featuredIndex + 1));
+      setFeatured(0);
+
       const items = Array.from(document.querySelectorAll('.js-lightbox'));
       const lightbox = document.getElementById('lightbox');
       const lightboxImage = document.getElementById('lightboxImage');
@@ -996,11 +1138,16 @@
       const nextBtn = document.getElementById('lightboxNext');
       let currentIndex = 0;
 
+      function refreshItems() {
+        return Array.from(document.querySelectorAll('.js-lightbox'));
+      }
+
       function openLightbox(index) {
+        const currentItems = refreshItems();
         currentIndex = index;
-        const item = items[index];
+        const item = currentItems[index];
         lightboxImage.src = item.getAttribute('href');
-        lightboxImage.alt = item.querySelector('img').alt;
+        lightboxImage.alt = item.querySelector('img') ? item.querySelector('img').alt : (item.dataset.title || 'Portfolio image');
         lightboxTitle.textContent = item.dataset.title || '';
         lightboxMeta.textContent = item.dataset.meta || '';
         lightbox.classList.add('open');
@@ -1015,11 +1162,12 @@
       }
 
       function showRelative(step) {
-        currentIndex = (currentIndex + step + items.length) % items.length;
+        const currentItems = refreshItems();
+        currentIndex = (currentIndex + step + currentItems.length) % currentItems.length;
         openLightbox(currentIndex);
       }
 
-      items.forEach((item, index) => {
+      refreshItems().forEach((item, index) => {
         item.addEventListener('click', (event) => {
           event.preventDefault();
           openLightbox(index);
@@ -1035,10 +1183,15 @@
       });
 
       document.addEventListener('keydown', (event) => {
-        if (!lightbox.classList.contains('open')) return;
-        if (event.key === 'Escape') closeLightbox();
-        if (event.key === 'ArrowRight') showRelative(1);
-        if (event.key === 'ArrowLeft') showRelative(-1);
+        if (lightbox.classList.contains('open')) {
+          if (event.key === 'Escape') closeLightbox();
+          if (event.key === 'ArrowRight') showRelative(1);
+          if (event.key === 'ArrowLeft') showRelative(-1);
+          return;
+        }
+
+        if (event.key === 'ArrowRight') setFeatured(featuredIndex + 1);
+        if (event.key === 'ArrowLeft') setFeatured(featuredIndex - 1);
       });
     </script>
   </body>
