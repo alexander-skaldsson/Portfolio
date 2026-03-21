@@ -4,14 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alex Skaldsson | Nature Photography Portfolio</title>
-    <meta
-      name="description"
-      content="Nature photography portfolio of Alex Skaldsson featuring atmospheric landscape photography, mountain scenes, towers, snow, and wide-format nature imagery from Spain and beyond."
-    />
-    <meta
-      name="keywords"
-      content="My name is Alex Skaldsson, I'm a nature and wildlife photographer. See my work below"
-    />
+    <meta name="description" content="Nature photography portfolio of Alex Skaldsson featuring atmospheric landscape photography, mountain scenes, towers, snow, and wide-format nature imagery from Spain and beyond." />
+    <meta name="keywords" content="My name is Alex Skaldsson, I'm a nature and wildlife photographer. See my work below" />
     <meta name="author" content="Alex Skaldsson" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#060606" />
@@ -20,10 +14,7 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Alex Skaldsson | Nature Photography Portfolio" />
-    <meta
-      property="og:description"
-      content="Atmospheric nature and landscape photography by Alex Skaldsson. Wide mountain vistas, solitary towers, snow scenes, and quiet terrain studies."
-    />
+    <meta property="og:description" content="Atmospheric nature and landscape photography by Alex Skaldsson." />
     <meta property="og:url" content="https://skaldsson.art/" />
     <meta property="og:site_name" content="Alex Skaldsson" />
     <meta property="og:image" content="https://skaldsson.art/Spanish%20Landscape.jpg" />
@@ -31,11 +22,12 @@
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Alex Skaldsson | Nature Photography Portfolio" />
-    <meta
-      name="twitter:description"
-      content="Wide-format landscape and nature photography portfolio by Alex Skaldsson."
-    />
+    <meta name="twitter:description" content="Wide-format landscape and nature photography portfolio by Alex Skaldsson." />
     <meta name="twitter:image" content="https://skaldsson.art/Spanish%20Landscape.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
 
     <script type="application/ld+json">
       {
@@ -49,234 +41,175 @@
       }
     </script>
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "Alex Skaldsson Nature Photography Portfolio",
-        "url": "https://skaldsson.art/",
-        "description": "Portfolio of nature and landscape photography by Alex Skaldsson.",
-        "about": {
-          "@type": "Person",
-          "name": "Alex Skaldsson"
-        }
-      }
-    </script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Selected photographs by Alex Skaldsson",
-        "itemListElement": [
-          {
-            "@type": "ImageObject",
-            "position": 1,
-            "name": "Spanish Landscape",
-            "contentUrl": "https://skaldsson.art/Spanish%20Landscape.jpg"
-          },
-          {
-            "@type": "ImageObject",
-            "position": 2,
-            "name": "French Mountains",
-            "contentUrl": "https://skaldsson.art/French%20Mountains.jpg"
-          },
-          {
-            "@type": "ImageObject",
-            "position": 3,
-            "name": "Spanish Mountain during Sunset",
-            "contentUrl": "https://skaldsson.art/Spanish%20Mountain%20during%20Sunset.jpg"
-          },
-          {
-            "@type": "ImageObject",
-            "position": 4,
-            "name": "Snowy Bliss",
-            "contentUrl": "https://skaldsson.art/Snowy%20Bliss.jpg"
-          },
-          {
-            "@type": "ImageObject",
-            "position": 5,
-            "name": "Church Tower Spain",
-            "contentUrl": "https://skaldsson.art/Church%20Tower%20Spain.jpg"
-          },
-          {
-            "@type": "ImageObject",
-            "position": 6,
-            "name": "Lonely Tower",
-            "contentUrl": "https://skaldsson.art/Lonely%20Tower.jpg"
-          }
-        ]
-      }
-    </script>
-
     <style>
       :root {
         --bg: #050505;
         --panel: #0b0b0b;
         --panel-2: #101010;
-        --line: rgba(255, 255, 255, 0.1);
-        --line-strong: rgba(255, 255, 255, 0.16);
-        --text: rgba(255, 255, 255, 0.96);
-        --soft: rgba(255, 255, 255, 0.74);
-        --muted: rgba(255, 255, 255, 0.46);
-        --max: 1520px;
+        --line: rgba(255, 255, 255, 0.09);
+        --line-strong: rgba(255, 255, 255, 0.18);
+        --text: rgba(255, 255, 255, 0.94);
+        --soft: rgba(255, 255, 255, 0.62);
+        --muted: rgba(255, 255, 255, 0.36);
+        --max: 1480px;
         --radius: 26px;
-        --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+        --shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+        --font-display: 'DM Serif Display', Georgia, serif;
+        --font-mono: 'DM Mono', 'Courier New', monospace;
       }
 
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
 
       body {
         background: var(--bg);
         color: var(--text);
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        line-height: 1.5;
+        font-family: var(--font-mono);
+        font-weight: 300;
+        line-height: 1.6;
         -webkit-font-smoothing: antialiased;
         text-rendering: optimizeLegibility;
       }
 
-      img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      button {
-        font: inherit;
-      }
+      img { display: block; width: 100%; height: auto; }
+      a { color: inherit; text-decoration: none; }
+      button { font: inherit; }
 
       .container {
-        width: min(var(--max), calc(100% - 36px));
+        width: min(var(--max), calc(100% - 40px));
         margin: 0 auto;
       }
 
+      /* ── HEADER ── */
       .site-header {
         position: sticky;
         top: 0;
         z-index: 100;
-        background: rgba(5, 5, 5, 0.7);
-        backdrop-filter: blur(18px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        background: rgba(5, 5, 5, 0.72);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--line);
       }
 
       .site-header-inner {
-        width: min(var(--max), calc(100% - 36px));
-        min-height: 72px;
+        width: min(var(--max), calc(100% - 40px));
+        height: 68px;
         margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 20px;
       }
 
       .brand {
         display: flex;
-        flex-direction: column;
-        gap: 4px;
+        align-items: baseline;
+        gap: 12px;
       }
 
       .brand-name {
-        font-size: 1rem;
-        font-weight: 700;
-        letter-spacing: -0.03em;
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        letter-spacing: 0.01em;
+        color: var(--text);
       }
 
       .brand-role {
-        font-size: 0.72rem;
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
         color: var(--muted);
         text-transform: uppercase;
-        letter-spacing: 0.2em;
+        letter-spacing: 0.22em;
+        font-weight: 300;
+      }
+
+      .brand-sep {
+        width: 1px;
+        height: 14px;
+        background: var(--line-strong);
       }
 
       .nav {
         display: flex;
-        flex-wrap: wrap;
-        gap: 22px;
-        color: var(--soft);
-        font-size: 0.83rem;
+        gap: 28px;
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--muted);
       }
 
-      .nav a,
-      .link-line,
-      .gallery-card,
-      .lightbox-close,
-      .lightbox-arrow,
-      .contact-link {
-        transition: opacity 0.25s ease, transform 0.35s ease, border-color 0.25s ease;
-      }
+      .nav a { transition: color 0.2s ease; }
+      .nav a:hover { color: var(--text); }
 
-      .nav a:hover,
-      .contact-link:hover,
-      .link-line:hover,
-      .gallery-card:hover .gallery-title {
-        opacity: 1;
-      }
-
+      /* ── HERO ── */
       .hero {
-        padding: 34px 0 14px;
+        padding: 52px 0 20px;
       }
 
       .hero-top {
         display: grid;
-        grid-template-columns: 0.95fr 1.25fr;
-        gap: 28px;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
         align-items: end;
-        margin-bottom: 22px;
+        margin-bottom: 32px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid var(--line);
       }
 
-      .eyebrow,
-      .section-kicker {
-        display: inline-block;
-        color: var(--muted);
-        font-size: 0.74rem;
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .eyebrow {
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
         text-transform: uppercase;
-        letter-spacing: 0.24em;
+        letter-spacing: 0.26em;
+        color: var(--muted);
+        font-weight: 300;
       }
 
       .hero h1 {
-        margin-top: 14px;
-        max-width: 9ch;
-        font-size: clamp(3.2rem, 8vw, 7.6rem);
-        line-height: 0.9;
-        letter-spacing: -0.06em;
-        font-weight: 700;
+        font-family: var(--font-display);
+        font-size: clamp(3rem, 6.5vw, 6.2rem);
+        line-height: 1.0;
+        letter-spacing: -0.02em;
+        font-weight: 400;
+        color: var(--text);
+      }
+
+      .hero-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 6px;
       }
 
       .hero-copy {
-        max-width: 44rem;
+        font-family: var(--font-mono);
+        font-weight: 300;
         color: var(--soft);
-        font-size: 1rem;
-        line-height: 1.95;
+        font-size: 0.88rem;
+        line-height: 2.0;
+        max-width: 38rem;
       }
 
+      /* ── FEATURED SLIDER ── */
       .featured-slider {
         display: grid;
-        grid-template-columns: minmax(0, 1.65fr) minmax(320px, 0.75fr);
-        gap: 18px;
+        grid-template-columns: minmax(0, 1.7fr) 360px;
+        gap: 16px;
         align-items: stretch;
       }
 
       .featured-media {
         position: relative;
         overflow: hidden;
-        border-radius: 32px;
+        border-radius: 28px;
         background: var(--panel);
         border: 1px solid var(--line);
         box-shadow: var(--shadow);
-        min-height: 68vh;
+        min-height: 66vh;
       }
 
       .featured-media img {
@@ -288,50 +221,88 @@
       .featured-overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.08) 44%, transparent 72%);
+        background: linear-gradient(to top, rgba(0,0,0,0.55), transparent 50%);
         pointer-events: none;
       }
 
+      /* ── FEATURED PANEL ── */
       .featured-panel {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        gap: 18px;
-        padding: 22px;
-        border-radius: 32px;
-        background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+        gap: 0;
+        border-radius: 28px;
+        background: var(--panel);
         border: 1px solid var(--line);
-        min-height: 68vh;
+        min-height: 66vh;
+        overflow: hidden;
+      }
+
+      .panel-top {
+        padding: 24px 24px 20px;
+        border-bottom: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .panel-counter-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
 
       .featured-counter {
-        color: var(--muted);
-        font-size: 0.76rem;
+        font-family: var(--font-mono);
+        font-size: 0.66rem;
         text-transform: uppercase;
         letter-spacing: 0.22em;
+        color: var(--muted);
+        font-weight: 300;
       }
 
       .featured-title {
-        font-size: clamp(2rem, 4vw, 3.4rem);
-        line-height: 0.92;
-        letter-spacing: -0.05em;
-        margin-top: 8px;
+        font-family: var(--font-display);
+        font-size: clamp(1.7rem, 2.8vw, 2.6rem);
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+        font-weight: 400;
+        color: var(--text);
       }
 
       .featured-meta {
-        margin-top: 16px;
-        display: grid;
-        gap: 8px;
-        color: var(--muted);
-        font-size: 0.78rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 2px;
+      }
+
+      .meta-tag {
+        font-family: var(--font-mono);
+        font-size: 0.64rem;
         text-transform: uppercase;
-        letter-spacing: 0.16em;
+        letter-spacing: 0.18em;
+        color: var(--muted);
+        font-weight: 300;
+        padding: 4px 10px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+      }
+
+      .panel-body {
+        padding: 20px 24px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
       }
 
       .featured-description {
+        font-family: var(--font-mono);
+        font-weight: 300;
         color: var(--soft);
-        line-height: 1.95;
-        font-size: 0.98rem;
+        font-size: 0.82rem;
+        line-height: 1.9;
       }
 
       .featured-controls {
@@ -343,38 +314,46 @@
 
       .arrow-group {
         display: flex;
-        gap: 10px;
+        gap: 8px;
       }
 
       .feature-arrow {
-        width: 48px;
-        height: 48px;
+        width: 44px;
+        height: 44px;
         border-radius: 999px;
         border: 1px solid var(--line-strong);
         background: rgba(255,255,255,0.02);
-        color: #fff;
+        color: var(--text);
         cursor: pointer;
-        transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+        transition: border-color 0.2s, background 0.2s, transform 0.2s;
+        font-size: 1.1rem;
       }
 
       .feature-arrow:hover {
-        transform: scale(1.04);
-        border-color: rgba(255,255,255,0.28);
-        background: rgba(255,255,255,0.05);
+        border-color: rgba(255,255,255,0.3);
+        background: rgba(255,255,255,0.06);
+        transform: scale(1.05);
       }
 
       .featured-link {
-        color: var(--soft);
-        font-size: 0.85rem;
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
         text-transform: uppercase;
-        letter-spacing: 0.18em;
+        letter-spacing: 0.2em;
+        color: var(--muted);
+        font-weight: 300;
+        transition: color 0.2s;
       }
 
-      .featured-thumbs {
+      .featured-link:hover { color: var(--text); }
+
+      /* ── THUMBS ── */
+      .panel-thumbs {
+        padding: 16px;
+        border-top: 1px solid var(--line);
         display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 12px;
-        align-items: start;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
       }
 
       .thumb-button {
@@ -384,256 +363,144 @@
         background: none;
         cursor: pointer;
         text-align: left;
-        display: grid;
-        grid-template-rows: auto auto;
-        gap: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
       }
 
       .thumb-frame {
         width: 100%;
         aspect-ratio: 1 / 1;
         overflow: hidden;
-        border-radius: 18px;
+        border-radius: 12px;
         border: 1px solid var(--line);
         background: var(--panel-2);
+        transition: border-color 0.2s;
       }
 
       .thumb-frame img {
         width: 100%;
         height: 100%;
-        display: block;
         object-fit: cover;
-        transition: transform 0.7s ease, opacity 0.25s ease;
+        transition: transform 0.6s ease, opacity 0.2s;
       }
 
       .thumb-button.active .thumb-frame {
-        border-color: rgba(255,255,255,0.34);
+        border-color: rgba(255,255,255,0.3);
       }
 
       .thumb-button:hover img,
       .thumb-button.active img {
-        transform: scale(1.03);
+        transform: scale(1.05);
       }
 
       .thumb-label {
-        min-height: 2.2em;
-        color: var(--muted);
-        font-size: 0.72rem;
+        font-family: var(--font-mono);
+        font-size: 0.6rem;
         text-transform: uppercase;
         letter-spacing: 0.14em;
+        color: var(--muted);
+        font-weight: 300;
         line-height: 1.3;
-        white-space: normal;
         overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
       }
 
+      /* ── SECTIONS ── */
       .section {
-        padding: 56px 0 18px;
+        padding: 60px 0 20px;
       }
 
       .section-head {
         display: grid;
-        grid-template-columns: 240px 1fr;
-        gap: 28px;
-        align-items: start;
-        margin-bottom: 22px;
+        grid-template-columns: 200px 1fr;
+        gap: 40px;
+        align-items: baseline;
+        margin-bottom: 28px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--line);
       }
 
       .section-title {
-        font-size: 0.92rem;
-        color: var(--muted);
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
         text-transform: uppercase;
-        letter-spacing: 0.22em;
+        letter-spacing: 0.24em;
+        color: var(--muted);
+        font-weight: 300;
       }
 
       .section-copy {
+        font-family: var(--font-mono);
+        font-weight: 300;
         color: var(--soft);
-        line-height: 1.95;
-        max-width: 54rem;
+        font-size: 0.88rem;
+        line-height: 1.9;
+        max-width: 48rem;
       }
 
-      .panorama-stack {
-        display: grid;
-        gap: 18px;
-      }
-
-      .panorama-card {
-        display: grid;
-        grid-template-columns: 220px 1fr;
-        gap: 20px;
-        align-items: center;
-        padding: 14px;
-        border: 1px solid var(--line);
-        border-radius: 28px;
-        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      }
-
-      .panorama-meta {
-        padding: 4px 6px;
-      }
-
-      .panorama-index {
-        color: var(--muted);
-        font-size: 0.76rem;
-        text-transform: uppercase;
-        letter-spacing: 0.22em;
-        margin-bottom: 10px;
-      }
-
-      .panorama-title {
-        font-size: clamp(1.4rem, 2vw, 2rem);
-        line-height: 0.95;
-        letter-spacing: -0.04em;
-        margin-bottom: 10px;
-      }
-
-      .panorama-notes {
-        display: grid;
-        gap: 6px;
-        color: var(--muted);
-        font-size: 0.78rem;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-      }
-
-      .panorama-frame,
-      .gallery-frame,
-      .essay-frame {
-        overflow: hidden;
-        border-radius: 22px;
-        background: var(--panel);
-        border: 1px solid var(--line);
-      }
-
-      .panorama-frame img {
-        aspect-ratio: 16 / 8;
-        object-fit: cover;
-      }
-
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 16px;
-      }
-
-      .gallery-card {
-        display: block;
-        opacity: 0.97;
-      }
-
-      .gallery-card:hover {
-        transform: translateY(-2px);
-      }
-
-      .gallery-card:hover img,
-      .panorama-card:hover img,
-      .essay-frame:hover img,
-      .strip-thumb:hover img {
-        transform: scale(1.02);
-      }
-
-      .gallery-frame img,
-      .essay-frame img,
-      .strip-thumb img,
-      .panorama-frame img {
-        transition: transform 0.8s ease;
-      }
-
-      .gallery-card.wide {
-        grid-column: span 8;
-      }
-
-      .gallery-card.standard {
-        grid-column: span 4;
-      }
-
-      .gallery-card.tall {
-        grid-column: span 4;
-      }
-
-      .gallery-card.tall .gallery-frame img {
-        aspect-ratio: 5 / 7.5;
-        object-fit: cover;
-      }
-
-      .gallery-card.wide .gallery-frame img {
-        aspect-ratio: 16 / 10;
-        object-fit: cover;
-      }
-
-      .gallery-card.standard .gallery-frame img {
-        aspect-ratio: 4 / 3;
-        object-fit: cover;
-      }
-
-      .gallery-title {
-        margin-top: 11px;
-        font-size: 0.98rem;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        opacity: 0.96;
-      }
-
-      .gallery-meta {
-        margin-top: 4px;
-        color: var(--muted);
-        font-size: 0.75rem;
-        text-transform: uppercase;
-        letter-spacing: 0.16em;
-      }
-
-      .essay-layout {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 16px;
-      }
-
-      .essay-frame img {
-        aspect-ratio: 16 / 10;
-        object-fit: cover;
-      }
-
+      /* ── ABOUT ── */
       .about-grid {
         display: grid;
-        grid-template-columns: 220px minmax(0, 1fr) minmax(0, 1fr);
-        gap: 28px;
-        padding-top: 6px;
+        grid-template-columns: 200px 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+      }
+
+      .about-kicker {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: var(--soft);
+        line-height: 1.4;
       }
 
       .about-copy {
+        font-family: var(--font-mono);
+        font-weight: 300;
         color: var(--soft);
-        line-height: 1.95;
-        font-size: 1rem;
+        font-size: 0.86rem;
+        line-height: 2.0;
       }
 
+      /* ── CONTACT ── */
       .contact-wrap {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        padding-bottom: 50px;
+        gap: 16px;
+        padding-bottom: 60px;
       }
 
       .contact-panel {
         border: 1px solid var(--line);
-        border-radius: 28px;
-        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-        padding: 24px;
+        border-radius: 24px;
+        background: var(--panel);
+        padding: 28px;
       }
 
       .contact-panel h3 {
-        font-size: clamp(1.8rem, 3vw, 2.7rem);
-        line-height: 0.95;
-        letter-spacing: -0.04em;
-        margin-bottom: 14px;
+        font-family: var(--font-display);
+        font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+        font-weight: 400;
+        margin-bottom: 16px;
+        color: var(--text);
       }
 
       .contact-panel p {
+        font-family: var(--font-mono);
+        font-weight: 300;
         color: var(--soft);
+        font-size: 0.84rem;
         line-height: 1.9;
       }
 
       .contact-list {
-        display: grid;
-        gap: 6px;
+        display: flex;
+        flex-direction: column;
       }
 
       .contact-link {
@@ -641,47 +508,51 @@
         align-items: center;
         justify-content: space-between;
         gap: 12px;
-        padding: 17px 0;
+        padding: 18px 0;
         border-bottom: 1px solid var(--line);
-        font-size: 1rem;
-        opacity: 0.94;
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        font-weight: 300;
+        color: var(--soft);
+        transition: color 0.2s;
       }
 
-      .contact-link .contact-value {
+      .contact-link:first-child { border-top: 1px solid var(--line); }
+      .contact-link:hover { color: var(--text); }
+
+      .contact-label {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.68rem;
+        color: var(--muted);
+      }
+
+      .contact-value {
+        font-size: 0.8rem;
         color: var(--soft);
       }
 
       .footer-note {
+        font-family: var(--font-mono);
+        font-weight: 300;
         color: var(--muted);
-        font-size: 0.8rem;
-        padding-bottom: 26px;
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        padding-bottom: 28px;
       }
 
-      .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-      }
-
+      /* ── LIGHTBOX ── */
       .lightbox {
         position: fixed;
         inset: 0;
         display: none;
         place-items: center;
-        background: rgba(0, 0, 0, 0.92);
+        background: rgba(0,0,0,0.94);
         z-index: 200;
         padding: 24px;
       }
 
-      .lightbox.open {
-        display: grid;
-      }
+      .lightbox.open { display: grid; }
 
       .lightbox-stage {
         position: relative;
@@ -691,8 +562,8 @@
       .lightbox figure {
         max-height: 86vh;
         overflow: hidden;
-        border-radius: 24px;
-        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 20px;
+        border: 1px solid rgba(255,255,255,0.1);
         background: #000;
       }
 
@@ -706,33 +577,37 @@
         display: flex;
         justify-content: space-between;
         gap: 16px;
-        margin-top: 12px;
-        color: rgba(255, 255, 255, 0.82);
-        font-size: 0.86rem;
+        margin-top: 14px;
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        font-weight: 300;
+        letter-spacing: 0.1em;
+        color: rgba(255,255,255,0.5);
       }
 
       .lightbox-close,
       .lightbox-arrow {
         position: absolute;
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        background: rgba(10, 10, 10, 0.84);
+        border: 1px solid rgba(255,255,255,0.14);
+        background: rgba(10,10,10,0.88);
         color: #fff;
         border-radius: 999px;
         cursor: pointer;
+        transition: transform 0.2s, border-color 0.2s;
       }
 
       .lightbox-close:hover,
       .lightbox-arrow:hover {
-        transform: scale(1.04);
-        border-color: rgba(255, 255, 255, 0.28);
+        transform: scale(1.06);
+        border-color: rgba(255,255,255,0.3);
       }
 
       .lightbox-close {
-        top: -10px;
+        top: -12px;
         right: 0;
         width: 44px;
         height: 44px;
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
 
       .lightbox-arrow {
@@ -743,102 +618,43 @@
         font-size: 1.2rem;
       }
 
-      .lightbox-arrow.prev {
-        left: -10px;
+      .lightbox-arrow.prev { left: -12px; }
+      .lightbox-arrow.next { right: -12px; }
+
+      .sr-only {
+        position: absolute; width: 1px; height: 1px; padding: 0;
+        margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+        white-space: nowrap; border: 0;
       }
 
-      .lightbox-arrow.next {
-        right: -10px;
-      }
-
+      /* ── RESPONSIVE ── */
       @media (max-width: 1180px) {
-        .hero-top,
-        .about-grid,
-        .featured-slider {
-          grid-template-columns: 1fr;
-        }
-
-        .hero h1 {
-          max-width: 11ch;
-        }
-
-        .featured-media,
-        .featured-panel {
-          min-height: auto;
-        }
-
-        .featured-media {
-          aspect-ratio: 16 / 10;
-        }
+        .hero-top { grid-template-columns: 1fr; gap: 28px; }
+        .featured-slider { grid-template-columns: 1fr; }
+        .featured-media { min-height: auto; aspect-ratio: 16 / 10; }
+        .featured-panel { min-height: auto; }
+        .about-grid { grid-template-columns: 1fr 1fr; }
+        .about-grid > :first-child { display: none; }
       }
 
       @media (max-width: 860px) {
-        .hero-strip,
-        .gallery-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .gallery-card.wide,
-        .gallery-card.standard,
-        .gallery-card.tall {
-          grid-column: auto;
-        }
-
-        .gallery-card.tall .gallery-frame img,
-        .gallery-card.standard .gallery-frame img,
-        .gallery-card.wide .gallery-frame img {
-          aspect-ratio: 4 / 3;
-        }
-
-        .lightbox-arrow.prev {
-          left: 0;
-        }
-
-        .lightbox-arrow.next {
-          right: 0;
-        }
+        .section-head { grid-template-columns: 1fr; gap: 10px; }
+        .about-grid { grid-template-columns: 1fr; }
+        .contact-wrap { grid-template-columns: 1fr; }
+        .panel-thumbs { grid-template-columns: repeat(3, 1fr); }
       }
 
       @media (max-width: 640px) {
-        .site-header-inner {
-          min-height: auto;
-          padding: 14px 0;
-          align-items: flex-start;
-          flex-direction: column;
-        }
-
-        .container,
-        .site-header-inner {
-          width: min(var(--max), calc(100% - 22px));
-        }
-
-        .nav {
-          display: flex;
-          gap: 14px;
-        }
-
-        .featured-thumbs {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .featured-controls {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .panorama-card,
-        .contact-panel {
-          padding: 14px;
-        }
-
-        .lightbox {
-          padding: 12px;
-        }
-
-        .contact-link {
-          flex-direction: column;
-          align-items: flex-start;
-        }
+        .site-header-inner { height: auto; padding: 14px 0; flex-direction: column; align-items: flex-start; gap: 10px; }
+        .container, .site-header-inner { width: min(var(--max), calc(100% - 24px)); }
+        .hero-top { padding-bottom: 24px; margin-bottom: 24px; }
+        .hero h1 { font-size: clamp(2.4rem, 12vw, 4rem); }
+        .brand { flex-wrap: wrap; }
+        .brand-sep { display: none; }
+        .featured-controls { flex-direction: column; align-items: flex-start; gap: 10px; }
+        .lightbox { padding: 12px; }
+        .lightbox-arrow.prev { left: 0; }
+        .lightbox-arrow.next { right: 0; }
       }
     </style>
   </head>
@@ -847,11 +663,13 @@
       <div class="site-header-inner">
         <a href="#top" class="brand" aria-label="Alex Skaldsson home">
           <span class="brand-name">Alex Skaldsson</span>
+          <span class="brand-sep" aria-hidden="true"></span>
           <span class="brand-role">Nature Photography</span>
         </a>
         <nav class="nav" aria-label="Main navigation">
           <a href="#selected">Work</a>
           <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
@@ -859,13 +677,15 @@
     <main id="top">
       <section class="hero container" aria-labelledby="site-title">
         <div class="hero-top">
-          <div>
+          <div class="hero-left">
             <span class="eyebrow">Fine Art Landscape Portfolio</span>
             <h1 id="site-title">Wide landscapes built to breathe.</h1>
           </div>
-          <p class="hero-copy">
-            I'm a nature and wildlife photographer. I currently live in Spain and want to capture as much of this country's natural beauty as possible. Feel free to reach out and say hi
-          </p>
+          <div class="hero-right">
+            <p class="hero-copy">
+              I'm a nature and wildlife photographer. I currently live in Spain and want to capture as much of this country's natural beauty as possible. Feel free to reach out and say hi.
+            </p>
+          </div>
         </div>
 
         <section id="selected" class="featured-slider" aria-label="Featured works slider">
@@ -875,29 +695,33 @@
           </figure>
 
           <aside class="featured-panel">
-            <div>
-              <div class="featured-counter" id="featuredCounter">01 / 06</div>
+            <div class="panel-top">
+              <div class="panel-counter-row">
+                <span class="featured-counter" id="featuredCounter">01 / 06</span>
+              </div>
               <h2 class="featured-title" id="featuredTitle">Spanish Landscape</h2>
               <div class="featured-meta" id="featuredMeta">
-                <span>Landscape</span>
-                <span>Spain</span>
-                <span>6000 × 2546</span>
+                <span class="meta-tag">Landscape</span>
+                <span class="meta-tag">Spain</span>
+                <span class="meta-tag">6000 × 2546</span>
               </div>
             </div>
 
-            <p class="featured-description" id="featuredDescription">
-              An expansive panoramic frame with enough negative space and distance to set the tone for the entire portfolio. This section is meant to work like a sideways gallery: one photograph at a time, with context living beside the image rather than beneath a long scroll.
-            </p>
+            <div class="panel-body">
+              <p class="featured-description" id="featuredDescription">
+                An expansive panoramic frame with enough negative space and distance to set the tone for the entire portfolio. This section is meant to work like a sideways gallery: one photograph at a time, with context living beside the image rather than beneath a long scroll.
+              </p>
 
-            <div class="featured-controls">
-              <div class="arrow-group">
-                <button class="feature-arrow" id="featurePrev" aria-label="Previous featured image">‹</button>
-                <button class="feature-arrow" id="featureNext" aria-label="Next featured image">›</button>
+              <div class="featured-controls">
+                <div class="arrow-group">
+                  <button class="feature-arrow" id="featurePrev" aria-label="Previous featured image">‹</button>
+                  <button class="feature-arrow" id="featureNext" aria-label="Next featured image">›</button>
+                </div>
+                <a class="featured-link js-lightbox" id="featuredOpen" href="Spanish Landscape.jpg" data-title="Spanish Landscape" data-meta="Landscape · Spain" aria-label="Open featured image larger">Open image</a>
               </div>
-              <a class="featured-link js-lightbox" id="featuredOpen" href="Spanish Landscape.jpg" data-title="Spanish Landscape" data-meta="Landscape · Spain" aria-label="Open featured image larger">Open image</a>
             </div>
 
-            <div class="featured-thumbs" id="featuredThumbs"></div>
+            <div class="panel-thumbs" id="featuredThumbs"></div>
           </aside>
         </section>
       </section>
@@ -910,13 +734,13 @@
 
         <div class="about-grid">
           <div>
-            <span class="section-kicker">Alex Skaldsson</span>
+            <span class="about-kicker">Alex Skaldsson</span>
           </div>
           <p class="about-copy">
             Alex Skaldsson is a nature photographer whose work centers on landscape, mountains, snow fields, solitary towers, and the quieter edges of place. His photographs favor wide compositions, measured pacing, and a restrained visual language that lets terrain, weather, and light carry the image.
           </p>
           <p class="about-copy">
-            Alex’s portfolio is built around panoramic rhythm and restrained presentation rather than a dense scroll of thumbnails. The work is intended to feel slow, spacious, and immersive, with each frame given enough room to hold attention on its own.
+            Alex's portfolio is built around panoramic rhythm and restrained presentation rather than a dense scroll of thumbnails. The work is intended to feel slow, spacious, and immersive, with each frame given enough room to hold attention on its own.
           </p>
         </div>
       </section>
@@ -930,23 +754,21 @@
         <div class="contact-wrap">
           <div class="contact-panel">
             <h3>Available for selected projects.</h3>
-            <p>
-              Landscape commissions, print inquiries, and editorial collaborations. Feel free to get in touch.
-            </p>
+            <p>Landscape commissions, print inquiries, and editorial collaborations. Feel free to get in touch.</p>
           </div>
 
           <div class="contact-panel">
             <div class="contact-list">
               <a class="contact-link" id="emailLink" href="#" rel="nofollow">
-                <span>Email</span>
+                <span class="contact-label">Email</span>
                 <span class="contact-value" id="emailText">Click to reveal</span>
               </a>
               <a class="contact-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                <span>Instagram</span>
+                <span class="contact-label">Instagram</span>
                 <span class="contact-value">@alexskaldsson</span>
               </a>
               <a class="contact-link" href="https://www.tumblr.com" target="_blank" rel="noopener noreferrer">
-                <span>Journal</span>
+                <span class="contact-label">Journal</span>
                 <span class="contact-value">Tumblr</span>
               </a>
             </div>
@@ -1061,16 +883,15 @@
         featuredTitle.textContent = item.title;
         featuredDescription.textContent = item.description;
         featuredCounter.textContent =
-          String(featuredIndex + 1).padStart(2, '0') +
-          ' / ' +
+          String(featuredIndex + 1).padStart(2, '0') + ' / ' +
           String(featuredItems.length).padStart(2, '0');
-        featuredMeta.innerHTML = item.meta.map(part => `<span>${part}</span>`).join('');
+        featuredMeta.innerHTML = item.meta.map(part => `<span class="meta-tag">${part}</span>`).join('');
         featuredOpen.href = item.src;
         featuredOpen.dataset.title = item.title;
         featuredOpen.dataset.meta = item.shortMeta;
 
-        Array.from(thumbsWrap.children).forEach((button, buttonIndex) => {
-          button.classList.toggle('active', buttonIndex === featuredIndex);
+        Array.from(thumbsWrap.children).forEach((button, i) => {
+          button.classList.toggle('active', i === featuredIndex);
         });
       }
 
@@ -1078,6 +899,7 @@
       featureNext.addEventListener('click', () => setFeatured(featuredIndex + 1));
       setFeatured(0);
 
+      // Lightbox
       const lightbox = document.getElementById('lightbox');
       const lightboxImage = document.getElementById('lightboxImage');
       const lightboxTitle = document.getElementById('lightboxTitle');
@@ -1087,19 +909,14 @@
       const nextBtn = document.getElementById('lightboxNext');
       let currentIndex = 0;
 
-      function refreshItems() {
-        return Array.from(document.querySelectorAll('.js-lightbox'));
-      }
+      function refreshItems() { return Array.from(document.querySelectorAll('.js-lightbox')); }
 
       function openLightbox(index) {
-        const currentItems = refreshItems();
+        const items = refreshItems();
         currentIndex = index;
-        const item = currentItems[index];
+        const item = items[index];
         lightboxImage.src = item.getAttribute('href');
-        lightboxImage.alt =
-          item.querySelector('img')
-            ? item.querySelector('img').alt
-            : (item.dataset.title || 'Portfolio image');
+        lightboxImage.alt = item.dataset.title || 'Portfolio image';
         lightboxTitle.textContent = item.dataset.title || '';
         lightboxMeta.textContent = item.dataset.meta || '';
         lightbox.classList.add('open');
@@ -1114,60 +931,46 @@
       }
 
       function showRelative(step) {
-        const currentItems = refreshItems();
-        currentIndex = (currentIndex + step + currentItems.length) % currentItems.length;
+        const items = refreshItems();
+        currentIndex = (currentIndex + step + items.length) % items.length;
         openLightbox(currentIndex);
       }
 
       refreshItems().forEach((item, index) => {
-        item.addEventListener('click', (event) => {
-          event.preventDefault();
-          openLightbox(index);
-        });
+        item.addEventListener('click', e => { e.preventDefault(); openLightbox(index); });
       });
 
       closeBtn.addEventListener('click', closeLightbox);
       prevBtn.addEventListener('click', () => showRelative(-1));
       nextBtn.addEventListener('click', () => showRelative(1));
+      lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 
-      lightbox.addEventListener('click', (event) => {
-        if (event.target === lightbox) closeLightbox();
-      });
-
-      document.addEventListener('keydown', (event) => {
+      document.addEventListener('keydown', e => {
         if (lightbox.classList.contains('open')) {
-          if (event.key === 'Escape') closeLightbox();
-          if (event.key === 'ArrowRight') showRelative(1);
-          if (event.key === 'ArrowLeft') showRelative(-1);
+          if (e.key === 'Escape') closeLightbox();
+          if (e.key === 'ArrowRight') showRelative(1);
+          if (e.key === 'ArrowLeft') showRelative(-1);
           return;
         }
-
-        if (event.key === 'ArrowRight') setFeatured(featuredIndex + 1);
-        if (event.key === 'ArrowLeft') setFeatured(featuredIndex - 1);
+        if (e.key === 'ArrowRight') setFeatured(featuredIndex + 1);
+        if (e.key === 'ArrowLeft') setFeatured(featuredIndex - 1);
       });
 
+      // Email reveal
       const emailLink = document.getElementById('emailLink');
       const emailText = document.getElementById('emailText');
+      const emailAddress = ['Alexander', '.', 'skaldsson'].join('') + '@' + ['gmail', '.', 'com'].join('');
 
-      const emailUser = ['Alexander', '.', 'skaldsson'].join('');
-      const emailDomain = ['gmail', '.', 'com'].join('');
-      const emailAddress = emailUser + '@' + emailDomain;
-
-      emailLink.addEventListener('click', function (event) {
-        event.preventDefault();
+      emailLink.addEventListener('click', function(e) {
+        e.preventDefault();
         emailText.textContent = emailAddress;
         emailLink.href = 'mailto:' + emailAddress;
         window.location.href = 'mailto:' + emailAddress;
       });
 
-      emailLink.addEventListener('mouseenter', function () {
-        emailText.textContent = 'Click to email';
-      });
-
-      emailLink.addEventListener('mouseleave', function () {
-        if (!emailLink.href.includes('mailto:')) {
-          emailText.textContent = 'Click to reveal';
-        }
+      emailLink.addEventListener('mouseenter', () => { emailText.textContent = 'Click to email'; });
+      emailLink.addEventListener('mouseleave', () => {
+        if (!emailLink.href.includes('mailto:')) emailText.textContent = 'Click to reveal';
       });
     </script>
   </body>
