@@ -371,19 +371,26 @@
 
       .featured-thumbs {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 12px;
+        align-items: start;
       }
 
       .thumb-button {
+        width: 100%;
         padding: 0;
         border: 0;
         background: none;
         cursor: pointer;
         text-align: left;
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 8px;
       }
 
       .thumb-frame {
+        width: 100%;
+        aspect-ratio: 1 / 1;
         overflow: hidden;
         border-radius: 18px;
         border: 1px solid var(--line);
@@ -391,9 +398,11 @@
       }
 
       .thumb-frame img {
-        aspect-ratio: 16 / 10;
+        width: 100%;
+        height: 100%;
+        display: block;
         object-fit: cover;
-        transition: transform 0.7s ease, opacity 0.25s ease, border-color 0.25s ease;
+        transition: transform 0.7s ease, opacity 0.25s ease;
       }
 
       .thumb-button.active .thumb-frame {
@@ -406,14 +415,14 @@
       }
 
       .thumb-label {
-        margin-top: 8px;
+        min-height: 2.2em;
         color: var(--muted);
         font-size: 0.72rem;
         text-transform: uppercase;
         letter-spacing: 0.14em;
-        white-space: nowrap;
+        line-height: 1.3;
+        white-space: normal;
         overflow: hidden;
-        text-overflow: ellipsis;
       }
 
       .section {
@@ -804,7 +813,7 @@
         }
 
         .featured-thumbs {
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
         .featured-controls {
@@ -1024,7 +1033,9 @@
         button.className = 'thumb-button';
         button.setAttribute('aria-label', 'Show ' + item.title);
         button.innerHTML = `
-          <span class="thumb-frame"><img src="${item.src}" alt="${item.title} preview" loading="lazy" /></span>
+          <span class="thumb-frame">
+            <img src="${item.src}" alt="${item.title} preview" loading="lazy" />
+          </span>
           <span class="thumb-label">${item.title}</span>
         `;
         button.addEventListener('click', () => setFeatured(index));
@@ -1034,11 +1045,15 @@
       function setFeatured(index) {
         featuredIndex = (index + featuredItems.length) % featuredItems.length;
         const item = featuredItems[featuredIndex];
+
         featuredImage.src = item.src;
         featuredImage.alt = item.alt;
         featuredTitle.textContent = item.title;
         featuredDescription.textContent = item.description;
-        featuredCounter.textContent = String(featuredIndex + 1).padStart(2, '0') + ' / ' + String(featuredItems.length).padStart(2, '0');
+        featuredCounter.textContent =
+          String(featuredIndex + 1).padStart(2, '0') +
+          ' / ' +
+          String(featuredItems.length).padStart(2, '0');
         featuredMeta.innerHTML = item.meta.map(part => `<span>${part}</span>`).join('');
         featuredOpen.href = item.src;
         featuredOpen.dataset.title = item.title;
@@ -1053,7 +1068,6 @@
       featureNext.addEventListener('click', () => setFeatured(featuredIndex + 1));
       setFeatured(0);
 
-      const items = Array.from(document.querySelectorAll('.js-lightbox'));
       const lightbox = document.getElementById('lightbox');
       const lightboxImage = document.getElementById('lightboxImage');
       const lightboxTitle = document.getElementById('lightboxTitle');
@@ -1072,7 +1086,10 @@
         currentIndex = index;
         const item = currentItems[index];
         lightboxImage.src = item.getAttribute('href');
-        lightboxImage.alt = item.querySelector('img') ? item.querySelector('img').alt : (item.dataset.title || 'Portfolio image');
+        lightboxImage.alt =
+          item.querySelector('img')
+            ? item.querySelector('img').alt
+            : (item.dataset.title || 'Portfolio image');
         lightboxTitle.textContent = item.dataset.title || '';
         lightboxMeta.textContent = item.dataset.meta || '';
         lightbox.classList.add('open');
