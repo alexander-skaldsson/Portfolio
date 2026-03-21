@@ -140,7 +140,6 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        display: block;
       }
 
       .hero-card.one {
@@ -198,14 +197,14 @@
       }
 
       .project-image img {
-        height: 24rem;
+        width: 100%;
+        height: auto;
+        max-height: 70vh;
         object-fit: cover;
         transition: transform 0.8s ease, filter 0.5s ease;
       }
 
-      .project-image.tall img {
-        height: 42rem;
-      }
+      
 
       .project-image.split {
         display: grid;
@@ -224,7 +223,7 @@
       }
 
       .project-image.split .primary img {
-        height: 32rem;
+        max-height: 65vh;
       }
 
       .project-image.split .secondary {
@@ -232,7 +231,7 @@
       }
 
       .project-image.split .secondary img {
-        height: 22rem;
+        max-height: 45vh;
       }
 
       .project-image.collage {
@@ -252,6 +251,7 @@
       .project-image.collage .frame img {
         width: 100%;
         height: 100%;
+        object-fit: cover;
       }
 
       .project-image.collage .frame.a {
@@ -435,7 +435,7 @@
     <div class="page">
       <header class="topbar">
         <div class="container topbar-inner">
-          <div class="brand">Your Name</div>
+          <div class="brand">Alex Skaldsson</div>
           <nav class="nav">
             <a href="#work">Work</a>
             <a href="#about">About</a>
@@ -449,9 +449,9 @@
           <div class="container hero-grid">
             <div class="eyebrow">Selected Works</div>
             <p class="hero-copy">
-              A minimal editorial portfolio inspired by your reference video, but loosened up with overlap, asymmetry, and a more contemporary image rhythm.
+              A minimal nature photography portfolio exploring landscape, atmosphere, and quiet compositions across Spain and beyond.
             </p>
-            <h1 class="hero-title">Cinematic photography with a fresher silhouette.</h1>
+            <h1 class="hero-title">Nature photography with a cinematic, quiet perspective.</h1>
           </div>
           <div class="container">
             <div class="hero-visual">
@@ -459,15 +459,17 @@
                 <img src="Spanish Landscape.jpg" alt="Spanish Landscape" />
               </div>
               <div class="hero-card two">
-                <img src="https://images.<div class="hero-card two">
                 <img src="Lonely Tower.jpg" alt="Lonely Tower" />
               </div>
-              <div class<div class="hero-card three">
+              <div class="hero-card three">
                 <img src="Spanish Mountain during Sunset.jpg" alt="Spanish Mountain during Sunset" />
               </div>
             </div>
           </div>
-        </section>ss="project">
+        </section>
+
+        <section id="work" class="projects container">
+          <article class="project">
             <div class="project-grid">
               <div class="section-label">Church Tower Spain</div>
               <div class="meta">
@@ -575,7 +577,7 @@
           <div class="container about-grid">
             <div class="section-label">About</div>
             <p class="about-copy">
-              Replace this with your own artist statement. Right now the page is wired to the exact image filenames shown in your GitHub repo, so it should work as soon as those files stay in the same folder as index.html.
+              Alex Skaldsson is a nature photographer focused on landscape, atmosphere, and the relationship between light and terrain. His work explores quiet environments, subtle contrast, and a restrained visual language.
             </p>
             <p class="about-copy">
               The overlapping sections are there to make the portfolio feel more current and editorial while keeping the typography restrained and the overall structure minimal.
