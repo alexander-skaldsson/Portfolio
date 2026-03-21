@@ -34,8 +34,7 @@
 
       .page {
         min-height: 100vh;
-        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-        background-size: 100% 72px;
+        background: #000;
       }
 
       .container {
@@ -85,7 +84,7 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 28px;
-        padding: 32px 0 40px;
+        padding: 40px 0 48px;
       }
 
       .eyebrow,
@@ -119,6 +118,50 @@
         font-weight: 700;
         letter-spacing: -0.04em;
         text-align: left;
+        max-width: 10ch;
+      }
+
+      .hero-visual {
+        position: relative;
+        min-height: 42vw;
+        max-height: 640px;
+        margin-top: 8px;
+      }
+
+      .hero-card {
+        position: absolute;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: #0a0a0a;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      }
+
+      .hero-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .hero-card.one {
+        left: 0;
+        top: 0;
+        width: 58%;
+        height: 76%;
+      }
+
+      .hero-card.two {
+        right: 0;
+        top: 12%;
+        width: 34%;
+        height: 42%;
+      }
+
+      .hero-card.three {
+        left: 36%;
+        bottom: 0;
+        width: 42%;
+        height: 40%;
       }
 
       .projects article,
@@ -151,20 +194,91 @@
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.1);
         background: #0a0a0a;
+        position: relative;
       }
 
       .project-image img {
         height: 24rem;
         object-fit: cover;
-        transition: transform 0.7s ease;
+        transition: transform 0.8s ease, filter 0.5s ease;
       }
 
       .project-image.tall img {
         height: 42rem;
       }
 
-      .project-image:hover img {
-        transform: scale(1.02);
+      .project-image.split {
+        display: grid;
+        grid-template-columns: 1.3fr 0.9fr;
+        gap: 14px;
+        padding: 14px;
+        background: transparent;
+        border: none;
+      }
+
+      .project-image.split .primary,
+      .project-image.split .secondary {
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #0a0a0a;
+      }
+
+      .project-image.split .primary img {
+        height: 32rem;
+      }
+
+      .project-image.split .secondary {
+        margin-top: 56px;
+      }
+
+      .project-image.split .secondary img {
+        height: 22rem;
+      }
+
+      .project-image.collage {
+        border: none;
+        background: transparent;
+        min-height: 38rem;
+      }
+
+      .project-image.collage .frame {
+        position: absolute;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #0a0a0a;
+        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
+      }
+
+      .project-image.collage .frame img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .project-image.collage .frame.a {
+        left: 0;
+        top: 0;
+        width: 68%;
+        height: 28rem;
+      }
+
+      .project-image.collage .frame.b {
+        right: 2%;
+        top: 10rem;
+        width: 32%;
+        height: 20rem;
+      }
+
+      .project-image.collage .frame.c {
+        left: 18%;
+        bottom: 0;
+        width: 38%;
+        height: 14rem;
+      }
+
+      .project-image:hover img,
+      .hero-card:hover img {
+        transform: scale(1.03);
+        filter: saturate(1.05);
       }
 
       .about-grid {
@@ -205,9 +319,25 @@
 
       @media (min-width: 900px) {
         .hero-grid {
-          grid-template-columns: 1.1fr 1.2fr 2fr;
+          grid-template-columns: 1.05fr 1.1fr 1.8fr;
           align-items: start;
         }
+
+        .hero-title {
+          text-align: right;
+          justify-self: end;
+        }
+
+        .project-grid {
+          grid-template-columns: 1.1fr 1.4fr 2.3fr;
+          gap: 28px;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr 2fr 2fr;
+          gap: 30px;
+        }
+      }
 
         .hero-title {
           text-align: right;
@@ -230,6 +360,61 @@
           flex-direction: column;
           align-items: flex-start;
         }
+
+        .nav {
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+
+        .hero-visual {
+          min-height: 22rem;
+        }
+
+        .project-image img {
+          height: 15rem;
+        }
+
+        .project-image.tall img {
+          height: 28rem;
+        }
+
+        .project-image.split {
+          grid-template-columns: 1fr;
+          padding: 0;
+          gap: 12px;
+        }
+
+        .project-image.split .primary img,
+        .project-image.split .secondary img {
+          height: 16rem;
+        }
+
+        .project-image.split .secondary {
+          margin-top: 0;
+        }
+
+        .project-image.collage {
+          min-height: 28rem;
+        }
+
+        .project-image.collage .frame.a {
+          width: 76%;
+          height: 16rem;
+        }
+
+        .project-image.collage .frame.b {
+          width: 42%;
+          height: 11rem;
+          top: 7rem;
+          right: 0;
+        }
+
+        .project-image.collage .frame.c {
+          width: 52%;
+          height: 9rem;
+          left: 10%;
+        }
+      }
 
         .nav {
           gap: 16px;
@@ -264,9 +449,22 @@
           <div class="container hero-grid">
             <div class="eyebrow">Selected Works</div>
             <p class="hero-copy">
-              A minimal editorial portfolio inspired by your reference video: black canvas, thin dividers, restrained metadata, and full-width photographic moments.
+              A minimal editorial portfolio inspired by your reference video, but loosened up with overlap, asymmetry, and a more contemporary image rhythm.
             </p>
-            <h1 class="hero-title">Cinematic photography with a quiet grid.</h1>
+            <h1 class="hero-title">Cinematic photography with a fresher silhouette.</h1>
+          </div>
+          <div class="container">
+            <div class="hero-visual">
+              <div class="hero-card one">
+                <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1600&q=80" alt="Hero image one" />
+              </div>
+              <div class="hero-card two">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80" alt="Hero image two" />
+              </div>
+              <div class="hero-card three">
+                <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1400&q=80" alt="Hero image three" />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -284,8 +482,13 @@
                 A cinematic study of yellow cabs, reflections, and compressed city light. The layout keeps the image dominant while treating the surrounding text as quiet gallery notes.
               </p>
             </div>
-            <div class="project-image">
-              <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1600&q=80" alt="Night Taxi" />
+            <div class="project-image split">
+              <div class="primary">
+                <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1600&q=80" alt="Night Taxi" />
+              </div>
+              <div class="secondary">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80" alt="Night Taxi detail" />
+              </div>
             </div>
           </article>
 
@@ -320,8 +523,16 @@
                 A taller image section adds rhythm by alternating panoramic strips with more intimate portrait moments.
               </p>
             </div>
-            <div class="project-image tall">
-              <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80" alt="Rear Seat" />
+            <div class="project-image collage">
+              <div class="frame a">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80" alt="Rear Seat" />
+              </div>
+              <div class="frame b">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1100&q=80" alt="Rear Seat secondary" />
+              </div>
+              <div class="frame c">
+                <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80" alt="Rear Seat detail" />
+              </div>
             </div>
           </article>
 
