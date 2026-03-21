@@ -78,20 +78,32 @@
           {
             "@type": "ImageObject",
             "position": 2,
-            "name": "Church Tower Spain",
-            "contentUrl": "https://skaldsson.art/Church%20Tower%20Spain.jpg"
-          },
-          {
-            "@type": "ImageObject",
-            "position": 3,
             "name": "French Mountains",
             "contentUrl": "https://skaldsson.art/French%20Mountains.jpg"
           },
           {
             "@type": "ImageObject",
-            "position": 4,
+            "position": 3,
             "name": "Spanish Mountain during Sunset",
             "contentUrl": "https://skaldsson.art/Spanish%20Mountain%20during%20Sunset.jpg"
+          },
+          {
+            "@type": "ImageObject",
+            "position": 4,
+            "name": "Snowy Bliss",
+            "contentUrl": "https://skaldsson.art/Snowy%20Bliss.jpg"
+          },
+          {
+            "@type": "ImageObject",
+            "position": 5,
+            "name": "Church Tower Spain",
+            "contentUrl": "https://skaldsson.art/Church%20Tower%20Spain.jpg"
+          },
+          {
+            "@type": "ImageObject",
+            "position": 6,
+            "name": "Lonely Tower",
+            "contentUrl": "https://skaldsson.art/Lonely%20Tower.jpg"
           }
         ]
       }
@@ -405,7 +417,7 @@
       }
 
       .section {
-        padding: 32px 0 8px;
+        padding: 56px 0 18px;
       }
 
       .section-head {
@@ -572,13 +584,15 @@
 
       .about-grid {
         display: grid;
-        grid-template-columns: 220px 1fr 1fr;
-        gap: 24px;
+        grid-template-columns: 220px minmax(0, 1fr) minmax(0, 1fr);
+        gap: 28px;
+        padding-top: 6px;
       }
 
       .about-copy {
         color: var(--soft);
         line-height: 1.95;
+        font-size: 1rem;
       }
 
       .contact-wrap {
@@ -725,16 +739,22 @@
 
       @media (max-width: 1180px) {
         .hero-top,
-        .section-head,
-        .panorama-card,
-        .essay-layout,
         .about-grid,
-        .contact-wrap {
+        .featured-slider {
           grid-template-columns: 1fr;
         }
 
         .hero h1 {
           max-width: 11ch;
+        }
+
+        .featured-media,
+        .featured-panel {
+          min-height: auto;
+        }
+
+        .featured-media {
+          aspect-ratio: 16 / 10;
         }
       }
 
@@ -778,25 +798,18 @@
           width: min(var(--max), calc(100% - 22px));
         }
 
-        .nav,
-        .hero-strip,
-        .gallery-grid {
-          grid-template-columns: 1fr;
-        }
-
         .nav {
           display: flex;
           gap: 14px;
         }
 
-        .hero-meta,
-        .lightbox-caption {
-          flex-direction: column;
-          align-items: flex-start;
+        .featured-thumbs {
+          grid-template-columns: 1fr 1fr;
         }
 
-        .hero-stage {
-          border-radius: 24px;
+        .featured-controls {
+          flex-direction: column;
+          align-items: flex-start;
         }
 
         .panorama-card,
@@ -818,10 +831,8 @@
           <span class="brand-role">Nature Photography</span>
         </a>
         <nav class="nav" aria-label="Main navigation">
-          <a href="#selected">Selected</a>
-          <a href="#portfolio">Portfolio</a>
+          <a href="#selected">Work</a>
           <a href="#about">About</a>
-          <a href="#contact">Contact</a>
         </nav>
       </div>
     </header>
@@ -872,92 +883,6 @@
         </section>
       </section>
 
-      <section id="portfolio" class="section container" aria-labelledby="portfolio-title">
-        <div class="section-head">
-          <h2 id="portfolio-title" class="section-title">Portfolio</h2>
-          <p class="section-copy">
-            A proper portfolio grid with wide photographs prioritized, vertical works given their own proportions, and a lightbox for viewing images at a larger scale without leaving the page.
-          </p>
-        </div>
-
-        <div class="gallery-grid">
-          <a class="gallery-card wide js-lightbox" href="Spanish Landscape.jpg" data-title="Spanish Landscape" data-meta="Landscape · Spain" aria-label="Open Spanish Landscape">
-            <figure class="gallery-frame">
-              <img src="Spanish Landscape.jpg" alt="Wide Spanish landscape photograph" loading="lazy" />
-            </figure>
-            <div class="gallery-title">Spanish Landscape</div>
-            <div class="gallery-meta">Landscape · Panoramic</div>
-          </a>
-
-          <a class="gallery-card standard js-lightbox" href="Church Tower Spain.jpg" data-title="Church Tower Spain" data-meta="Spain · Solitary structure" aria-label="Open Church Tower Spain">
-            <figure class="gallery-frame">
-              <img src="Church Tower Spain.jpg" alt="Church tower within a natural landscape in Spain" loading="lazy" />
-            </figure>
-            <div class="gallery-title">Church Tower Spain</div>
-            <div class="gallery-meta">Place · Structure</div>
-          </a>
-
-          <a class="gallery-card tall js-lightbox" href="Towering Mountain.jpg" data-title="Towering Mountain" data-meta="Mountain · Vertical frame" aria-label="Open Towering Mountain">
-            <figure class="gallery-frame">
-              <img src="Towering Mountain.jpg" alt="Vertical mountain photograph by Alex Skaldsson" loading="lazy" />
-            </figure>
-            <div class="gallery-title">Towering Mountain</div>
-            <div class="gallery-meta">Vertical · Mountain</div>
-          </a>
-
-          <a class="gallery-card wide js-lightbox" href="Snowy Bliss.jpg" data-title="Snowy Bliss" data-meta="Snow · Quiet terrain" aria-label="Open Snowy Bliss">
-            <figure class="gallery-frame">
-              <img src="Snowy Bliss.jpg" alt="Snow-covered landscape photograph by Alex Skaldsson" loading="lazy" />
-            </figure>
-            <div class="gallery-title">Snowy Bliss</div>
-            <div class="gallery-meta">Snow · Landscape</div>
-          </a>
-
-          <a class="gallery-card standard js-lightbox" href="Lonely Tower.jpg" data-title="Lonely Tower" data-meta="Tower · Solitude" aria-label="Open Lonely Tower">
-            <figure class="gallery-frame">
-              <img src="Lonely Tower.jpg" alt="Solitary tower photograph by Alex Skaldsson" loading="lazy" />
-            </figure>
-            <div class="gallery-title">Lonely Tower</div>
-            <div class="gallery-meta">Tower · Solitude</div>
-          </a>
-
-          <a class="gallery-card standard js-lightbox" href="Grazing Sheep.jpg" data-title="Grazing Sheep" data-meta="Nature · Pastoral scene" aria-label="Open Grazing Sheep">
-            <figure class="gallery-frame">
-              <img src="Grazing Sheep.jpg" alt="Grazing sheep in a natural landscape photographed by Alex Skaldsson" loading="lazy" />
-            </figure>
-            <div class="gallery-title">Grazing Sheep</div>
-            <div class="gallery-meta">Pastoral · Nature</div>
-          </a>
-        </div>
-      </section>
-
-      <section class="section container" aria-labelledby="essay-title">
-        <div class="section-head">
-          <h2 id="essay-title" class="section-title">Further works</h2>
-          <p class="section-copy">
-            A quieter closing rhythm with two additional photographs, giving the portfolio a stronger ending than a uniform grid alone.
-          </p>
-        </div>
-
-        <div class="essay-layout">
-          <a class="gallery-card js-lightbox" href="French Mountains.jpg" data-title="French Mountains" data-meta="France · Atmosphere" aria-label="Open French Mountains">
-            <figure class="essay-frame">
-              <img src="French Mountains.jpg" alt="French mountain landscape photograph" loading="lazy" />
-            </figure>
-            <div class="gallery-title">French Mountains</div>
-            <div class="gallery-meta">Mountains · Atmosphere</div>
-          </a>
-
-          <a class="gallery-card js-lightbox" href="Spanish Mountain during Sunset.jpg" data-title="Spanish Mountain during Sunset" data-meta="Spain · Sunset panorama" aria-label="Open Spanish Mountain during Sunset">
-            <figure class="essay-frame">
-              <img src="Spanish Mountain during Sunset.jpg" alt="Mountain landscape at sunset in Spain" loading="lazy" />
-            </figure>
-            <div class="gallery-title">Spanish Mountain during Sunset</div>
-            <div class="gallery-meta">Sunset · Panorama</div>
-          </a>
-        </div>
-      </section>
-
       <section id="about" class="section container" aria-labelledby="about-title">
         <div class="section-head">
           <h2 id="about-title" class="section-title">About</h2>
@@ -972,7 +897,7 @@
             Alex Skaldsson is a nature photographer whose work centers on landscape, mountains, snow fields, solitary towers, and the quieter edges of place. His photographs favor wide compositions, measured pacing, and a restrained visual language that lets terrain, weather, and light carry the image.
           </p>
           <p class="about-copy">
-            This version uses legitimate SEO best practices rather than hidden keyword stuffing: semantic HTML, strong titles and descriptions, Open Graph tags, Twitter cards, image alt text, structured data, canonical tags, and indexable content that accurately describes the work.
+            Alex’s portfolio is built around panoramic rhythm and restrained presentation rather than a dense scroll of thumbnails. The work is intended to feel slow, spacious, and immersive, with each frame given enough room to hold attention on its own.
           </p>
         </div>
       </section>
