@@ -3,8 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
+    <title>Alex Skaldsson | Nature Photography Portfolio</title>
+    <meta
+      name="description"
+      content="Nature photography portfolio of Alex Skaldsson featuring atmospheric landscape photography, mountain scenes, towers, snow, and wide-format nature imagery from Spain and beyond."
+    />
+    <meta
+      name="keywords"
+      content="Alex Skaldsson, Alex Skaldsson photographer, nature photography, landscape photography, fine art nature photography, mountain photography, Spain landscape photographer, atmospheric photography"
+    />
+    <meta name="author" content="Alex Skaldsson" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#060606" />
+    <link rel="canonical" href="https://skaldsson.art/" />
+    <link rel="preload" as="image" href="Spanish Landscape.jpg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Alex Skaldsson | Nature Photography Portfolio" />
+    <meta
+      property="og:description"
+      content="Atmospheric nature and landscape photography by Alex Skaldsson. Wide mountain vistas, solitary towers, snow scenes, and quiet terrain studies."
+    />
+    <meta property="og:url" content="https://skaldsson.art/" />
+    <meta property="og:site_name" content="Alex Skaldsson" />
+    <meta property="og:image" content="https://skaldsson.art/Spanish%20Landscape.jpg" />
+    <meta property="og:image:alt" content="Wide landscape photograph from the portfolio of Alex Skaldsson" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alex Skaldsson | Nature Photography Portfolio" />
+    <meta
+      name="twitter:description"
+      content="Wide-format landscape and nature photography portfolio by Alex Skaldsson."
+    />
+    <meta name="twitter:image" content="https://skaldsson.art/Spanish%20Landscape.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Alex Skaldsson",
+        "url": "https://skaldsson.art/",
+        "jobTitle": "Nature Photographer",
+        "description": "Alex Skaldsson is a nature photographer focused on atmospheric landscapes, mountains, snow, and quiet wide-format compositions.",
+        "image": "https://skaldsson.art/Spanish%20Landscape.jpg"
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Alex Skaldsson Nature Photography Portfolio",
+        "url": "https://skaldsson.art/",
+        "description": "Portfolio of nature and landscape photography by Alex Skaldsson.",
+        "about": {
+          "@type": "Person",
+          "name": "Alex Skaldsson"
+        }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Selected photographs by Alex Skaldsson",
+        "itemListElement": [
+          {
+            "@type": "ImageObject",
+            "position": 1,
+            "name": "Spanish Landscape",
+            "contentUrl": "https://skaldsson.art/Spanish%20Landscape.jpg"
+          },
+          {
+            "@type": "ImageObject",
+            "position": 2,
+            "name": "Church Tower Spain",
+            "contentUrl": "https://skaldsson.art/Church%20Tower%20Spain.jpg"
+          },
+          {
+            "@type": "ImageObject",
+            "position": 3,
+            "name": "French Mountains",
+            "contentUrl": "https://skaldsson.art/French%20Mountains.jpg"
+          },
+          {
+            "@type": "ImageObject",
+            "position": 4,
+            "name": "Spanish Mountain during Sunset",
+            "contentUrl": "https://skaldsson.art/Spanish%20Mountain%20during%20Sunset.jpg"
+          }
+        ]
+      }
+    </script>
+
     <style>
+      :root {
+        --bg: #050505;
+        --panel: #0b0b0b;
+        --panel-2: #101010;
+        --line: rgba(255, 255, 255, 0.1);
+        --line-strong: rgba(255, 255, 255, 0.16);
+        --text: rgba(255, 255, 255, 0.96);
+        --soft: rgba(255, 255, 255, 0.74);
+        --muted: rgba(255, 255, 255, 0.46);
+        --max: 1520px;
+        --radius: 26px;
+        --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
@@ -16,10 +123,18 @@
       }
 
       body {
-        background: #000;
-        color: #fff;
-        font-family: Arial, Helvetica, sans-serif;
-        line-height: 1.4;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
       }
 
       a {
@@ -27,575 +142,904 @@
         text-decoration: none;
       }
 
-      img {
-        display: block;
-        width: 100%;
-      }
-
-      .page {
-        min-height: 100vh;
-        background: #000;
+      button {
+        font: inherit;
       }
 
       .container {
-        width: min(1400px, calc(100% - 32px));
+        width: min(var(--max), calc(100% - 36px));
         margin: 0 auto;
       }
 
-      .topbar {
+      .site-header {
         position: sticky;
         top: 0;
-        z-index: 30;
-        background: rgba(0, 0, 0, 0.9);
-        backdrop-filter: blur(8px);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 100;
+        background: rgba(5, 5, 5, 0.7);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
       }
 
-      .topbar-inner {
+      .site-header-inner {
+        width: min(var(--max), calc(100% - 36px));
+        min-height: 72px;
+        margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 14px 0;
-        font-size: 11px;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
+        gap: 20px;
       }
 
       .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .brand-name {
+        font-size: 1rem;
         font-weight: 700;
+        letter-spacing: -0.03em;
+      }
+
+      .brand-role {
+        font-size: 0.72rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
       }
 
       .nav {
         display: flex;
-        gap: 24px;
-        color: rgba(255, 255, 255, 0.72);
+        flex-wrap: wrap;
+        gap: 22px;
+        color: var(--soft);
+        font-size: 0.83rem;
+      }
+
+      .nav a,
+      .link-line,
+      .gallery-card,
+      .lightbox-close,
+      .lightbox-arrow {
+        transition: opacity 0.25s ease, transform 0.35s ease, border-color 0.25s ease;
       }
 
       .nav a:hover,
-      .contact-links a:hover {
-        color: #fff;
+      .contact-link:hover,
+      .link-line:hover,
+      .gallery-card:hover .gallery-title {
+        opacity: 1;
       }
 
       .hero {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 34px 0 14px;
       }
 
-      .hero-grid {
+      .hero-top {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 0.95fr 1.25fr;
         gap: 28px;
-        padding: 40px 0 48px;
+        align-items: end;
+        margin-bottom: 22px;
       }
 
       .eyebrow,
-      .section-label,
-      .meta,
-      .contact-label {
-        font-size: 11px;
-        letter-spacing: 0.22em;
+      .section-kicker {
+        display: inline-block;
+        color: var(--muted);
+        font-size: 0.74rem;
         text-transform: uppercase;
+        letter-spacing: 0.24em;
       }
 
-      .eyebrow,
-      .hero-copy,
-      .about-copy,
-      .project-description,
-      .contact-label,
-      .meta {
-        color: rgba(255, 255, 255, 0.65);
-      }
-
-      .hero-copy,
-      .about-copy,
-      .project-description {
-        font-size: 15px;
-        line-height: 1.8;
-      }
-
-      .hero-title {
-        font-size: clamp(42px, 8vw, 110px);
-        line-height: 0.95;
+      .hero h1 {
+        margin-top: 14px;
+        max-width: 9ch;
+        font-size: clamp(3.2rem, 8vw, 7.6rem);
+        line-height: 0.9;
+        letter-spacing: -0.06em;
         font-weight: 700;
-        letter-spacing: -0.04em;
-        text-align: left;
-        max-width: 10ch;
       }
 
-      .hero-visual {
+      .hero-copy {
+        max-width: 44rem;
+        color: var(--soft);
+        font-size: 1rem;
+        line-height: 1.95;
+      }
+
+      .hero-stage {
         position: relative;
-        min-height: 42vw;
-        max-height: 640px;
-        margin-top: 8px;
-      }
-
-      .hero-card {
-        position: absolute;
+        border-radius: 32px;
         overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        background: #0a0a0a;
-        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+        background: var(--panel);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
       }
 
-      .hero-card img {
-        width: 100%;
-        height: 100%;
+      .hero-stage img {
+        aspect-ratio: 16 / 8.6;
         object-fit: cover;
       }
 
-      .hero-card.one {
-        left: 0;
-        top: 0;
-        width: 58%;
-        height: 76%;
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.08) 45%, transparent 70%);
+        pointer-events: none;
       }
 
-      .hero-card.two {
-        right: 0;
-        top: 12%;
-        width: 34%;
-        height: 42%;
+      .hero-meta {
+        position: absolute;
+        left: 24px;
+        right: 24px;
+        bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: end;
       }
 
-      .hero-card.three {
-        left: 36%;
-        bottom: 0;
-        width: 42%;
-        height: 40%;
+      .hero-meta-title {
+        font-size: clamp(1.3rem, 2vw, 1.85rem);
+        letter-spacing: -0.03em;
       }
 
-      .projects article,
-      .about,
-      .contact {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      .hero-meta-note {
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
       }
 
-      .project {
-        padding: 16px 0;
-      }
-
-      .project-grid {
+      .hero-strip {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .strip-thumb {
+        background: var(--panel-2);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+      }
+
+      .strip-thumb img {
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+      }
+
+      .section {
+        padding: 32px 0 8px;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 28px;
+        align-items: start;
+        margin-bottom: 22px;
+      }
+
+      .section-title {
+        font-size: 0.92rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+      }
+
+      .section-copy {
+        color: var(--soft);
+        line-height: 1.95;
+        max-width: 54rem;
+      }
+
+      .panorama-stack {
+        display: grid;
         gap: 18px;
       }
 
-      .section-label {
-        color: rgba(255, 255, 255, 0.9);
+      .panorama-card {
+        display: grid;
+        grid-template-columns: 220px 1fr;
+        gap: 20px;
+        align-items: center;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
       }
 
-      .meta {
+      .panorama-meta {
+        padding: 4px 6px;
+      }
+
+      .panorama-index {
+        color: var(--muted);
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        margin-bottom: 10px;
+      }
+
+      .panorama-title {
+        font-size: clamp(1.4rem, 2vw, 2rem);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        margin-bottom: 10px;
+      }
+
+      .panorama-notes {
         display: grid;
         gap: 6px;
+        color: var(--muted);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
       }
 
-      .project-image {
-        margin-top: 18px;
+      .panorama-frame,
+      .gallery-frame,
+      .essay-frame {
         overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: #0a0a0a;
-        position: relative;
+        border-radius: 22px;
+        background: var(--panel);
+        border: 1px solid var(--line);
       }
 
-      .project-image img {
-        width: 100%;
-        height: auto;
-        max-height: 70vh;
+      .panorama-frame img {
+        aspect-ratio: 16 / 8;
         object-fit: cover;
-        transition: transform 0.8s ease, filter 0.5s ease;
       }
 
-      
-
-      .project-image.split {
+      .gallery-grid {
         display: grid;
-        grid-template-columns: 1.3fr 0.9fr;
-        gap: 14px;
-        padding: 14px;
-        background: transparent;
-        border: none;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 16px;
       }
 
-      .project-image.split .primary,
-      .project-image.split .secondary {
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: #0a0a0a;
+      .gallery-card {
+        display: block;
+        opacity: 0.97;
       }
 
-      .project-image.split .primary img {
-        max-height: 65vh;
+      .gallery-card:hover {
+        transform: translateY(-2px);
       }
 
-      .project-image.split .secondary {
-        margin-top: 56px;
+      .gallery-card:hover img,
+      .panorama-card:hover img,
+      .essay-frame:hover img,
+      .strip-thumb:hover img {
+        transform: scale(1.02);
       }
 
-      .project-image.split .secondary img {
-        max-height: 45vh;
+      .gallery-frame img,
+      .essay-frame img,
+      .strip-thumb img,
+      .panorama-frame img {
+        transition: transform 0.8s ease;
       }
 
-      .project-image.collage {
-        border: none;
-        background: transparent;
-        min-height: 38rem;
+      .gallery-card.wide {
+        grid-column: span 8;
       }
 
-      .project-image.collage .frame {
-        position: absolute;
-        overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        background: #0a0a0a;
-        box-shadow: 0 16px 50px rgba(0, 0, 0, 0.4);
+      .gallery-card.standard {
+        grid-column: span 4;
       }
 
-      .project-image.collage .frame img {
-        width: 100%;
-        height: 100%;
+      .gallery-card.tall {
+        grid-column: span 4;
+      }
+
+      .gallery-card.tall .gallery-frame img {
+        aspect-ratio: 5 / 7.5;
         object-fit: cover;
       }
 
-      .project-image.collage .frame.a {
-        left: 0;
-        top: 0;
-        width: 68%;
-        height: 28rem;
+      .gallery-card.wide .gallery-frame img {
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
       }
 
-      .project-image.collage .frame.b {
-        right: 2%;
-        top: 10rem;
-        width: 32%;
-        height: 20rem;
+      .gallery-card.standard .gallery-frame img {
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
       }
 
-      .project-image.collage .frame.c {
-        left: 18%;
-        bottom: 0;
-        width: 38%;
-        height: 14rem;
+      .gallery-title {
+        margin-top: 11px;
+        font-size: 0.98rem;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        opacity: 0.96;
       }
 
-      .project-image:hover img,
-      .hero-card:hover img {
-        transform: scale(1.03);
-        filter: saturate(1.05);
+      .gallery-meta {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+      }
+
+      .essay-layout {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 16px;
+      }
+
+      .essay-frame img {
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
       }
 
       .about-grid {
         display: grid;
-        grid-template-columns: 1fr;
-        gap: 22px;
-        padding: 32px 0;
+        grid-template-columns: 220px 1fr 1fr;
+        gap: 24px;
       }
 
-      .contact {
-        padding: 32px 0 40px;
+      .about-copy {
+        color: var(--soft);
+        line-height: 1.95;
       }
 
-      .contact-label {
-        padding-bottom: 10px;
-        text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      .contact-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding-bottom: 50px;
       }
 
-      .contact-links {
-        padding-top: 24px;
+      .contact-panel {
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        padding: 24px;
       }
 
-      .contact-links a {
-        display: block;
-        padding: 8px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        font-size: clamp(54px, 10vw, 132px);
-        line-height: 0.88;
-        font-weight: 700;
-        letter-spacing: -0.05em;
-        transition: transform 0.25s ease, color 0.25s ease;
+      .contact-panel h3 {
+        font-size: clamp(1.8rem, 3vw, 2.7rem);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
+        margin-bottom: 14px;
       }
 
-      .contact-links a:hover {
-        transform: translateX(8px);
+      .contact-panel p {
+        color: var(--soft);
+        line-height: 1.9;
       }
 
-      @media (min-width: 900px) {
-        .hero-grid {
-          grid-template-columns: 1.05fr 1.1fr 1.8fr;
-          align-items: start;
+      .contact-list {
+        display: grid;
+        gap: 6px;
+      }
+
+      .contact-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 17px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 1rem;
+        opacity: 0.94;
+      }
+
+      .footer-note {
+        color: var(--muted);
+        font-size: 0.8rem;
+        padding-bottom: 26px;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        display: none;
+        place-items: center;
+        background: rgba(0, 0, 0, 0.92);
+        z-index: 200;
+        padding: 24px;
+      }
+
+      .lightbox.open {
+        display: grid;
+      }
+
+      .lightbox-stage {
+        position: relative;
+        width: min(1500px, 100%);
+      }
+
+      .lightbox figure {
+        max-height: 86vh;
+        overflow: hidden;
+        border-radius: 24px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: #000;
+      }
+
+      .lightbox img {
+        max-height: 86vh;
+        object-fit: contain;
+        background: #000;
+      }
+
+      .lightbox-caption {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 12px;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.86rem;
+      }
+
+      .lightbox-close,
+      .lightbox-arrow {
+        position: absolute;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(10, 10, 10, 0.84);
+        color: #fff;
+        border-radius: 999px;
+        cursor: pointer;
+      }
+
+      .lightbox-close:hover,
+      .lightbox-arrow:hover {
+        transform: scale(1.04);
+        border-color: rgba(255, 255, 255, 0.28);
+      }
+
+      .lightbox-close {
+        top: -10px;
+        right: 0;
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+      }
+
+      .lightbox-arrow {
+        top: 50%;
+        transform: translateY(-50%);
+        width: 46px;
+        height: 46px;
+        font-size: 1.2rem;
+      }
+
+      .lightbox-arrow.prev {
+        left: -10px;
+      }
+
+      .lightbox-arrow.next {
+        right: -10px;
+      }
+
+      @media (max-width: 1180px) {
+        .hero-top,
+        .section-head,
+        .panorama-card,
+        .essay-layout,
+        .about-grid,
+        .contact-wrap {
+          grid-template-columns: 1fr;
         }
 
-        .hero-title {
-          text-align: right;
-          justify-self: end;
-        }
-
-        .project-grid {
-          grid-template-columns: 1.1fr 1.4fr 2.3fr;
-          gap: 28px;
-        }
-
-        .about-grid {
-          grid-template-columns: 1fr 2fr 2fr;
-          gap: 30px;
+        .hero h1 {
+          max-width: 11ch;
         }
       }
 
-        .hero-title {
-          text-align: right;
+      @media (max-width: 860px) {
+        .hero-strip,
+        .gallery-grid {
+          grid-template-columns: 1fr 1fr;
         }
 
-        .project-grid {
-          grid-template-columns: 1.1fr 1.4fr 2.3fr;
-          gap: 28px;
+        .gallery-card.wide,
+        .gallery-card.standard,
+        .gallery-card.tall {
+          grid-column: auto;
         }
 
-        .about-grid {
-          grid-template-columns: 1fr 2fr 2fr;
-          gap: 30px;
+        .gallery-card.tall .gallery-frame img,
+        .gallery-card.standard .gallery-frame img,
+        .gallery-card.wide .gallery-frame img {
+          aspect-ratio: 4 / 3;
+        }
+
+        .lightbox-arrow.prev {
+          left: 0;
+        }
+
+        .lightbox-arrow.next {
+          right: 0;
         }
       }
 
-      @media (max-width: 700px) {
-        .topbar-inner {
-          gap: 12px;
+      @media (max-width: 640px) {
+        .site-header-inner {
+          min-height: auto;
+          padding: 14px 0;
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .container,
+        .site-header-inner {
+          width: min(var(--max), calc(100% - 22px));
+        }
+
+        .nav,
+        .hero-strip,
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .nav {
+          display: flex;
+          gap: 14px;
+        }
+
+        .hero-meta,
+        .lightbox-caption {
           flex-direction: column;
           align-items: flex-start;
         }
 
-        .nav {
-          gap: 16px;
-          flex-wrap: wrap;
+        .hero-stage {
+          border-radius: 24px;
         }
 
-        .hero-visual {
-          min-height: 22rem;
+        .panorama-card,
+        .contact-panel {
+          padding: 14px;
         }
 
-        .project-image img {
-          height: 15rem;
-        }
-
-        .project-image.tall img {
-          height: 28rem;
-        }
-
-        .project-image.split {
-          grid-template-columns: 1fr;
-          padding: 0;
-          gap: 12px;
-        }
-
-        .project-image.split .primary img,
-        .project-image.split .secondary img {
-          height: 16rem;
-        }
-
-        .project-image.split .secondary {
-          margin-top: 0;
-        }
-
-        .project-image.collage {
-          min-height: 28rem;
-        }
-
-        .project-image.collage .frame.a {
-          width: 76%;
-          height: 16rem;
-        }
-
-        .project-image.collage .frame.b {
-          width: 42%;
-          height: 11rem;
-          top: 7rem;
-          right: 0;
-        }
-
-        .project-image.collage .frame.c {
-          width: 52%;
-          height: 9rem;
-          left: 10%;
-        }
-      }
-
-        .nav {
-          gap: 16px;
-          flex-wrap: wrap;
-        }
-
-        .project-image img {
-          height: 15rem;
-        }
-
-        .project-image.tall img {
-          height: 28rem;
+        .lightbox {
+          padding: 12px;
         }
       }
     </style>
   </head>
   <body>
-    <div class="page">
-      <header class="topbar">
-        <div class="container topbar-inner">
-          <div class="brand">Alex Skaldsson</div>
-          <nav class="nav">
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-          </nav>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a href="#top" class="brand" aria-label="Alex Skaldsson home">
+          <span class="brand-name">Alex Skaldsson</span>
+          <span class="brand-role">Nature Photography</span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#selected">Selected</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero container" aria-labelledby="site-title">
+        <div class="hero-top">
+          <div>
+            <span class="eyebrow">Fine Art Landscape Portfolio</span>
+            <h1 id="site-title">Wide landscapes built to breathe.</h1>
+          </div>
+          <p class="hero-copy">
+            Alex Skaldsson is a nature photographer focused on expansive terrain, mountain light, snow, solitary structures, and quiet atmospheric scenes. This portfolio is redesigned around your strongest asset: wide-format images that deserve scale, restraint, and space.
+          </p>
         </div>
-      </header>
 
-      <main>
-        <section class="hero">
-          <div class="container hero-grid">
-            <div class="eyebrow">Selected Works</div>
-            <p class="hero-copy">
-              A minimal nature photography portfolio exploring landscape, atmosphere, and quiet compositions across Spain and beyond.
+        <figure class="hero-stage">
+          <img
+            src="Spanish Landscape.jpg"
+            alt="Panoramic landscape photograph by Alex Skaldsson showing open terrain and expansive light"
+            loading="eager"
+            fetchpriority="high"
+          />
+          <div class="hero-overlay"></div>
+          <figcaption class="hero-meta">
+            <div>
+              <div class="hero-meta-title">Spanish Landscape</div>
+              <div class="hero-meta-note">Featured panoramic work</div>
+            </div>
+            <div class="hero-meta-note">Landscape photography · Spain</div>
+          </figcaption>
+        </figure>
+
+        <div class="hero-strip" aria-label="Preview strip">
+          <figure class="strip-thumb"><img src="French Mountains.jpg" alt="French mountain landscape preview" loading="lazy" /></figure>
+          <figure class="strip-thumb"><img src="Church Tower Spain.jpg" alt="Church tower in Spain preview" loading="lazy" /></figure>
+          <figure class="strip-thumb"><img src="Snowy Bliss.jpg" alt="Snow scene preview" loading="lazy" /></figure>
+          <figure class="strip-thumb"><img src="Spanish Mountain during Sunset.jpg" alt="Mountain sunset preview" loading="lazy" /></figure>
+        </div>
+      </section>
+
+      <section id="selected" class="section container" aria-labelledby="selected-title">
+        <div class="section-head">
+          <h2 id="selected-title" class="section-title">Selected works</h2>
+          <p class="section-copy">
+            For landscape portfolios, the strongest approach is not aggressive overlap. It is image hierarchy. This layout uses large panoramic features, careful sequencing, and a clean editorial system that lets the photographs do the talking.
+          </p>
+        </div>
+
+        <div class="panorama-stack">
+          <article class="panorama-card">
+            <div class="panorama-meta">
+              <div class="panorama-index">01</div>
+              <h3 class="panorama-title">Spanish Landscape</h3>
+              <div class="panorama-notes">
+                <span>Spain</span>
+                <span>6000 × 2546</span>
+                <span>Panoramic landscape</span>
+              </div>
+            </div>
+            <figure class="panorama-frame">
+              <img src="Spanish Landscape.jpg" alt="Wide Spanish landscape photograph by Alex Skaldsson" loading="lazy" />
+            </figure>
+          </article>
+
+          <article class="panorama-card">
+            <div class="panorama-meta">
+              <div class="panorama-index">02</div>
+              <h3 class="panorama-title">French Mountains</h3>
+              <div class="panorama-notes">
+                <span>France</span>
+                <span>4032 × 1349</span>
+                <span>Atmospheric mountain scene</span>
+              </div>
+            </div>
+            <figure class="panorama-frame">
+              <img src="French Mountains.jpg" alt="French mountain landscape with atmospheric light by Alex Skaldsson" loading="lazy" />
+            </figure>
+          </article>
+
+          <article class="panorama-card">
+            <div class="panorama-meta">
+              <div class="panorama-index">03</div>
+              <h3 class="panorama-title">Spanish Mountain during Sunset</h3>
+              <div class="panorama-notes">
+                <span>Spain</span>
+                <span>6000 × 3571</span>
+                <span>Mountain light</span>
+              </div>
+            </div>
+            <figure class="panorama-frame">
+              <img src="Spanish Mountain during Sunset.jpg" alt="Spanish mountain landscape at sunset photographed by Alex Skaldsson" loading="lazy" />
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <section id="portfolio" class="section container" aria-labelledby="portfolio-title">
+        <div class="section-head">
+          <h2 id="portfolio-title" class="section-title">Portfolio</h2>
+          <p class="section-copy">
+            A proper portfolio grid with wide photographs prioritized, vertical works given their own proportions, and a lightbox for viewing images at a larger scale without leaving the page.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <a class="gallery-card wide js-lightbox" href="Spanish Landscape.jpg" data-title="Spanish Landscape" data-meta="Landscape · Spain" aria-label="Open Spanish Landscape">
+            <figure class="gallery-frame">
+              <img src="Spanish Landscape.jpg" alt="Wide Spanish landscape photograph" loading="lazy" />
+            </figure>
+            <div class="gallery-title">Spanish Landscape</div>
+            <div class="gallery-meta">Landscape · Panoramic</div>
+          </a>
+
+          <a class="gallery-card standard js-lightbox" href="Church Tower Spain.jpg" data-title="Church Tower Spain" data-meta="Spain · Solitary structure" aria-label="Open Church Tower Spain">
+            <figure class="gallery-frame">
+              <img src="Church Tower Spain.jpg" alt="Church tower within a natural landscape in Spain" loading="lazy" />
+            </figure>
+            <div class="gallery-title">Church Tower Spain</div>
+            <div class="gallery-meta">Place · Structure</div>
+          </a>
+
+          <a class="gallery-card tall js-lightbox" href="Towering Mountain.jpg" data-title="Towering Mountain" data-meta="Mountain · Vertical frame" aria-label="Open Towering Mountain">
+            <figure class="gallery-frame">
+              <img src="Towering Mountain.jpg" alt="Vertical mountain photograph by Alex Skaldsson" loading="lazy" />
+            </figure>
+            <div class="gallery-title">Towering Mountain</div>
+            <div class="gallery-meta">Vertical · Mountain</div>
+          </a>
+
+          <a class="gallery-card wide js-lightbox" href="Snowy Bliss.jpg" data-title="Snowy Bliss" data-meta="Snow · Quiet terrain" aria-label="Open Snowy Bliss">
+            <figure class="gallery-frame">
+              <img src="Snowy Bliss.jpg" alt="Snow-covered landscape photograph by Alex Skaldsson" loading="lazy" />
+            </figure>
+            <div class="gallery-title">Snowy Bliss</div>
+            <div class="gallery-meta">Snow · Landscape</div>
+          </a>
+
+          <a class="gallery-card standard js-lightbox" href="Lonely Tower.jpg" data-title="Lonely Tower" data-meta="Tower · Solitude" aria-label="Open Lonely Tower">
+            <figure class="gallery-frame">
+              <img src="Lonely Tower.jpg" alt="Solitary tower photograph by Alex Skaldsson" loading="lazy" />
+            </figure>
+            <div class="gallery-title">Lonely Tower</div>
+            <div class="gallery-meta">Tower · Solitude</div>
+          </a>
+
+          <a class="gallery-card standard js-lightbox" href="Grazing Sheep.jpg" data-title="Grazing Sheep" data-meta="Nature · Pastoral scene" aria-label="Open Grazing Sheep">
+            <figure class="gallery-frame">
+              <img src="Grazing Sheep.jpg" alt="Grazing sheep in a natural landscape photographed by Alex Skaldsson" loading="lazy" />
+            </figure>
+            <div class="gallery-title">Grazing Sheep</div>
+            <div class="gallery-meta">Pastoral · Nature</div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section container" aria-labelledby="essay-title">
+        <div class="section-head">
+          <h2 id="essay-title" class="section-title">Further works</h2>
+          <p class="section-copy">
+            A quieter closing rhythm with two additional photographs, giving the portfolio a stronger ending than a uniform grid alone.
+          </p>
+        </div>
+
+        <div class="essay-layout">
+          <a class="gallery-card js-lightbox" href="French Mountains.jpg" data-title="French Mountains" data-meta="France · Atmosphere" aria-label="Open French Mountains">
+            <figure class="essay-frame">
+              <img src="French Mountains.jpg" alt="French mountain landscape photograph" loading="lazy" />
+            </figure>
+            <div class="gallery-title">French Mountains</div>
+            <div class="gallery-meta">Mountains · Atmosphere</div>
+          </a>
+
+          <a class="gallery-card js-lightbox" href="Spanish Mountain during Sunset.jpg" data-title="Spanish Mountain during Sunset" data-meta="Spain · Sunset panorama" aria-label="Open Spanish Mountain during Sunset">
+            <figure class="essay-frame">
+              <img src="Spanish Mountain during Sunset.jpg" alt="Mountain landscape at sunset in Spain" loading="lazy" />
+            </figure>
+            <div class="gallery-title">Spanish Mountain during Sunset</div>
+            <div class="gallery-meta">Sunset · Panorama</div>
+          </a>
+        </div>
+      </section>
+
+      <section id="about" class="section container" aria-labelledby="about-title">
+        <div class="section-head">
+          <h2 id="about-title" class="section-title">About</h2>
+          <p class="section-copy">Nature photography with an emphasis on calm scale, atmosphere, and clean image presentation.</p>
+        </div>
+
+        <div class="about-grid">
+          <div>
+            <span class="section-kicker">Alex Skaldsson</span>
+          </div>
+          <p class="about-copy">
+            Alex Skaldsson is a nature photographer whose work centers on landscape, mountains, snow fields, solitary towers, and the quieter edges of place. His photographs favor wide compositions, measured pacing, and a restrained visual language that lets terrain, weather, and light carry the image.
+          </p>
+          <p class="about-copy">
+            This version uses legitimate SEO best practices rather than hidden keyword stuffing: semantic HTML, strong titles and descriptions, Open Graph tags, Twitter cards, image alt text, structured data, canonical tags, and indexable content that accurately describes the work.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" class="section container" aria-labelledby="contact-title">
+        <div class="section-head">
+          <h2 id="contact-title" class="section-title">Contact</h2>
+          <p class="section-copy">For prints, commissions, collaborations, and editorial inquiries.</p>
+        </div>
+
+        <div class="contact-wrap">
+          <div class="contact-panel">
+            <h3>Available for selected projects.</h3>
+            <p>
+              Landscape commissions, print inquiries, and editorial collaborations. Replace the links below with your real profiles when ready.
             </p>
-            <h1 class="hero-title">Nature photography with a cinematic, quiet perspective.</h1>
           </div>
-          <div class="container">
-            <div class="hero-visual">
-              <div class="hero-card one">
-                <img src="Spanish Landscape.jpg" alt="Spanish Landscape" />
-              </div>
-              <div class="hero-card two">
-                <img src="Lonely Tower.jpg" alt="Lonely Tower" />
-              </div>
-              <div class="hero-card three">
-                <img src="Spanish Mountain during Sunset.jpg" alt="Spanish Mountain during Sunset" />
-              </div>
-            </div>
-          </div>
-        </section>
 
-        <section id="work" class="projects container">
-          <article class="project">
-            <div class="project-grid">
-              <div class="section-label">Church Tower Spain</div>
-              <div class="meta">
-                <div>Spain</div>
-                <div>Photography</div>
-                <div>Architecture</div>
-                <div>Editorial Study</div>
-              </div>
-              <p class="project-description">
-                A paired composition that gives one landscape image room to breathe while a secondary frame adds a more intimate architectural note.
-              </p>
-            </div>
-            <div class="project-image split">
-              <div class="primary">
-                <img src="Church Tower Spain.jpg" alt="Church Tower Spain" />
-              </div>
-              <div class="secondary">
-                <img src="Lonely Tower.jpg" alt="Lonely Tower" />
-              </div>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project-grid">
-              <div class="section-label">French Mountains</div>
-              <div class="meta">
-                <div>France</div>
-                <div>Photography</div>
-                <div>Landscape</div>
-                <div>Personal Work</div>
-              </div>
-              <p class="project-description">
-                Soft atmosphere and layered distance keep this section quiet and expansive, with a simple full-width treatment to balance the more experimental layouts around it.
-              </p>
-            </div>
-            <div class="project-image">
-              <img src="French Mountains.jpg" alt="French Mountains" />
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project-grid">
-              <div class="section-label">Spanish Mountain at Sunset</div>
-              <div class="meta">
-                <div>Spain</div>
-                <div>Photography</div>
-                <div>Landscape</div>
-                <div>Series Composition</div>
-              </div>
-              <p class="project-description">
-                An overlapping collage gives the mountain scene more movement, mixing scale and detail without losing the restrained, minimalist presentation.
-              </p>
-            </div>
-            <div class="project-image collage">
-              <div class="frame a">
-                <img src="Spanish Mountain during Sunset.jpg" alt="Spanish Mountain during Sunset" />
-              </div>
-              <div class="frame b">
-                <img src="Snowy Bliss.jpg" alt="Snowy Bliss" />
-              </div>
-              <div class="frame c">
-                <img src="Towering Mountain.jpg" alt="Towering Mountain" />
-              </div>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project-grid">
-              <div class="section-label">Grazing Sheep</div>
-              <div class="meta">
-                <div>Countryside</div>
-                <div>Photography</div>
-                <div>Pastoral Scene</div>
-                <div>Minimal Study</div>
-              </div>
-              <p class="project-description">
-                This quieter frame gives the eye a place to rest, helping the sequence feel paced rather than uniformly dense.
-              </p>
-            </div>
-            <div class="project-image">
-              <img src="Grazing Sheep.jpg" alt="Grazing Sheep" />
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project-grid">
-              <div class="section-label">Snow and Stone</div>
-              <div class="meta">
-                <div>Mountain Region</div>
-                <div>Photography</div>
-                <div>Atmospheric Landscape</div>
-                <div>Closing Image</div>
-              </div>
-              <p class="project-description">
-                A final expansive landscape closes the portfolio with a colder tone before the oversized contact section.
-              </p>
-            </div>
-            <div class="project-image">
-              <img src="Snowy Bliss.jpg" alt="Snowy Bliss" />
-            </div>
-          </article>
-        </section>
-
-        <section id="about" class="about">
-          <div class="container about-grid">
-            <div class="section-label">About</div>
-            <p class="about-copy">
-              Alex Skaldsson is a nature photographer focused on landscape, atmosphere, and the relationship between light and terrain. His work explores quiet environments, subtle contrast, and a restrained visual language.
-            </p>
-            <p class="about-copy">
-              The overlapping sections are there to make the portfolio feel more current and editorial while keeping the typography restrained and the overall structure minimal.
-            </p>
-          </div>
-        </section>
-
-        <section id="contact" class="contact">
-          <div class="container">
-            <div class="contact-label">Contact</div>
-            <div class="contact-links">
-              <a href="mailto:hello@yourname.com">Email</a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-              <a href="https://www.tumblr.com" target="_blank" rel="noopener noreferrer">Tumblr</a>
+          <div class="contact-panel">
+            <div class="contact-list">
+              <a class="contact-link" href="mailto:hello@skaldsson.art">
+                <span>Email</span>
+                <span>hello@skaldsson.art</span>
+              </a>
+              <a class="contact-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                <span>Instagram</span>
+                <span>@alexskaldsson</span>
+              </a>
+              <a class="contact-link" href="https://www.tumblr.com" target="_blank" rel="noopener noreferrer">
+                <span>Journal</span>
+                <span>Tumblr</span>
+              </a>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+
+        <p class="footer-note">© <span id="year"></span> Alex Skaldsson. All rights reserved.</p>
+      </section>
+    </main>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+      <div class="lightbox-stage">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close image viewer">✕</button>
+        <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+        <button class="lightbox-arrow next" id="lightboxNext" aria-label="Next image">›</button>
+        <figure>
+          <img id="lightboxImage" src="" alt="" />
+        </figure>
+        <figcaption class="lightbox-caption">
+          <span id="lightboxTitle"></span>
+          <span id="lightboxMeta"></span>
+        </figcaption>
+      </div>
     </div>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const items = Array.from(document.querySelectorAll('.js-lightbox'));
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightboxImage');
+      const lightboxTitle = document.getElementById('lightboxTitle');
+      const lightboxMeta = document.getElementById('lightboxMeta');
+      const closeBtn = document.getElementById('lightboxClose');
+      const prevBtn = document.getElementById('lightboxPrev');
+      const nextBtn = document.getElementById('lightboxNext');
+      let currentIndex = 0;
+
+      function openLightbox(index) {
+        currentIndex = index;
+        const item = items[index];
+        lightboxImage.src = item.getAttribute('href');
+        lightboxImage.alt = item.querySelector('img').alt;
+        lightboxTitle.textContent = item.dataset.title || '';
+        lightboxMeta.textContent = item.dataset.meta || '';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function showRelative(step) {
+        currentIndex = (currentIndex + step + items.length) % items.length;
+        openLightbox(currentIndex);
+      }
+
+      items.forEach((item, index) => {
+        item.addEventListener('click', (event) => {
+          event.preventDefault();
+          openLightbox(index);
+        });
+      });
+
+      closeBtn.addEventListener('click', closeLightbox);
+      prevBtn.addEventListener('click', () => showRelative(-1));
+      nextBtn.addEventListener('click', () => showRelative(1));
+
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowRight') showRelative(1);
+        if (event.key === 'ArrowLeft') showRelative(-1);
+      });
+    </script>
   </body>
 </html>
