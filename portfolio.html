@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #000;
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.4;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
+
+      .page {
+        min-height: 100vh;
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+        background-size: 100% 72px;
+      }
+
+      .container {
+        width: min(1400px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: rgba(0, 0, 0, 0.9);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .topbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .brand {
+        font-weight: 700;
+      }
+
+      .nav {
+        display: flex;
+        gap: 24px;
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .nav a:hover,
+      .contact-links a:hover {
+        color: #fff;
+      }
+
+      .hero {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 32px 0 40px;
+      }
+
+      .eyebrow,
+      .section-label,
+      .meta,
+      .contact-label {
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow,
+      .hero-copy,
+      .about-copy,
+      .project-description,
+      .contact-label,
+      .meta {
+        color: rgba(255, 255, 255, 0.65);
+      }
+
+      .hero-copy,
+      .about-copy,
+      .project-description {
+        font-size: 15px;
+        line-height: 1.8;
+      }
+
+      .hero-title {
+        font-size: clamp(42px, 8vw, 110px);
+        line-height: 0.95;
+        font-weight: 700;
+        letter-spacing: -0.04em;
+        text-align: left;
+      }
+
+      .projects article,
+      .about,
+      .contact {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .project {
+        padding: 16px 0;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .section-label {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .meta {
+        display: grid;
+        gap: 6px;
+      }
+
+      .project-image {
+        margin-top: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: #0a0a0a;
+      }
+
+      .project-image img {
+        height: 24rem;
+        object-fit: cover;
+        transition: transform 0.7s ease;
+      }
+
+      .project-image.tall img {
+        height: 42rem;
+      }
+
+      .project-image:hover img {
+        transform: scale(1.02);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 32px 0;
+      }
+
+      .contact {
+        padding: 32px 0 40px;
+      }
+
+      .contact-label {
+        padding-bottom: 10px;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .contact-links {
+        padding-top: 24px;
+      }
+
+      .contact-links a {
+        display: block;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: clamp(54px, 10vw, 132px);
+        line-height: 0.88;
+        font-weight: 700;
+        letter-spacing: -0.05em;
+        transition: transform 0.25s ease, color 0.25s ease;
+      }
+
+      .contact-links a:hover {
+        transform: translateX(8px);
+      }
+
+      @media (min-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1.1fr 1.2fr 2fr;
+          align-items: start;
+        }
+
+        .hero-title {
+          text-align: right;
+        }
+
+        .project-grid {
+          grid-template-columns: 1.1fr 1.4fr 2.3fr;
+          gap: 28px;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr 2fr 2fr;
+          gap: 30px;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .topbar-inner {
+          gap: 12px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .nav {
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+
+        .project-image img {
+          height: 15rem;
+        }
+
+        .project-image.tall img {
+          height: 28rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <div class="container topbar-inner">
+          <div class="brand">Your Name</div>
+          <nav class="nav">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="container hero-grid">
+            <div class="eyebrow">Selected Works</div>
+            <p class="hero-copy">
+              A minimal editorial portfolio inspired by your reference video: black canvas, thin dividers, restrained metadata, and full-width photographic moments.
+            </p>
+            <h1 class="hero-title">Cinematic photography with a quiet grid.</h1>
+          </div>
+        </section>
+
+        <section id="work" class="projects container">
+          <article class="project">
+            <div class="project-grid">
+              <div class="section-label">Night Taxi</div>
+              <div class="meta">
+                <div>Aug 2025</div>
+                <div>Photographer</div>
+                <div>Editorial Series</div>
+                <div>New York</div>
+              </div>
+              <p class="project-description">
+                A cinematic study of yellow cabs, reflections, and compressed city light. The layout keeps the image dominant while treating the surrounding text as quiet gallery notes.
+              </p>
+            </div>
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1600&q=80" alt="Night Taxi" />
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-grid">
+              <div class="section-label">Bridge Haze</div>
+              <div class="meta">
+                <div>Jan 2026</div>
+                <div>Photographer</div>
+                <div>Personal Work</div>
+                <div>Brooklyn</div>
+              </div>
+              <p class="project-description">
+                Muted contrast, long verticals, and a restrained caption system echo the museum-like presentation style from the video.
+              </p>
+            </div>
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1600&q=80" alt="Bridge Haze" />
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-grid">
+              <div class="section-label">Rear Seat</div>
+              <div class="meta">
+                <div>May 2025</div>
+                <div>Photographer</div>
+                <div>Portrait</div>
+                <div>Queens</div>
+              </div>
+              <p class="project-description">
+                A taller image section adds rhythm by alternating panoramic strips with more intimate portrait moments.
+              </p>
+            </div>
+            <div class="project-image tall">
+              <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80" alt="Rear Seat" />
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-grid">
+              <div class="section-label">Power Lines</div>
+              <div class="meta">
+                <div>Jun 2025</div>
+                <div>Photographer</div>
+                <div>Landscape</div>
+                <div>California</div>
+              </div>
+              <p class="project-description">
+                Warm dusk tones and minimal framing preserve the clean, high-contrast feel of the source design.
+              </p>
+            </div>
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Power Lines" />
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-grid">
+              <div class="section-label">Desert Ride</div>
+              <div class="meta">
+                <div>Sep 2025</div>
+                <div>Photographer</div>
+                <div>Travel Story</div>
+                <div>Nevada</div>
+              </div>
+              <p class="project-description">
+                The final image leads into an oversized contact block, mirroring the dramatic ending typography from the reference.
+              </p>
+            </div>
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80" alt="Desert Ride" />
+            </div>
+          </article>
+        </section>
+
+        <section id="about" class="about">
+          <div class="container about-grid">
+            <div class="section-label">About</div>
+            <p class="about-copy">
+              Replace this with your artist statement. The visual system is doing most of the work here, so the copy can stay compact and understated.
+            </p>
+            <p class="about-copy">
+              To push it even closer to the reference, swap in your own photos, adjust the spacing between sections, and use a more refined sans-serif font if you want a more fashion-editorial feel.
+            </p>
+          </div>
+        </section>
+
+        <section id="contact" class="contact">
+          <div class="container">
+            <div class="contact-label">Contact</div>
+            <div class="contact-links">
+              <a href="mailto:hello@yourname.com">Email</a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://www.tumblr.com" target="_blank" rel="noopener noreferrer">Tumblr</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
