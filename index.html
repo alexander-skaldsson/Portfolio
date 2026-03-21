@@ -10,7 +10,7 @@
     />
     <meta
       name="keywords"
-      content="Alex Skaldsson, Alex Skaldsson photographer, nature photography, landscape photography, fine art nature photography, mountain photography, Spain landscape photographer, atmospheric photography"
+      content="My name is Alex Skaldsson, I'm a nature and wildlife photographer. See my work below"
     />
     <meta name="author" content="Alex Skaldsson" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -213,7 +213,8 @@
       .link-line,
       .gallery-card,
       .lightbox-close,
-      .lightbox-arrow {
+      .lightbox-arrow,
+      .contact-link {
         transition: opacity 0.25s ease, transform 0.35s ease, border-color 0.25s ease;
       }
 
@@ -646,6 +647,10 @@
         opacity: 0.94;
       }
 
+      .contact-link .contact-value {
+        color: var(--soft);
+      }
+
       .footer-note {
         color: var(--muted);
         font-size: 0.8rem;
@@ -829,6 +834,11 @@
         .lightbox {
           padding: 12px;
         }
+
+        .contact-link {
+          flex-direction: column;
+          align-items: flex-start;
+        }
       }
     </style>
   </head>
@@ -854,7 +864,7 @@
             <h1 id="site-title">Wide landscapes built to breathe.</h1>
           </div>
           <p class="hero-copy">
-            Alex Skaldsson is a nature photographer focused on expansive terrain, mountain light, snow, solitary structures, and quiet atmospheric scenes. This portfolio is redesigned around your strongest asset: wide-format images that deserve scale, restraint, and space.
+            I'm a nature and wildlife photographer. I currently live in Spain and want to capture as much of this country's natural beauty as possible. Feel free to reach out and say hi
           </p>
         </div>
 
@@ -921,23 +931,23 @@
           <div class="contact-panel">
             <h3>Available for selected projects.</h3>
             <p>
-              Landscape commissions, print inquiries, and editorial collaborations. Replace the links below with your real profiles when ready.
+              Landscape commissions, print inquiries, and editorial collaborations. Feel free to get in touch.
             </p>
           </div>
 
           <div class="contact-panel">
             <div class="contact-list">
-              <a class="contact-link" href="mailto:hello@skaldsson.art">
+              <a class="contact-link" id="emailLink" href="#" rel="nofollow">
                 <span>Email</span>
-                <span>hello@skaldsson.art</span>
+                <span class="contact-value" id="emailText">Click to reveal</span>
               </a>
               <a class="contact-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                 <span>Instagram</span>
-                <span>@alexskaldsson</span>
+                <span class="contact-value">@alexskaldsson</span>
               </a>
               <a class="contact-link" href="https://www.tumblr.com" target="_blank" rel="noopener noreferrer">
                 <span>Journal</span>
-                <span>Tumblr</span>
+                <span class="contact-value">Tumblr</span>
               </a>
             </div>
           </div>
@@ -1134,6 +1144,30 @@
 
         if (event.key === 'ArrowRight') setFeatured(featuredIndex + 1);
         if (event.key === 'ArrowLeft') setFeatured(featuredIndex - 1);
+      });
+
+      const emailLink = document.getElementById('emailLink');
+      const emailText = document.getElementById('emailText');
+
+      const emailUser = ['Alexander', '.', 'skaldsson'].join('');
+      const emailDomain = ['gmail', '.', 'com'].join('');
+      const emailAddress = emailUser + '@' + emailDomain;
+
+      emailLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        emailText.textContent = emailAddress;
+        emailLink.href = 'mailto:' + emailAddress;
+        window.location.href = 'mailto:' + emailAddress;
+      });
+
+      emailLink.addEventListener('mouseenter', function () {
+        emailText.textContent = 'Click to email';
+      });
+
+      emailLink.addEventListener('mouseleave', function () {
+        if (!emailLink.href.includes('mailto:')) {
+          emailText.textContent = 'Click to reveal';
+        }
       });
     </script>
   </body>
