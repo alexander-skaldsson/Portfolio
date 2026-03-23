@@ -203,6 +203,23 @@
         background: rgba(0,0,0,0); 
       }
 
+      /* Grid Image Watermark */
+      .photo-item::before {
+        content: "© Alex Skaldsson";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(255, 255, 255, 0.4);
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 500;
+        pointer-events: none; /* Crucial: lets clicks pass through to the image */
+        z-index: 20;
+        white-space: nowrap;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Ensures it shows up on light images */
+      }
+
       .photo-item img {
         transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), filter 0.7s ease;
       }
@@ -378,6 +395,23 @@
         justify-content: center;
       }
 
+      /* Lightbox Image Watermark */
+      .lightbox-stage::after {
+        content: "© Alex Skaldsson";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(255, 255, 255, 0.3);
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 500;
+        pointer-events: none;
+        z-index: 205;
+        white-space: nowrap;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+      }
+
       .lightbox img {
         max-height: 90vh;
         width: auto;
@@ -402,6 +436,7 @@
         transition: all 0.3s ease;
         display: grid;
         place-items: center;
+        z-index: 210; /* Put buttons above watermark */
       }
 
       .lightbox-controls button:hover { 
@@ -425,7 +460,7 @@
         border-radius: 50%;
         font-size: 1.2rem;
         cursor: pointer;
-        z-index: 201;
+        z-index: 210;
         transition: all 0.3s ease;
       }
 
@@ -448,7 +483,7 @@
     <header class="site-header">
       <div class="site-header-inner container">
         <a href="#top" aria-label="Alex Skaldsson home">
-          <img src="logo.png" alt="Skaldsson Photography" class="brand-logo" />
+          <img src="logo.png" alt="Skaldsson Photography" class="brand-logo" draggable="false" />
         </a>
         <nav class="nav">
           <a href="#work">Work</a>
@@ -463,7 +498,6 @@
         <h1>Wide landscapes built to <span>breathe.</span></h1>
         <p class="hero-copy">
           My name is Alex Skaldsson. I'm a nature and wildlife photographer. My work is focused on empty, open spaces. Mountains, snowy fields and peaks, somwewhere you can go and find refuge from it all.
-     
         </p>
       </section>
 
@@ -517,7 +551,7 @@ I love photography and have worked as a commercial photographer for the lat fift
     <div class="lightbox" id="lightbox">
       <button class="lightbox-close" id="lightboxClose">✕</button>
       <div class="lightbox-stage">
-        <img id="lightboxImage" src="" alt="" />
+        <img id="lightboxImage" src="" alt="" draggable="false" />
         <div class="lightbox-controls">
           <button class="lightbox-prev" id="lightboxPrev">‹</button>
           <button class="lightbox-next" id="lightboxNext">›</button>
@@ -550,8 +584,9 @@ I love photography and have worked as a commercial photographer for the lat fift
       photos.forEach((photo, index) => {
         const div = document.createElement("div");
         div.className = "photo-item";
+        // ADDED: draggable="false" 
         div.innerHTML = `
-          <img src="${photo.src}" alt="${photo.title}" loading="lazy" />
+          <img src="${photo.src}" alt="${photo.title}" loading="lazy" draggable="false" />
           <div class="photo-overlay">
             <div class="photo-title">${photo.title}</div>
             <div class="photo-meta">${photo.meta}</div>
