@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TW28G0WP3P"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW28G0WP3P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-TW28G0WP3P");
+    </script>
 
-  gtag('config', 'G-TW28G0WP3P');
-</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alex Skaldsson | Nature Photography Portfolio</title>
@@ -518,6 +520,88 @@
         line-height: 2;
       }
 
+      .support-wrap {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 16px;
+        padding-bottom: 32px;
+      }
+
+      .support-panel {
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--panel);
+        padding: 28px;
+      }
+
+      .support-panel h3 {
+        font-family: var(--font-display);
+        font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+        font-weight: 400;
+        margin-bottom: 16px;
+        color: var(--text);
+      }
+
+      .support-panel p {
+        font-family: var(--font-mono);
+        font-weight: 300;
+        color: var(--soft);
+        font-size: 0.84rem;
+        line-height: 1.9;
+      }
+
+      .support-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .support-button,
+      .support-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 18px;
+        border-radius: 999px;
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      }
+
+      .support-button {
+        background: #5f7fff;
+        color: white;
+        border: 1px solid #5f7fff;
+      }
+
+      .support-button:hover {
+        transform: translateY(-1px);
+      }
+
+      .support-secondary {
+        border: 1px solid var(--line-strong);
+        background: rgba(255, 255, 255, 0.02);
+        color: var(--text);
+      }
+
+      .support-secondary:hover {
+        border-color: rgba(255, 255, 255, 0.28);
+        transform: translateY(-1px);
+      }
+
+      .support-note {
+        margin-top: 18px;
+        font-size: 0.74rem;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+      }
+
       .contact-wrap {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -768,6 +852,10 @@
           grid-template-columns: 1fr;
         }
 
+        .support-wrap {
+          grid-template-columns: 1fr;
+        }
+
         .contact-wrap {
           grid-template-columns: 1fr;
         }
@@ -835,9 +923,16 @@
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPWCRQK5"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MPWCRQK5"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <header class="site-header">
       <div class="site-header-inner">
         <a href="#top" class="brand" aria-label="Alex Skaldsson home">
@@ -845,9 +940,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="brand-sep" aria-hidden="true"></span>
           <span class="brand-role">Nature Photography</span>
         </a>
+
         <nav class="nav" aria-label="Main navigation">
           <a href="#selected">Work</a>
           <a href="#about">About</a>
+          <a href="#support">Support</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -862,7 +959,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <div class="hero-right">
             <p class="hero-copy">
-              My name is Alex Skaldsson, my work centers on landscape, mountains, snow fields, solitary towers, and the quieter moments in life. I have a special love for empty, lonely spaces you can go to take a break from it all.
+              My name is Alex Skaldsson, my work centers on landscape, mountains, snow fields,
+              solitary towers, and the quieter moments in life. I have a special love for empty,
+              lonely spaces you can go to take a break from it all.
             </p>
           </div>
         </div>
@@ -871,8 +970,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <figure class="featured-media">
             <div class="featured-media-controls">
               <div class="arrow-group">
-                <button class="feature-arrow" id="featurePrev" aria-label="Previous featured image">‹</button>
-                <button class="feature-arrow" id="featureNext" aria-label="Next featured image">›</button>
+                <button class="feature-arrow" id="featurePrev" aria-label="Previous featured image">
+                  ‹
+                </button>
+                <button class="feature-arrow" id="featureNext" aria-label="Next featured image">
+                  ›
+                </button>
               </div>
               <a
                 class="featured-link js-lightbox"
@@ -899,7 +1002,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <aside class="featured-panel">
             <div class="panel-top">
               <div class="panel-counter-row">
-                <span class="featured-counter" id="featuredCounter">01 / 10</span>
+                <span class="featured-counter" id="featuredCounter">01 / 13</span>
               </div>
               <h2 class="featured-title" id="featuredTitle">Spanish Landscape</h2>
               <div class="featured-meta" id="featuredMeta">
@@ -920,7 +1023,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="section-head">
           <h2 id="about-title" class="section-title">About</h2>
           <p class="section-copy">
-            Nature photography with an emphasis on calm scale, atmosphere, and clean image presentation.
+            Nature photography with an emphasis on calm scale, atmosphere, and clean image
+            presentation.
           </p>
         </div>
 
@@ -929,7 +1033,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <span class="about-kicker">Alex Skaldsson</span>
           </div>
           <p class="about-copy">
-            My name is Alex Skaldsson, my work centers on landscape, mountains, snow fields, solitary towers, and the quieter moments in life. I have a special love for empty, lonely spaces you can go to take a break from it all.
+            My name is Alex Skaldsson, my work centers on landscape, mountains, snow fields,
+            solitary towers, and the quieter moments in life. I have a special love for empty,
+            lonely spaces you can go to take a break from it all.
           </p>
           <p class="about-copy">
             My portfolio is free to use. I only ask that you tag me when you use the photos.
@@ -937,17 +1043,74 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </section>
 
+      <section id="support" class="section container" aria-labelledby="support-title">
+        <div class="section-head">
+          <h2 id="support-title" class="section-title">Support</h2>
+          <p class="section-copy">
+            If you enjoy the work and want to help me keep making and sharing it, you can support
+            me here.
+          </p>
+        </div>
+
+        <div class="support-wrap">
+          <div class="support-panel">
+            <h3>Help keep the portfolio alive.</h3>
+            <p>
+              I share my images freely and only ask for credit when they’re used. If you’d like to
+              support future trips, prints, hosting, and more quiet landscapes, you can do that
+              here.
+            </p>
+
+            <div class="support-actions">
+              <a
+                class="support-button"
+                href="https://www.buymeacoffee.com/alexandersw9"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Support me
+              </a>
+
+              <a
+                class="support-secondary"
+                href="https://unsplash.com/@a_skaldsson"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Unsplash
+              </a>
+            </div>
+
+            <p class="support-note">
+              Thank you — even small support helps keep the work online and growing.
+            </p>
+          </div>
+
+          <div class="support-panel">
+            <h3>Use the work freely.</h3>
+            <p>
+              My portfolio remains free to use. A tag, a share, or a small contribution all help in
+              different ways. I want the site to feel generous first, with support as an optional
+              gesture rather than an interruption.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" class="section container" aria-labelledby="contact-title">
         <div class="section-head">
           <h2 id="contact-title" class="section-title">Contact</h2>
-          <p class="section-copy">For prints, commissions, collaborations, and editorial inquiries.</p>
+          <p class="section-copy">
+            For prints, commissions, collaborations, and editorial inquiries.
+          </p>
         </div>
 
         <div class="contact-wrap">
           <div class="contact-panel">
             <h3>Available for selected projects.</h3>
             <p>
-              Landscape commissions, print inquiries, editorial collaborations, and image use. Feel free to get in touch or tag me when you share the work.
+              Landscape commissions, print inquiries, editorial collaborations, and image use. Feel
+              free to get in touch or tag me when you share the work.
             </p>
           </div>
 
@@ -967,8 +1130,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 rel="noopener noreferrer"
               >
                 <span class="contact-label-wrap">
-                  <svg class="social-icon" viewBox="0 0 600 530" aria-hidden="true" fill="currentColor">
-                    <path d="M133 37c68 51 141 154 167 207 26-53 99-156 167-207 49-37 128-66 128 25 0 18-10 150-17 172-25 76-118 95-201 81 145 25 182 108 102 190-152 156-218-39-235-89-3-7-4-10-5-10s-2 3-5 10c-17 50-83 245-235 89-80-82-43-165 102-190-83 14-176-5-201-81-7-22-17-154-17-172 0-91 79-62 128-25z"/>
+                  <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                    <path
+                      d="M12 11.388c1.438-2.787 5.364-6.74 7.428-8.168 1.487-1.03 3.893-1.83 3.893.92 0 .549-.315 4.611-.5 5.27-.643 2.287-2.983 2.87-5.064 2.517 3.639.617 4.566 2.66 2.566 4.704-3.8 3.883-5.458-.978-5.882-2.222-.078-.228-.116-.335-.441-.335-.325 0-.363.107-.441.335-.424 1.244-2.083 6.105-5.882 2.222-2-2.044-1.073-4.087 2.566-4.704-2.081.353-4.421-.23-5.064-2.517-.185-.659-.5-4.721-.5-5.27 0-2.75 2.406-1.95 3.893-.92C6.636 4.648 10.562 8.601 12 11.388Z"
+                    />
                   </svg>
                   <span class="contact-label">Bluesky</span>
                 </span>
@@ -983,7 +1148,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               >
                 <span class="contact-label-wrap">
                   <svg class="social-icon" viewBox="0 0 1200 1227" aria-hidden="true" fill="currentColor">
-                    <path d="M714 519 1160 0h-106L667 450 358 0H0l468 681L0 1227h106l409-476 327 476h358L714 519ZM569 687l-47-67L146 82h163l304 435 47 67 394 563H891L569 687Z"/>
+                    <path
+                      d="M714 519 1160 0h-106L667 450 358 0H0l468 681L0 1227h106l409-476 327 476h358L714 519ZM569 687l-47-67L146 82h163l304 435 47 67 394 563H891L569 687Z"
+                    />
                   </svg>
                   <span class="contact-label">X</span>
                 </span>
@@ -998,7 +1165,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               >
                 <span class="contact-label-wrap">
                   <svg class="social-icon" viewBox="0 0 32 32" aria-hidden="true" fill="currentColor">
-                    <path d="M10 4h12v8H10zM4 14h24v14H4z"/>
+                    <path d="M10 4h12v8H10zM4 14h24v14H4z" />
                   </svg>
                   <span class="contact-label">Unsplash</span>
                 </span>
@@ -1010,7 +1177,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <p class="unsplash-note">
           My portfolio is free to use. Please tag me when you use the photos, or visit my
-          <a href="https://unsplash.com/@a_skaldsson" target="_blank" rel="noopener noreferrer">Unsplash profile</a>.
+          <a href="https://unsplash.com/@a_skaldsson" target="_blank" rel="noopener noreferrer">
+            Unsplash profile
+          </a>.
         </p>
 
         <p class="footer-note">© <span id="year"></span> Alex Skaldsson. All rights reserved.</p>
@@ -1094,10 +1263,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         },
         {
           src: "An ending day.jpg",
-          title: "An ending day",
-          alt: "An ending day by Alex Skaldsson",
-          meta: ["Seagulls", "Landscape"],
-          shortMeta: "Seagulls · Landscape"
+          title: "An Ending Day",
+          alt: "Ending day landscape photograph by Alex Skaldsson",
+          meta: ["Evening", "Landscape"],
+          shortMeta: "Evening · Landscape"
         },
         {
           src: "lonely storks.jpg",
@@ -1105,6 +1274,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           alt: "Lonely storks photograph by Alex Skaldsson",
           meta: ["Storks", "Solitude", "Landscape"],
           shortMeta: "Storks · Solitude"
+        },
+        {
+          src: "A lonely sunset.jpg",
+          title: "A Lonely Sunset",
+          alt: "Lonely sunset landscape photograph by Alex Skaldsson",
+          meta: ["Sunset", "Solitude", "Landscape"],
+          shortMeta: "Sunset · Solitude"
+        },
+        {
+          src: "Castle at Sunset.jpg",
+          title: "Castle at Sunset",
+          alt: "Castle at sunset landscape photograph by Alex Skaldsson",
+          meta: ["Castle", "Sunset", "Landscape"],
+          shortMeta: "Castle · Sunset"
+        },
+        {
+          src: "Lonely Christ in the Desert.jpg",
+          title: "Lonely Christ in the Desert",
+          alt: "Desert landscape featuring a solitary Christ figure photographed by Alex Skaldsson",
+          meta: ["Desert", "Solitude", "Figure"],
+          shortMeta: "Desert · Solitude"
         }
       ];
 
@@ -1211,6 +1401,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       closeBtn.addEventListener("click", closeLightbox);
       prevBtn.addEventListener("click", () => showRelative(-1));
       nextBtn.addEventListener("click", () => showRelative(1));
+
       lightbox.addEventListener("click", (e) => {
         if (e.target === lightbox) closeLightbox();
       });
@@ -1229,7 +1420,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       const emailLink = document.getElementById("emailLink");
       const emailText = document.getElementById("emailText");
-      const emailAddress = ["Alexander", ".", "skaldsson"].join("") + "@" + ["gmail", ".", "com"].join("");
+      const emailAddress =
+        ["Alexander", ".", "skaldsson"].join("") + "@" + ["gmail", ".", "com"].join("");
 
       emailLink.addEventListener("click", function (e) {
         e.preventDefault();
@@ -1243,8 +1435,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
 
       emailLink.addEventListener("mouseleave", () => {
-        if (!emailLink.href.includes("mailto:")) emailText.textContent = "Click to reveal";
+        if (!emailLink.href.includes("mailto:")) {
+          emailText.textContent = "Click to reveal";
+        }
       });
     </script>
+
+    <script
+      data-name="BMC-Widget"
+      data-cfasync="false"
+      src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+      data-id="alexandersw9"
+      data-description="Support me on Buy me a coffee!"
+      data-message=""
+      data-color="#5F7FFF"
+      data-position="Right"
+      data-x_margin="18"
+      data-y_margin="18"
+    ></script>
   </body>
 </html>
