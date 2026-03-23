@@ -192,6 +192,7 @@
         background: var(--surface);
         box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         transform: translateZ(0);
+        z-index: 1; /* Establishes a stacking context */
       }
 
       /* Transparent Shield for Right-Click Protection */
@@ -199,25 +200,32 @@
         content: "";
         position: absolute;
         inset: 0;
-        z-index: 5;
+        z-index: 20; /* Keep shield above the image and watermark */
         background: rgba(0,0,0,0); 
       }
 
-      /* Grid Image Watermark */
-      .photo-item::before {
-        content: "© Alex Skaldsson";
+      /* Grid Image Wrapper for Watermark */
+      .protected-wrapper {
+        position: relative;
+        width: 100%;
+        z-index: 10;
+      }
+
+      /* Refined Grid Watermark Font and Position */
+      .protected-wrapper::before {
+        content: "© Alex Skaldsson Photography";
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) rotate(-35deg); /* Angled for a 'better' look */
         color: rgba(255, 255, 255, 0.4);
         font-family: var(--font-display);
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 500;
-        pointer-events: none; /* Crucial: lets clicks pass through to the image */
-        z-index: 20;
+        pointer-events: none; /* Crucial: lets clicks pass through */
+        z-index: 15; /* Above image, below shield and overlay */
         white-space: nowrap;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Ensures it shows up on light images */
+        text-shadow: 0 1px 3px rgba(0,0,0,0.6); 
       }
 
       .photo-item img {
@@ -239,7 +247,7 @@
         justify-content: flex-end;
         transition: opacity 0.4s ease;
         pointer-events: none;
-        z-index: 10; /* Keeps overlay text above the shield */
+        z-index: 30; /* Keeps overlay text above the shield */
       }
 
       .photo-item:hover .photo-overlay {
@@ -393,21 +401,22 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        z-index: 205;
       }
 
       /* Lightbox Image Watermark */
-      .lightbox-stage::after {
-        content: "© Alex Skaldsson";
+      .lightbox-wrapper::after {
+        content: "© Alex Skaldsson Photography";
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) rotate(-25deg);
         color: rgba(255, 255, 255, 0.3);
         font-family: var(--font-display);
-        font-size: clamp(2rem, 5vw, 4rem);
+        font-size: clamp(1.8rem, 4vw, 3.5rem);
         font-weight: 500;
         pointer-events: none;
-        z-index: 205;
+        z-index: 220;
         white-space: nowrap;
         text-shadow: 0 2px 8px rgba(0,0,0,0.8);
       }
@@ -419,6 +428,7 @@
         object-fit: contain;
         border-radius: 4px;
         box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        z-index: 210;
       }
 
       .lightbox-controls button {
@@ -436,7 +446,7 @@
         transition: all 0.3s ease;
         display: grid;
         place-items: center;
-        z-index: 210; /* Put buttons above watermark */
+        z-index: 230; /* Put buttons above watermark */
       }
 
       .lightbox-controls button:hover { 
@@ -460,7 +470,7 @@
         border-radius: 50%;
         font-size: 1.2rem;
         cursor: pointer;
-        z-index: 210;
+        z-index: 230;
         transition: all 0.3s ease;
       }
 
@@ -497,7 +507,7 @@
       <section class="hero container">
         <h1>Wide landscapes built to <span>breathe.</span></h1>
         <p class="hero-copy">
-          My name is Alex Skaldsson. I'm a nature and wildlife photographer. My work is focused on empty, open spaces. Mountains, snowy fields and peaks, somwewhere you can go and find refuge from it all.
+          My name is Alex Skaldsson. I'm a nature and wildlife photographer. My work is focused on empty, open spaces. Mountains, snowy fields and peaks, somewhere you can go and find refuge from it all.
         </p>
       </section>
 
@@ -510,7 +520,7 @@
           <h2 class="section-title">The Photographer</h2>
           <div class="section-content">
             <p>
-I love photography and have worked as a commercial photographer for the lat fifteen years, but have now decided to shoot for pleasure instead of just for work and regain the love I once had for this medium, before it became a job. Follow me in this journey.       </p>
+I love photography and have worked as a commercial photographer for the last fifteen years, but have now decided to shoot for pleasure instead of just for work and regain the love I once had for this medium, before it became a job. Follow me in this journey.       </p>
             <div class="actions-row">
               <a href="https://www.buymeacoffee.com/alexandersw9" target="_blank" class="btn btn-primary">Support my work</a>
             </div>
@@ -551,7 +561,9 @@ I love photography and have worked as a commercial photographer for the lat fift
     <div class="lightbox" id="lightbox">
       <button class="lightbox-close" id="lightboxClose">✕</button>
       <div class="lightbox-stage">
-        <img id="lightboxImage" src="" alt="" draggable="false" />
+        <div class="lightbox-wrapper">
+          <img id="lightboxImage" src="" alt="" draggable="false" />
+        </div>
         <div class="lightbox-controls">
           <button class="lightbox-prev" id="lightboxPrev">‹</button>
           <button class="lightbox-next" id="lightboxNext">›</button>
@@ -584,9 +596,11 @@ I love photography and have worked as a commercial photographer for the lat fift
       photos.forEach((photo, index) => {
         const div = document.createElement("div");
         div.className = "photo-item";
-        // ADDED: draggable="false" 
+        // New structure for grid item protection
         div.innerHTML = `
-          <img src="${photo.src}" alt="${photo.title}" loading="lazy" draggable="false" />
+          <div class="protected-wrapper">
+            <img src="${photo.src}" alt="${photo.title}" loading="lazy" draggable="false" />
+          </div>
           <div class="photo-overlay">
             <div class="photo-title">${photo.title}</div>
             <div class="photo-meta">${photo.meta}</div>
@@ -639,4 +653,4 @@ I love photography and have worked as a commercial photographer for the lat fift
       }, false);
     </script>
   </body>
-</html>
+</html
