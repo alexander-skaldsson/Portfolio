@@ -30,7 +30,7 @@
     />
     <meta name="author" content="Alex Skaldsson" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="theme-color" content="#09090b" />
+    <meta name="theme-color" content="#f5f4f0" />
     <link rel="canonical" href="https://skaldsson.art/" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,14 +42,21 @@
 
     <style>
       :root {
-        --bg: #09090b;
-        --surface: #18181b;
-        --surface-hover: #27272a;
-        --line: rgba(255, 255, 255, 0.08);
-        --text: #fafafa;
-        --text-muted: #a1a1aa;
-        --accent: #00d16b;
-        --accent-glow: rgba(0, 209, 107, 0.2);
+        /* Soft, warm off-white background instead of pure white */
+        --bg: #f5f4f0; 
+        /* Slightly lighter or darker surface for contrast */
+        --surface: #ecebe6; 
+        --surface-hover: #e2e0d8;
+        /* Subtle dark lines instead of white lines */
+        --line: rgba(0, 0, 0, 0.08);
+        
+        /* Dark charcoal text instead of harsh black */
+        --text: #27272a; 
+        --text-muted: #52525b;
+        
+        /* A more elegant, natural accent color (Earthy Terracotta) */
+        --accent: #c25e40; 
+        --accent-glow: rgba(194, 94, 64, 0.15);
 
         --max-width: 1400px;
         --font-display: "Cormorant Garamond", Georgia, serif;
@@ -97,7 +104,7 @@
         position: sticky;
         top: 0;
         z-index: 100;
-        background: rgba(9, 9, 11, 0.7);
+        background: rgba(245, 244, 240, 0.85);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         border-bottom: 1px solid var(--line);
@@ -191,7 +198,7 @@
         overflow: hidden;
         cursor: pointer;
         background: var(--surface);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         transform: translateZ(0);
       }
 
@@ -294,14 +301,14 @@
 
       .btn-primary {
         background: var(--accent);
-        color: #000;
+        color: #fff;
         box-shadow: 0 4px 15px var(--accent-glow);
       }
 
       .btn-primary:hover {
-        background: #00e676;
+        background: #a94f34;
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0, 209, 107, 0.4);
+        box-shadow: 0 6px 20px rgba(194, 94, 64, 0.4);
       }
 
       .btn-outline {
@@ -313,7 +320,7 @@
       .btn-outline:hover {
         border-color: var(--accent);
         color: var(--accent);
-        background: rgba(0, 209, 107, 0.05);
+        background: rgba(194, 94, 64, 0.05);
       }
 
       .actions-row {
@@ -403,7 +410,7 @@
 
       .lightbox-controls button:hover {
         background: var(--accent);
-        color: #000;
+        color: #fff;
         border-color: var(--accent);
       }
 
@@ -433,7 +440,7 @@
 
       .lightbox-close:hover {
         background: var(--accent);
-        color: #000;
+        color: #fff;
         border-color: var(--accent);
       }
 
@@ -450,14 +457,14 @@
 
       .support-bubble-text {
         max-width: 260px;
-        background: rgba(24, 24, 27, 0.96);
+        background: rgba(245, 244, 240, 0.96);
         color: var(--text);
         border: 1px solid var(--line);
         border-radius: 18px;
         padding: 14px 16px;
         font-size: 0.9rem;
         line-height: 1.5;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       }
 
       .support-bubble-text strong {
@@ -470,7 +477,7 @@
         height: 62px;
         border-radius: 50%;
         background: var(--accent);
-        color: #000;
+        color: #fff;
         display: grid;
         place-items: center;
         font-size: 1.5rem;
@@ -481,8 +488,8 @@
 
       .support-bubble-link:hover {
         transform: translateY(-2px) scale(1.04);
-        background: #00e676;
-        box-shadow: 0 12px 28px rgba(0, 209, 107, 0.4);
+        background: #a94f34;
+        box-shadow: 0 12px 28px rgba(194, 94, 64, 0.4);
       }
 
       @media (max-width: 900px) {
@@ -591,7 +598,7 @@
               <a href="https://bsky.app/profile/skaldsson.bsky.social" target="_blank" class="btn btn-outline">Bluesky</a>
             </div>
             <div class="licensing-block">
-              <h3 style="color: #fff; margin-bottom: 12px; font-weight: 500; font-size: 1.1rem;">
+              <h3 style="margin-bottom: 12px; font-weight: 500; font-size: 1.1rem; color: var(--text);">
                 Usage & Licensing
               </h3>
               <p style="margin-bottom: 16px; font-size: 0.95rem; line-height: 1.6;">
