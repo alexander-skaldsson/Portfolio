@@ -30,7 +30,7 @@
     />
     <meta name="author" content="Alex Skaldsson" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="theme-color" content="#f5f4f0" />
+    <meta name="theme-color" content="#3e3b38" />
     <link rel="canonical" href="https://skaldsson.art/" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,21 +42,21 @@
 
     <style>
       :root {
-        /* Soft, warm off-white background instead of pure white */
-        --bg: #f5f4f0; 
-        /* Slightly lighter or darker surface for contrast */
-        --surface: #ecebe6; 
-        --surface-hover: #e2e0d8;
-        /* Subtle dark lines instead of white lines */
-        --line: rgba(0, 0, 0, 0.08);
+        /* Soft, muted dark taupe - easy on the eyes */
+        --bg: #3e3b38; 
+        /* Slightly lighter muted surface */
+        --surface: #4a4642; 
+        --surface-hover: #57524e;
+        /* Subtle dividing lines */
+        --line: rgba(255, 255, 255, 0.08);
         
-        /* Dark charcoal text instead of harsh black */
-        --text: #27272a; 
-        --text-muted: #52525b;
+        /* Soft off-white text to prevent eye strain */
+        --text: #e6e3df; 
+        --text-muted: #b5b0a8;
         
-        /* A more elegant, natural accent color (Earthy Terracotta) */
-        --accent: #c25e40; 
-        --accent-glow: rgba(194, 94, 64, 0.15);
+        /* Pastel clay/terracotta accent */
+        --accent: #d4a373; 
+        --accent-glow: rgba(212, 163, 115, 0.15);
 
         --max-width: 1400px;
         --font-display: "Cormorant Garamond", Georgia, serif;
@@ -104,7 +104,7 @@
         position: sticky;
         top: 0;
         z-index: 100;
-        background: rgba(245, 244, 240, 0.85);
+        background: rgba(62, 59, 56, 0.85);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         border-bottom: 1px solid var(--line);
@@ -198,7 +198,7 @@
         overflow: hidden;
         cursor: pointer;
         background: var(--surface);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         transform: translateZ(0);
       }
 
@@ -301,14 +301,14 @@
 
       .btn-primary {
         background: var(--accent);
-        color: #fff;
+        color: #2b2826;
         box-shadow: 0 4px 15px var(--accent-glow);
       }
 
       .btn-primary:hover {
-        background: #a94f34;
+        background: #e3b88d;
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(194, 94, 64, 0.4);
+        box-shadow: 0 6px 20px rgba(212, 163, 115, 0.4);
       }
 
       .btn-outline {
@@ -320,7 +320,7 @@
       .btn-outline:hover {
         border-color: var(--accent);
         color: var(--accent);
-        background: rgba(194, 94, 64, 0.05);
+        background: rgba(212, 163, 115, 0.05);
       }
 
       .actions-row {
@@ -361,7 +361,7 @@
         inset: 0;
         display: none;
         place-items: center;
-        background: rgba(0, 0, 0, 0.98);
+        background: rgba(0, 0, 0, 0.95);
         z-index: 200;
         padding: 24px;
         backdrop-filter: blur(10px);
@@ -410,7 +410,7 @@
 
       .lightbox-controls button:hover {
         background: var(--accent);
-        color: #fff;
+        color: #2b2826;
         border-color: var(--accent);
       }
 
@@ -440,7 +440,7 @@
 
       .lightbox-close:hover {
         background: var(--accent);
-        color: #fff;
+        color: #2b2826;
         border-color: var(--accent);
       }
 
@@ -457,14 +457,14 @@
 
       .support-bubble-text {
         max-width: 260px;
-        background: rgba(245, 244, 240, 0.96);
+        background: rgba(74, 70, 66, 0.96);
         color: var(--text);
         border: 1px solid var(--line);
         border-radius: 18px;
         padding: 14px 16px;
         font-size: 0.9rem;
         line-height: 1.5;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       }
 
       .support-bubble-text strong {
@@ -477,7 +477,7 @@
         height: 62px;
         border-radius: 50%;
         background: var(--accent);
-        color: #fff;
+        color: #2b2826;
         display: grid;
         place-items: center;
         font-size: 1.5rem;
@@ -488,8 +488,8 @@
 
       .support-bubble-link:hover {
         transform: translateY(-2px) scale(1.04);
-        background: #a94f34;
-        box-shadow: 0 12px 28px rgba(194, 94, 64, 0.4);
+        background: #e3b88d;
+        box-shadow: 0 12px 28px rgba(212, 163, 115, 0.4);
       }
 
       @media (max-width: 900px) {
