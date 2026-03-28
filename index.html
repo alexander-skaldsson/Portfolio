@@ -130,6 +130,12 @@
         opacity: 0.8;
       }
 
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+      }
+
       .nav {
         display: flex;
         gap: 40px;
@@ -141,6 +147,31 @@
       }
 
       .nav a:hover {
+        color: var(--accent);
+      }
+
+      .lang-switch {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .lang-btn {
+        background: none;
+        border: none;
+        color: var(--text-muted);
+        cursor: pointer;
+        font-size: 0.85rem;
+        font-weight: 600;
+        font-family: var(--font-sans);
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px;
+      }
+
+      .lang-btn:hover, .lang-btn.active {
         color: var(--accent);
       }
 
@@ -515,6 +546,10 @@
           display: none;
         }
 
+        .header-right {
+          gap: 16px;
+        }
+
         .lightbox-controls button {
           height: 44px;
           width: 44px;
@@ -554,18 +589,25 @@
         <a href="#top" aria-label="Alex Skaldsson home">
           <img src="logo.gif" alt="Skaldsson Photography" class="brand-logo" />
         </a>
-        <nav class="nav">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
+        <div class="header-right">
+          <nav class="nav">
+            <a href="#work" data-i18n="navWork">Work</a>
+            <a href="#about" data-i18n="navAbout">About</a>
+            <a href="#contact" data-i18n="navContact">Contact</a>
+          </nav>
+          <div class="lang-switch">
+            <button class="lang-btn active" onclick="setLanguage('en')" id="btn-en">🇬🇧 EN</button>
+            <span style="color: var(--line);">|</span>
+            <button class="lang-btn" onclick="setLanguage('es')" id="btn-es">🇪🇸 ES</button>
+          </div>
+        </div>
       </div>
     </header>
 
     <main id="top">
       <section class="hero container">
-        <h1>Wide landscapes that <span>breathe.</span></h1>
-        <p class="hero-copy">
+        <h1 data-i18n="heroTitle">Wide landscapes that <span>breathe.</span></h1>
+        <p class="hero-copy" data-i18n="heroCopy">
           My name is Alex Skaldsson. I'm a nature and wildlife photographer. My
           work is focused on empty, open spaces. Mountains, snowy fields and
           peaks, somewhere you can go and find refuge from it all.
@@ -578,9 +620,9 @@
 
       <section id="about" class="section">
         <div class="container section-grid">
-          <h2 class="section-title">The Photographer</h2>
+          <h2 class="section-title" data-i18n="aboutTitle">The Photographer</h2>
           <div class="section-content">
-            <p>
+            <p data-i18n="aboutCopy">
               I have spent the last fifteen years working as a commercial photographer. Now, I am dedicating my time to personal work. This portfolio is a return to why I first picked up a camera: the pure, unfiltered pleasure of capturing the world around me. Thank you for following along.
             </p>
           </div>
@@ -589,30 +631,30 @@
 
       <section id="contact" class="section">
         <div class="container section-grid">
-          <h2 class="section-title">Get in Touch</h2>
+          <h2 class="section-title" data-i18n="contactTitle">Get in Touch</h2>
           <div class="section-content">
-            <p>
+            <p data-i18n="contactCopy">
               Available for landscape commissions, print inquiries, and editorial
               collaborations. Feel free to get in touch.
             </p>
             <div class="actions-row">
-              <a href="mailto:contact@skaldsson.art" class="btn btn-outline">Email Me</a>
+              <a href="mailto:contact@skaldsson.art" class="btn btn-outline" data-i18n="btnEmail">Email Me</a>
               <a href="https://bsky.app/profile/skaldsson.bsky.social" target="_blank" class="btn btn-outline">Bluesky</a>
             </div>
             <div class="licensing-block">
-              <h3 style="margin-bottom: 12px; font-weight: 600; font-size: 1.1rem; color: var(--text);">
+              <h3 style="margin-bottom: 12px; font-weight: 600; font-size: 1.1rem; color: var(--text);" data-i18n="usageTitle">
                 Usage & Licensing
               </h3>
-              <p style="margin-bottom: 16px; font-size: 0.95rem; line-height: 1.6;">
+              <p style="margin-bottom: 16px; font-size: 0.95rem; line-height: 1.6;" data-i18n="usage1">
                 All images on this site are free to use for <strong>personal use</strong>. 
                 This includes wallpapers, personal projects, and non-commercial sharing.
               </p>
-              <p style="margin-bottom: 16px; font-size: 0.95rem; line-height: 1.6;">
+              <p style="margin-bottom: 16px; font-size: 0.95rem; line-height: 1.6;" data-i18n="usage2">
                 For <strong>commercial use</strong> — including advertising, branding, websites, 
                 monetized content, or any business-related use — please contact me in advance 
                 to obtain permission or a license.
               </p>
-              <p style="margin: 0; font-size: 0.95rem;">
+              <p style="margin: 0; font-size: 0.95rem;" data-i18n="usage3">
                 If you enjoy my work, consider supporting me as it helps me keep creating.
               </p>
             </div>
@@ -643,7 +685,7 @@
       class="support-bubble"
       aria-label="Support my work"
     >
-      <div class="support-bubble-text">
+      <div class="support-bubble-text" data-i18n="supportBubble">
         All my images are <strong>free to use</strong> — consider supporting my
         work if you can.
       </div>
@@ -651,8 +693,65 @@
     </a>
 
     <script>
+      // Automatically set current year
       document.getElementById("year").textContent = new Date().getFullYear();
 
+      // Internationalization (i18n) Data
+      const i18n = {
+        en: {
+          navWork: "Work",
+          navAbout: "About",
+          navContact: "Contact",
+          heroTitle: "Wide landscapes that <span>breathe.</span>",
+          heroCopy: "My name is Alex Skaldsson. I'm a nature and wildlife photographer. My work is focused on empty, open spaces. Mountains, snowy fields and peaks, somewhere you can go and find refuge from it all.",
+          aboutTitle: "The Photographer",
+          aboutCopy: "I have spent the last fifteen years working as a commercial photographer. Now, I am dedicating my time to personal work. This portfolio is a return to why I first picked up a camera: the pure, unfiltered pleasure of capturing the world around me. Thank you for following along.",
+          contactTitle: "Get in Touch",
+          contactCopy: "Available for landscape commissions, print inquiries, and editorial collaborations. Feel free to get in touch.",
+          btnEmail: "Email Me",
+          usageTitle: "Usage & Licensing",
+          usage1: "All images on this site are free to use for <strong>personal use</strong>. This includes wallpapers, personal projects, and non-commercial sharing.",
+          usage2: "For <strong>commercial use</strong> — including advertising, branding, websites, monetized content, or any business-related use — please contact me in advance to obtain permission or a license.",
+          usage3: "If you enjoy my work, consider supporting me as it helps me keep creating.",
+          supportBubble: "All my images are <strong>free to use</strong> — consider supporting my work if you can."
+        },
+        es: {
+          navWork: "Trabajo",
+          navAbout: "Sobre mí",
+          navContact: "Contacto",
+          heroTitle: "Paisajes inmensos que <span>respiran.</span>",
+          heroCopy: "Mi nombre es Alex Skaldsson. Soy fotógrafo de naturaleza y vida salvaje. Mi trabajo se centra en espacios amplios y vacíos. Montañas, campos nevados y cumbres, lugares a los que puedes ir a refugiarte de todo.",
+          aboutTitle: "El Fotógrafo",
+          aboutCopy: "He pasado los últimos quince años trabajando como fotógrafo comercial. Ahora, dedico mi tiempo al trabajo personal. Este portafolio es un regreso al motivo por el que cogí una cámara por primera vez: el puro placer de capturar el mundo que me rodea. Gracias por acompañarme en este viaje.",
+          contactTitle: "Contacto",
+          contactCopy: "Disponible para encargos de paisajes, venta de impresiones y colaboraciones editoriales. No dudes en ponerte en contacto.",
+          btnEmail: "Envíame un Email",
+          usageTitle: "Uso y Licencias",
+          usage1: "Todas las imágenes de este sitio son de uso gratuito para <strong>uso personal</strong>. Esto incluye fondos de pantalla, proyectos personales y uso compartido no comercial.",
+          usage2: "Para <strong>uso comercial</strong> — incluyendo publicidad, marcas, sitios web, contenido monetizado o cualquier uso relacionado con un negocio — por favor contáctame con anticipación para obtener permiso o una licencia.",
+          usage3: "Si disfrutas de mi trabajo, considera apoyarme, ya que me ayuda a seguir creando.",
+          supportBubble: "Todas mis imágenes son de <strong>uso gratuito</strong> — considera apoyar mi trabajo si puedes."
+        }
+      };
+
+      // Function to swap languages
+      function setLanguage(lang) {
+        // Toggle button active states
+        document.getElementById('btn-en').classList.remove('active');
+        document.getElementById('btn-es').classList.remove('active');
+        document.getElementById('btn-' + lang).classList.add('active');
+
+        // Swap out the text for everything with a data-i18n attribute
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (i18n[lang] && i18n[lang][key]) {
+            el.innerHTML = i18n[lang][key];
+          }
+        });
+      }
+
+      // Photography Array
       const photos = [
         { src: "A lonely sunset.jpg", title: "A Lonely Sunset", meta: "Solitude" },
         { src: "A simple flower.jpg", title: "A Simple Flower", meta: "Nature" },
@@ -667,6 +766,7 @@
         { src: "Lonely Castle.jpg", title: "Lonely Castle", meta: "Landscape" },
         { src: "Lonely Christ in the Desert.jpg", title: "Christ in the Desert", meta: "Figure" },
         { src: "Lonely Church on a Hill.jpg", title: "Lonely Church on a Hill", meta: "Landscape" },
+        { src: "Lonely Road.jpg", title: "Lonely Road", meta: "Landscape" },
         { src: "Lonely Tower.jpg", title: "Lonely Tower", meta: "Solitude" },
         { src: "Mid-Flight Stork.jpg", title: "Mid-Flight Stork", meta: "Wildlife" },
         { src: "Nature Takes All.jpg", title: "Nature Takes All", meta: "Nature" },
@@ -680,6 +780,7 @@
         { src: "Zaragoza.jpg", title: "Zaragoza", meta: "Spain" }
       ];
 
+      // Gallery Initialization
       const grid = document.getElementById("photoGrid");
       let currentIndex = 0;
 
@@ -697,6 +798,7 @@
         grid.appendChild(div);
       });
 
+      // Lightbox Logic
       const lightbox = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightboxImage");
 
