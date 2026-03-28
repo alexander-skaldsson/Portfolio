@@ -55,9 +55,9 @@
         /* Stronger dark muted tone */
         --text-muted: #47423c;
         
-        /* Rich rust/terracotta accent */
-        --accent: #b05c3f; 
-        --accent-glow: rgba(176, 92, 63, 0.15);
+        /* Vibrant coral red accent */
+        --accent: #ff5e5b; 
+        --accent-glow: rgba(255, 94, 91, 0.15);
 
         --max-width: 1400px;
         --font-display: "Cormorant Garamond", Georgia, serif;
@@ -78,7 +78,6 @@
         background: var(--bg);
         color: var(--text);
         font-family: var(--font-sans);
-        /* Bumped from 300 to 400 for better contrast on mid-tones */
         font-weight: 400; 
         line-height: 1.7;
         letter-spacing: 0.02em;
@@ -106,7 +105,7 @@
         position: sticky;
         top: 0;
         z-index: 100;
-        background: rgba(218, 212, 203, 0.85); /* Matches --bg */
+        background: rgba(218, 212, 203, 0.85); 
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         border-bottom: 1px solid var(--line);
@@ -156,7 +155,7 @@
         font-family: var(--font-display);
         font-size: clamp(3rem, 6vw, 5.5rem);
         line-height: 1.05;
-        font-weight: 500; /* Slightly bolder heading */
+        font-weight: 500; 
         margin-bottom: 24px;
         letter-spacing: -0.01em;
         font-style: normal;
@@ -310,9 +309,9 @@
       }
 
       .btn-primary:hover {
-        background: #964e34;
+        background: #e64542;
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(176, 92, 63, 0.4);
+        box-shadow: 0 6px 20px rgba(255, 94, 91, 0.4);
       }
 
       .btn-outline {
@@ -324,7 +323,7 @@
       .btn-outline:hover {
         border-color: var(--accent);
         color: var(--accent);
-        background: rgba(176, 92, 63, 0.05);
+        background: rgba(255, 94, 91, 0.05);
       }
 
       .actions-row {
@@ -462,7 +461,7 @@
 
       .support-bubble-text {
         max-width: 260px;
-        background: rgba(218, 212, 203, 0.96); /* Matches --bg */
+        background: rgba(218, 212, 203, 0.96); 
         color: var(--text);
         border: 1px solid var(--line);
         border-radius: 18px;
@@ -494,8 +493,8 @@
 
       .support-bubble-link:hover {
         transform: translateY(-2px) scale(1.04);
-        background: #964e34;
-        box-shadow: 0 12px 28px rgba(176, 92, 63, 0.4);
+        background: #e64542;
+        box-shadow: 0 12px 28px rgba(255, 94, 91, 0.4);
       }
 
       @media (max-width: 900px) {
