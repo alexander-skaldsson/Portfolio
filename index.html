@@ -12,12 +12,11 @@
     </script>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6209354407417435" crossorigin="anonymous"></script>
-
     <meta name="google-adsense-account" content="ca-pub-6209354407417435">
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alex Skaldsson | Nature Photography Portfolio</title>
+    <title>Alex Skaldsson | Photography & Services</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
@@ -26,7 +25,7 @@
 
     <meta
       name="description"
-      content="Nature photography portfolio of Alex Skaldsson featuring atmospheric landscape photography, mountain scenes, towers, snow, and wide-format nature imagery from Spain and beyond."
+      content="Alex Skaldsson Photography. Nature & Wildlife portfolio and professional photography services including weddings, events, and personal photoshoots."
     />
     <meta name="author" content="Alex Skaldsson" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -42,20 +41,12 @@
 
     <style>
       :root {
-        /* Muted, warm oat/cream */
-        --bg: #dad4cb; 
-        /* Slightly lighter muted surface */
+        var(--bg): #dad4cb; 
         --surface: #e4dfd6; 
         --surface-hover: #eee9e0;
-        /* Subtle dividing lines */
         --line: rgba(0, 0, 0, 0.12);
-        
-        /* Near-black warm charcoal for maximum readability */
         --text: #11100f; 
-        /* Stronger dark muted tone */
         --text-muted: #47423c;
-        
-        /* Vibrant coral red accent */
         --accent: #ff5e5b; 
         --accent-glow: rgba(255, 94, 91, 0.15);
 
@@ -70,9 +61,7 @@
         padding: 0;
       }
 
-      html {
-        scroll-behavior: smooth;
-      }
+      html { scroll-behavior: smooth; }
 
       body {
         background: var(--bg);
@@ -84,99 +73,44 @@
         -webkit-font-smoothing: antialiased;
       }
 
-      img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
+      img { display: block; width: 100%; height: auto; }
+      a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 
-      a {
-        color: inherit;
-        text-decoration: none;
-        transition: all 0.3s ease;
-      }
-
-      .container {
-        width: min(var(--max-width), calc(100% - 48px));
-        margin: 0 auto;
-      }
+      .container { width: min(var(--max-width), calc(100% - 48px)); margin: 0 auto; }
 
       .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 100;
+        position: sticky; top: 0; z-index: 100;
         background: rgba(218, 212, 203, 0.85); 
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
+        backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
         border-bottom: 1px solid var(--line);
         padding: 16px 0;
         transition: transform 0.3s ease;
       }
 
-      .site-header-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
+      .site-header-inner { display: flex; align-items: center; justify-content: space-between; }
 
-      .brand-logo {
-        height: 85px;
-        width: auto;
-        display: block;
-        transition: opacity 0.3s ease;
-      }
+      .brand-logo { height: 85px; width: auto; display: block; transition: opacity 0.3s ease; }
+      .brand-logo:hover { opacity: 0.8; }
 
-      .brand-logo:hover {
-        opacity: 0.8;
-      }
-
-      .header-right {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-      }
+      .header-right { display: flex; align-items: center; gap: 40px; }
 
       .nav {
-        display: flex;
-        gap: 40px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--text-muted);
+        display: flex; gap: 40px; font-size: 0.8rem; font-weight: 600;
+        letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted);
       }
+      .nav a:hover { color: var(--accent); }
 
-      .nav a:hover {
-        color: var(--accent);
-      }
-
-      .lang-switch {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
+      .lang-switch { display: flex; align-items: center; gap: 12px; }
       .lang-btn {
-        background: none;
-        border: none;
-        color: var(--text-muted);
-        cursor: pointer;
-        font-size: 0.85rem;
-        font-weight: 600;
-        font-family: var(--font-sans);
-        transition: color 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-        padding: 4px;
+        background: none; border: none; color: var(--text-muted);
+        cursor: pointer; font-size: 0.85rem; font-weight: 600;
+        font-family: var(--font-sans); transition: color 0.3s ease;
+        display: flex; align-items: center; gap: 6px; padding: 4px;
       }
-
-      .lang-btn:hover, .lang-btn.active {
-        color: var(--accent);
-      }
+      .lang-btn:hover, .lang-btn.active { color: var(--accent); }
 
       .hero {
-        padding: 12vh 0 10vh;
+        padding: 12vh 0 8vh;
         text-align: center;
         max-width: 900px;
         margin: 0 auto;
@@ -185,415 +119,116 @@
       .hero h1 {
         font-family: var(--font-display);
         font-size: clamp(3rem, 6vw, 5.5rem);
-        line-height: 1.05;
-        font-weight: 500; 
-        margin-bottom: 24px;
-        letter-spacing: -0.01em;
-        font-style: normal;
+        line-height: 1.05; font-weight: 500; 
+        margin-bottom: 24px; letter-spacing: -0.01em;
       }
-
-      .hero h1 span {
-        color: var(--accent);
-        font-style: italic;
-      }
+      .hero h1 span { color: var(--accent); font-style: italic; }
 
       .hero-copy {
-        color: var(--text-muted);
-        font-size: 1.1rem;
-        max-width: 650px;
-        margin: 0 auto;
-        font-weight: 500;
+        color: var(--text-muted); font-size: 1.1rem; max-width: 650px;
+        margin: 0 auto; font-weight: 500;
       }
 
-      .photo-grid {
-        column-count: 1;
-        column-gap: 24px;
+      /* Portal Grid for the Hub Page */
+      .portal-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
         padding-bottom: 100px;
       }
 
       @media (min-width: 768px) {
-        .photo-grid {
-          column-count: 2;
-        }
+        .portal-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      }
+
+      .portal-card {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--surface);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+        aspect-ratio: 4/5;
+        display: flex;
       }
 
       @media (min-width: 1024px) {
-        .photo-grid {
-          column-count: 3;
-        }
+        .portal-card { aspect-ratio: 1/1; }
       }
 
-      .photo-item {
-        position: relative;
-        break-inside: avoid;
-        margin-bottom: 24px;
-        border-radius: 12px;
-        overflow: hidden;
-        cursor: pointer;
-        background: var(--surface);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
-        transform: translateZ(0);
+      .portal-card img {
+        width: 100%; height: 100%; object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.8s ease;
       }
 
-      .photo-item img {
-        transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), filter 0.7s ease;
-      }
-
-      .photo-item:hover img {
+      .portal-card:hover img {
         transform: scale(1.05);
+        filter: brightness(0.8);
       }
 
-      .photo-overlay {
-        position: absolute;
-        inset: 0;
-        padding: 32px 24px;
-        background: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 0.9) 0%,
-          rgba(0, 0, 0, 0.2) 50%,
-          transparent 100%
-        );
+      .portal-overlay {
+        position: absolute; inset: 0; padding: 40px;
+        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+        display: flex; flex-direction: column; justify-content: flex-end;
+        align-items: center; text-align: center;
+        transition: background 0.4s ease;
+      }
+
+      .portal-card:hover .portal-overlay {
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
+      }
+
+      .portal-title {
+        font-family: var(--font-display); font-size: 2.5rem; color: #fff;
+        margin-bottom: 12px; transform: translateY(15px); transition: transform 0.4s ease;
+      }
+
+      .portal-desc {
+        color: rgba(255, 255, 255, 0.9); font-size: 1rem; font-weight: 500;
+        max-width: 80%; transform: translateY(15px); transition: transform 0.4s ease 0.05s;
         opacity: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        transition: opacity 0.4s ease;
-        pointer-events: none;
-        z-index: 2;
+      }
+      
+      .portal-btn {
+        margin-top: 24px; padding: 12px 32px; border: 1px solid #fff; border-radius: 100px;
+        color: #fff; font-size: 0.85rem; font-weight: 600; text-transform: uppercase;
+        letter-spacing: 0.1em; opacity: 0; transform: translateY(15px);
+        transition: all 0.4s ease 0.1s;
       }
 
-      .photo-item:hover .photo-overlay {
-        opacity: 1;
+      .portal-card:hover .portal-title,
+      .portal-card:hover .portal-desc,
+      .portal-card:hover .portal-btn {
+        transform: translateY(0); opacity: 1;
       }
+      .portal-card .portal-title { opacity: 1; /* Title always visible */ }
 
-      .photo-title {
-        font-family: var(--font-display);
-        font-size: 1.6rem;
-        color: #fff;
-        margin-bottom: 6px;
-        transform: translateY(10px);
-        transition: transform 0.4s ease;
-      }
-
-      .photo-meta {
-        font-size: 0.8rem;
-        font-weight: 500;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--accent);
-        transform: translateY(10px);
-        transition: transform 0.4s ease 0.05s;
-      }
-
-      .photo-item:hover .photo-title,
-      .photo-item:hover .photo-meta {
-        transform: translateY(0);
-      }
-
-      .section {
-        padding: 100px 0;
-        border-top: 1px solid var(--line);
-      }
-
-      .section-grid {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 80px;
-        align-items: start;
-      }
-
-      .section-title {
-        font-size: 0.85rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.3em;
-        color: var(--accent);
-        position: sticky;
-        top: 120px;
-      }
-
-      .section-content p {
-        font-size: 1.1rem;
-        color: var(--text-muted);
-        max-width: 700px;
-        margin-bottom: 40px;
-        font-weight: 500;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        height: 54px;
-        padding: 0 32px;
-        border-radius: 100px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        border: 1px solid transparent;
-      }
-
-      .btn-primary {
-        background: var(--accent);
-        color: #fff;
-        box-shadow: 0 4px 15px var(--accent-glow);
-      }
-
-      .btn-primary:hover {
-        background: #e64542;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(255, 94, 91, 0.4);
-      }
-
-      .btn-outline {
-        border-color: var(--line);
-        background: var(--surface);
-        color: var(--text);
-      }
-
-      .btn-outline:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-        background: rgba(255, 94, 91, 0.05);
-      }
-
-      .actions-row {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-
-      .licensing-block {
-        background: var(--surface);
-        padding: 32px;
-        border-radius: 12px;
-        margin-top: 48px;
-        border: 1px solid var(--line);
-      }
-
-      .licensing-block a {
-        color: var(--text);
-        font-weight: 600;
-        border-bottom: 2px solid var(--accent);
-        padding-bottom: 2px;
-      }
-
-      .licensing-block a:hover {
-        color: var(--accent);
-      }
+      .portal-btn:hover { background: #fff; color: var(--text); }
 
       .footer {
-        padding: 40px 0;
-        text-align: center;
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        border-top: 1px solid var(--line);
-        font-weight: 500;
-      }
-
-      .lightbox {
-        position: fixed;
-        inset: 0;
-        display: none;
-        place-items: center;
-        background: rgba(0, 0, 0, 0.95);
-        z-index: 200;
-        padding: 24px;
-        backdrop-filter: blur(10px);
-      }
-
-      .lightbox.open {
-        display: grid;
-      }
-
-      .lightbox-stage {
-        position: relative;
-        width: min(1600px, 100%);
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .lightbox img {
-        max-height: 90vh;
-        max-width: 100%;
-        width: auto;
-        margin: 0 auto;
-        object-fit: contain;
-        border-radius: 4px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-      }
-
-      .lightbox-controls button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: var(--surface);
-        color: var(--text);
-        border: 1px solid var(--line);
-        height: 60px;
-        width: 60px;
-        border-radius: 50%;
-        font-size: 1.5rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: grid;
-        place-items: center;
-        z-index: 10;
-      }
-
-      .lightbox-controls button:hover {
-        background: var(--accent);
-        color: #fff;
-        border-color: var(--accent);
-      }
-
-      .lightbox-prev {
-        left: 20px;
-      }
-
-      .lightbox-next {
-        right: 20px;
-      }
-
-      .lightbox-close {
-        position: absolute;
-        top: 30px;
-        right: 30px;
-        background: var(--surface);
-        border: 1px solid var(--line);
-        color: var(--text);
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        font-size: 1.2rem;
-        cursor: pointer;
-        z-index: 10;
-        transition: all 0.3s ease;
-      }
-
-      .lightbox-close:hover {
-        background: var(--accent);
-        color: #fff;
-        border-color: var(--accent);
-      }
-
-      /* Floating support bubble */
-      .support-bubble {
-        position: fixed;
-        right: 22px;
-        bottom: 22px;
-        z-index: 300;
-        display: flex;
-        align-items: end;
-        gap: 12px;
-      }
-
-      .support-bubble-text {
-        max-width: 260px;
-        background: rgba(218, 212, 203, 0.96); 
-        color: var(--text);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 14px 16px;
-        font-size: 0.9rem;
-        line-height: 1.5;
-        font-weight: 500;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .support-bubble-text strong {
-        color: var(--accent);
-        font-weight: 700;
-      }
-
-      .support-bubble-link {
-        width: 62px;
-        height: 62px;
-        border-radius: 50%;
-        background: var(--accent);
-        color: #fff;
-        display: grid;
-        place-items: center;
-        font-size: 1.5rem;
-        font-weight: 700;
-        box-shadow: 0 8px 24px var(--accent-glow);
-        border: none;
-      }
-
-      .support-bubble-link:hover {
-        transform: translateY(-2px) scale(1.04);
-        background: #e64542;
-        box-shadow: 0 12px 28px rgba(255, 94, 91, 0.4);
+        padding: 40px 0; text-align: center; font-size: 0.85rem;
+        color: var(--text-muted); border-top: 1px solid var(--line); font-weight: 500;
       }
 
       @media (max-width: 900px) {
-        .section-grid {
-          grid-template-columns: 1fr;
-          gap: 32px;
-        }
-
-        .section-title {
-          position: static;
-        }
-
-        .hero h1 {
-          font-size: 2.8rem;
-        }
-
-        .nav {
-          display: none;
-        }
-
-        .header-right {
-          gap: 16px;
-        }
-
-        .lightbox-controls button {
-          height: 44px;
-          width: 44px;
-          font-size: 1.2rem;
-        }
-
-        .support-bubble {
-          right: 16px;
-          bottom: 16px;
-          left: 16px;
-          justify-content: flex-end;
-        }
-
-        .support-bubble-text {
-          max-width: 200px;
-          font-size: 0.82rem;
-          padding: 12px 14px;
-        }
-
-        .support-bubble-link {
-          width: 56px;
-          height: 56px;
-          font-size: 1.35rem;
-        }
-      }
-
-      @media (max-width: 560px) {
-        .support-bubble-text {
-          display: none;
-        }
+        .hero h1 { font-size: 2.8rem; }
+        .nav { display: none; }
+        .portal-overlay { padding: 24px; }
+        .portal-title { font-size: 2rem; transform: translateY(0); }
+        .portal-desc, .portal-btn { opacity: 1; transform: translateY(0); }
       }
     </style>
   </head>
   <body>
     <header class="site-header">
       <div class="site-header-inner container">
-        <a href="#top" aria-label="Alex Skaldsson home">
+        <a href="index.html" aria-label="Alex Skaldsson home">
           <img src="logo.gif" alt="Skaldsson Photography" class="brand-logo" />
         </a>
         <div class="header-right">
           <nav class="nav">
-            <a href="#work" data-i18n="navWork">Work</a>
-            <a href="#about" data-i18n="navAbout">About</a>
-            <a href="#contact" data-i18n="navContact">Contact</a>
+            <a href="Nature&Wildlife.html" data-i18n="navNature">Nature</a>
+            <a href="services.html" data-i18n="navServices">Services</a>
+            <a href="mailto:contact@skaldsson.art" data-i18n="navContact">Contact</a>
           </nav>
           <div class="lang-switch">
             <button class="lang-btn active" onclick="setLanguage('en')" id="btn-en">🇬🇧 EN</button>
@@ -606,63 +241,30 @@
 
     <main id="top">
       <section class="hero container">
-        <h1 data-i18n="heroTitle">Wide landscapes that <span>breathe.</span></h1>
+        <h1 data-i18n="heroTitle">Capturing life, <span>still and moving.</span></h1>
         <p class="hero-copy" data-i18n="heroCopy">
-          My name is Alex Skaldsson. I'm a nature and wildlife photographer. My
-          work is focused on empty, open spaces. Mountains, snowy fields and
-          peaks, somewhere you can go and find refuge from it all.
+          Welcome to Alex Skaldsson Photography. Choose a gallery below to explore my fine art landscapes or to view my commercial and personal photography services.
         </p>
       </section>
 
-      <section id="work" class="container">
-        <div class="photo-grid" id="photoGrid"></div>
-      </section>
-
-      <section id="about" class="section">
-        <div class="container section-grid">
-          <h2 class="section-title" data-i18n="aboutTitle">The Photographer</h2>
-          <div class="section-content">
-            <p data-i18n="aboutCopy">
-              I have spent the last fifteen years working as a commercial photographer. Now, I am dedicating my time to personal work. This portfolio is a return to why I first picked up a camera: the pure, unfiltered pleasure of capturing the world around me. Thank you for following along.
-            </p>
+      <section class="portal-grid container">
+        <a href="Nature&Wildlife.html" class="portal-card">
+          <img src="A lonely sunset.jpg" alt="Nature and Wildlife Photography" />
+          <div class="portal-overlay">
+            <h2 class="portal-title" data-i18n="portalNatureTitle">Nature & Wildlife</h2>
+            <p class="portal-desc" data-i18n="portalNatureDesc">Personal works focused on wide open spaces, quiet mountains, and natural refuge.</p>
+            <div class="portal-btn" data-i18n="portalBtn">Explore Gallery</div>
           </div>
-        </div>
-      </section>
+        </a>
 
-      <section id="contact" class="section">
-        <div class="container section-grid">
-          <h2 class="section-title" data-i18n="contactTitle">Get in Touch</h2>
-          <div class="section-content">
-            <p data-i18n="contactCopy">
-              Available for landscape commissions, print inquiries, and editorial
-              collaborations. Feel free to get in touch.
-            </p>
-            <div class="actions-row">
-              <a href="mailto:contact@skaldsson.art" class="btn btn-outline" data-i18n="btnEmail">Email Me</a>
-              <a href="https://bsky.app/profile/skaldsson.bsky.social" target="_blank" class="btn btn-outline">Bluesky</a>
-              <a href="https://unsplash.com/@a_skaldsson" target="_blank" class="btn btn-outline">Unsplash</a>
-              <a href="https://500px.com/p/skaldsson?view=photos" target="_blank" class="btn btn-outline">500px</a>
-              <a href="https://www.flickr.com/people/204444312@N08/" target="_blank" class="btn btn-outline">Flickr</a>
-            </div>
-            <div class="licensing-block">
-              <h3 style="margin-bottom: 12px; font-weight: 600; font-size: 1.1rem; color: var(--text);" data-i18n="usageTitle">
-                Usage & Licensing
-              </h3>
-              <p style="margin-bottom: 16px; font-size: 0.95rem; line-height: 1.6;" data-i18n="usage1">
-                All images on this site are free to use for <strong>personal use</strong>. 
-                This includes wallpapers, personal projects, and non-commercial sharing.
-              </p>
-              <p style="margin-bottom: 16px; font-size: 0.95rem; line-height: 1.6;" data-i18n="usage2">
-                For <strong>commercial use</strong> — including advertising, branding, websites, 
-                monetized content, or any business-related use — please contact me in advance 
-                to obtain permission or a license.
-              </p>
-              <p style="margin: 0; font-size: 0.95rem;" data-i18n="usage3">
-                If you enjoy my work, consider supporting me as it helps me keep creating.
-              </p>
-            </div>
+        <a href="services.html" class="portal-card">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Photography Services" />
+          <div class="portal-overlay">
+            <h2 class="portal-title" data-i18n="portalServicesTitle">Services & Booking</h2>
+            <p class="portal-desc" data-i18n="portalServicesDesc">Professional bookings for weddings, private events, personal portraits, and commercial work.</p>
+            <div class="portal-btn" data-i18n="portalBtn">View Services</div>
           </div>
-        </div>
+        </a>
       </section>
     </main>
 
@@ -670,81 +272,41 @@
       © <span id="year"></span> Alex Skaldsson Photography.
     </footer>
 
-    <div class="lightbox" id="lightbox">
-      <button class="lightbox-close" id="lightboxClose">✕</button>
-      <div class="lightbox-stage">
-        <img id="lightboxImage" src="" alt="" />
-        <div class="lightbox-controls">
-          <button class="lightbox-prev" id="lightboxPrev">‹</button>
-          <button class="lightbox-next" id="lightboxNext">›</button>
-        </div>
-      </div>
-    </div>
-
-    <a
-      href="https://www.buymeacoffee.com/alexandersw9"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="support-bubble"
-      aria-label="Support my work"
-    >
-      <div class="support-bubble-text" data-i18n="supportBubble">
-        All my images are <strong>free to use</strong> — consider supporting my
-        work if you can.
-      </div>
-      <div class="support-bubble-link">♥</div>
-    </a>
-
     <script>
-      // Automatically set current year
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // Internationalization (i18n) Data
       const i18n = {
         en: {
-          navWork: "Work",
-          navAbout: "About",
+          navNature: "Nature",
+          navServices: "Services",
           navContact: "Contact",
-          heroTitle: "Wide landscapes that <span>breathe.</span>",
-          heroCopy: "My name is Alex Skaldsson. I'm a nature and wildlife photographer. My work is focused on empty, open spaces. Mountains, snowy fields and peaks, somewhere you can go and find refuge from it all.",
-          aboutTitle: "The Photographer",
-          aboutCopy: "I have spent the last fifteen years working as a commercial photographer. Now, I am dedicating my time to personal work. This portfolio is a return to why I first picked up a camera: the pure, unfiltered pleasure of capturing the world around me. Thank you for following along.",
-          contactTitle: "Get in Touch",
-          contactCopy: "Available for landscape commissions, print inquiries, and editorial collaborations. Feel free to get in touch.",
-          btnEmail: "Email Me",
-          usageTitle: "Usage & Licensing",
-          usage1: "All images on this site are free to use for <strong>personal use</strong>. This includes wallpapers, personal projects, and non-commercial sharing.",
-          usage2: "For <strong>commercial use</strong> — including advertising, branding, websites, monetized content, or any business-related use — please contact me in advance to obtain permission or a license.",
-          usage3: "If you enjoy my work, consider supporting me as it helps me keep creating.",
-          supportBubble: "All my images are <strong>free to use</strong> — consider supporting my work if you can."
+          heroTitle: "Capturing life, <span>still and moving.</span>",
+          heroCopy: "Welcome to Alex Skaldsson Photography. Choose a gallery below to explore my fine art landscapes or to view my commercial and personal photography services.",
+          portalNatureTitle: "Nature & Wildlife",
+          portalNatureDesc: "Personal works focused on wide open spaces, quiet mountains, and natural refuge.",
+          portalServicesTitle: "Services & Booking",
+          portalServicesDesc: "Professional bookings for weddings, private events, personal portraits, and commercial work.",
+          portalBtn: "Explore"
         },
         es: {
-          navWork: "Trabajo",
-          navAbout: "Sobre mí",
+          navNature: "Naturaleza",
+          navServices: "Servicios",
           navContact: "Contacto",
-          heroTitle: "Paisajes inmensos que <span>respiran.</span>",
-          heroCopy: "Mi nombre es Alex Skaldsson. Soy fotógrafo de naturaleza y vida salvaje. Mi trabajo se centra en espacios amplios y vacíos. Montañas, campos nevados y cumbres, lugares a los que puedes ir a refugiarte de todo.",
-          aboutTitle: "El Fotógrafo",
-          aboutCopy: "He pasado los últimos quince años trabajando como fotógrafo comercial. Ahora, dedico mi tiempo al trabajo personal. Este portafolio es un regreso al motivo por el que cogí una cámara por primera vez: el puro placer de capturar el mundo que me rodea. Gracias por acompañarme en este viaje.",
-          contactTitle: "Contacto",
-          contactCopy: "Disponible para encargos de paisajes, venta de impresiones y colaboraciones editoriales. No dudes en ponerte en contacto.",
-          btnEmail: "Envíame un Email",
-          usageTitle: "Uso y Licencias",
-          usage1: "Todas las imágenes de este sitio son de uso gratuito para <strong>uso personal</strong>. Esto incluye fondos de pantalla, proyectos personales y uso compartido no comercial.",
-          usage2: "Para <strong>uso comercial</strong> — incluyendo publicidad, marcas, sitios web, contenido monetizado o cualquier uso relacionado con un negocio — por favor contáctame con anticipación para obtener permiso o una licencia.",
-          usage3: "Si disfrutas de mi trabajo, considera apoyarme, ya que me ayuda a seguir creando.",
-          supportBubble: "Todas mis imágenes son de <strong>uso gratuito</strong> — considera apoyar mi trabajo si puedes."
+          heroTitle: "Capturando la vida, <span>en calma y en movimiento.</span>",
+          heroCopy: "Bienvenido a Alex Skaldsson Photography. Elige una galería a continuación para explorar mis paisajes artísticos o ver mis servicios de fotografía comercial y personal.",
+          portalNatureTitle: "Naturaleza y Vida Salvaje",
+          portalNatureDesc: "Trabajos personales centrados en espacios abiertos, montañas tranquilas y refugios naturales.",
+          portalServicesTitle: "Servicios y Reservas",
+          portalServicesDesc: "Reservas profesionales para bodas, eventos privados, retratos personales y trabajo comercial.",
+          portalBtn: "Explorar"
         }
       };
 
-      // Function to swap languages
       function setLanguage(lang) {
-        // Toggle button active states
         document.getElementById('btn-en').classList.remove('active');
         document.getElementById('btn-es').classList.remove('active');
         document.getElementById('btn-' + lang).classList.add('active');
 
-        // Swap out the text for everything with a data-i18n attribute
         const elements = document.querySelectorAll('[data-i18n]');
         elements.forEach(el => {
           const key = el.getAttribute('data-i18n');
@@ -753,103 +315,6 @@
           }
         });
       }
-
-      // Photography Array
-      const photos = [
-        { src: "A lonely sunset.jpg", title: "A Lonely Sunset", meta: "Solitude" },
-        { src: "A simple flower.jpg", title: "A Simple Flower", meta: "Nature" },
-        { src: "An ending day.jpg", title: "An Ending Day", meta: "Landscape" },
-        { src: "Castle at Sunset.jpg", title: "Castle at Sunset", meta: "Landscape" },
-        { src: "Church Tower Spain.jpg", title: "Church Tower", meta: "Spain" },
-        { src: "Spring Green.jpg", title: "Spring Green", meta: "Landscape" },
-        { src: "Fresh Trees.jpg", title: "Fresh Trees", meta: "Nature" },
-        { src: "Grazing Sheep.jpg", title: "Grazing Sheep", meta: "Wildlife" },
-        { src: "Green Desert.jpg", title: "Green Desert", meta: "Landscape" },
-        { src: "Green Fields.jpg", title: "Green Fields", meta: "Landscape" },
-        { src: "Lonely Castle.jpg", title: "Lonely Castle", meta: "Landscape" },
-        { src: "Lonely Christ in the Desert.jpg", title: "Christ in the Desert", meta: "Figure" },
-        { src: "Lonely Church on a Hill.jpg", title: "Lonely Church on a Hill", meta: "Landscape" },
-        { src: "Lonely Road.jpg", title: "Lonely Road", meta: "Landscape" },
-        { src: "Lonely Tower.jpg", title: "Lonely Tower", meta: "Solitude" },
-        { src: "Mid-Flight Stork.jpg", title: "Mid-Flight Stork", meta: "Wildlife" },
-        { src: "Nature Takes All.jpg", title: "Nature Takes All", meta: "Nature" },
-        { src: "Pillowy Mountains.jpg", title: "Pillowy Mountains", meta: "Mountains" },
-        { src: "Red Hill.jpg", title: "Red Hill", meta: "Landscape" },
-        { src: "Road to Nowhere.jpg", title: "Road to Nowhere", meta: "Landscape" },
-        { src: "Rock Pile.jpg", title: "Rock Pile", meta: "Nature" },
-        { src: "Snowy Bliss.jpg", title: "Snowy Bliss", meta: "Landscape" },
-        { src: "Spanish Landscape.jpg", title: "Spanish Landscape", meta: "Spain" },
-        { src: "Spanish Mountain during Sunset.jpg", title: "Mountain Sunset", meta: "Spain" },
-        { src: "Stork Family.jpg", title: "Stork Family", meta: "Wildlife" },
-        { src: "Towering Mountain.jpg", title: "Towering Mountain", meta: "Landscape" },
-        { src: "Water Rush.jpg", title: "Water Rush", meta: "Nature" },
-        { src: "Zaragoza.jpg", title: "Zaragoza", meta: "Spain" },
-        { src: "Mountain Trees.jpg", title: "Mountain Trees", meta: "Landscape" },
-        { src: "Piramid Mountain.jpg", title: "Piramid Mountain", meta: "Mountains" },
-        { src: "Top of the mountain.jpg", title: "Top of the Mountain", meta: "Mountains" },
-        { src: "Framing Hill.jpg", title: "Framing Hill", meta: "Landscape" },
-        { src: "Solitary.jpg", title: "Solitary", meta: "Solitude" },
-        { src: "Lonely Tree.jpg", title: "Lonely Tree", meta: "Nature" },
-        { src: "Sunset Hills.jpg", title: "Sunset Hills", meta: "Landscape" },
-        { src: "Peaceful Hills.jpg", title: "Peaceful Hills", meta: "Landscape" },
-        { src: "lonely storks.jpg", title: "Lonely Storks", meta: "Wildlife" }
-      ];
-
-      // Gallery Initialization
-      const grid = document.getElementById("photoGrid");
-      let currentIndex = 0;
-
-      photos.forEach((photo, index) => {
-        const div = document.createElement("div");
-        div.className = "photo-item";
-        div.innerHTML = `
-          <img src="${encodeURI(photo.src)}" alt="${photo.title}" loading="lazy" />
-          <div class="photo-overlay">
-            <div class="photo-title">${photo.title}</div>
-            <div class="photo-meta">${photo.meta}</div>
-          </div>
-        `;
-        div.addEventListener("click", () => openLightbox(index));
-        grid.appendChild(div);
-      });
-
-      // Lightbox Logic
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightboxImage");
-
-      function openLightbox(index) {
-        currentIndex = index;
-        lightboxImg.src = photos[currentIndex].src;
-        lightboxImg.alt = photos[currentIndex].title;
-        lightbox.classList.add("open");
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeLightbox() {
-        lightbox.classList.remove("open");
-        document.body.style.overflow = "";
-      }
-
-      function navigate(direction) {
-        currentIndex = (currentIndex + direction + photos.length) % photos.length;
-        lightboxImg.src = photos[currentIndex].src;
-        lightboxImg.alt = photos[currentIndex].title;
-      }
-
-      document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
-      document.getElementById("lightboxPrev").addEventListener("click", () => navigate(-1));
-      document.getElementById("lightboxNext").addEventListener("click", () => navigate(1));
-
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) closeLightbox();
-      });
-
-      document.addEventListener("keydown", (e) => {
-        if (!lightbox.classList.contains("open")) return;
-        if (e.key === "Escape") closeLightbox();
-        if (e.key === "ArrowLeft") navigate(-1);
-        if (e.key === "ArrowRight") navigate(1);
-      });
     </script>
   </body>
 </html>
