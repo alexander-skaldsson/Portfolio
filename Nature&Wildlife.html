@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW28G0WP3P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-TW28G0WP3P");
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nature & Wildlife | Alex Skaldsson</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,600&family=Montserrat:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #dad4cb; 
+        --surface: #e4dfd6; 
+        --line: rgba(0, 0, 0, 0.12);
+        --text: #11100f; 
+        --text-muted: #47423c;
+        --accent: #ff5e5b; 
+
+        --max-width: 1400px;
+        --font-display: "Cormorant Garamond", Georgia, serif;
+        --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+
+      body {
+        background: var(--bg); color: var(--text);
+        font-family: var(--font-sans); font-weight: 400; 
+        line-height: 1.7; letter-spacing: 0.02em;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img { display: block; width: 100%; height: auto; }
+      a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
+
+      .container { width: min(var(--max-width), calc(100% - 48px)); margin: 0 auto; }
+
+      /* Header */
+      .site-header {
+        position: sticky; top: 0; z-index: 100;
+        background: rgba(218, 212, 203, 0.85); 
+        backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--line); padding: 16px 0;
+      }
+      .site-header-inner { display: flex; align-items: center; justify-content: space-between; }
+      .brand-logo { height: 60px; width: auto; display: block; transition: opacity 0.3s ease; }
+      .brand-logo:hover { opacity: 0.8; }
+
+      .header-right { display: flex; align-items: center; gap: 40px; }
+      .nav { display: flex; gap: 40px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
+      .nav a:hover { color: var(--accent); }
+
+      .lang-switch { display: flex; align-items: center; gap: 12px; }
+      .lang-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 6px; padding: 4px; }
+      .lang-btn:hover, .lang-btn.active { color: var(--accent); }
+
+      /* Hero */
+      .hero { padding: 10vh 0 8vh; text-align: center; max-width: 900px; margin: 0 auto; }
+      .hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.05; font-weight: 500; margin-bottom: 24px; }
+      .hero h1 span { color: var(--accent); font-style: italic; }
+      .hero-copy { color: var(--text-muted); font-size: 1.1rem; max-width: 650px; margin: 0 auto; font-weight: 500; }
+
+      /* Gallery Grid */
+      .photo-grid { column-count: 1; column-gap: 24px; padding-bottom: 100px; }
+      @media (min-width: 768px) { .photo-grid { column-count: 2; } }
+      @media (min-width: 1024px) { .photo-grid { column-count: 3; } }
+
+      .photo-item {
+        position: relative; break-inside: avoid; margin-bottom: 24px;
+        border-radius: 12px; overflow: hidden; cursor: pointer;
+        background: var(--surface); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); 
+        transform: translateZ(0);
+      }
+      .photo-item img { transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), filter 0.7s ease; }
+      .photo-item:hover img { transform: scale(1.05); }
+
+      .photo-overlay {
+        position: absolute; inset: 0; padding: 32px 24px;
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+        opacity: 0; display: flex; flex-direction: column; justify-content: flex-end;
+        transition: opacity 0.4s ease; pointer-events: none; z-index: 2;
+      }
+      .photo-item:hover .photo-overlay { opacity: 1; }
+      .photo-title { font-family: var(--font-display); font-size: 1.6rem; color: #fff; margin-bottom: 6px; transform: translateY(10px); transition: transform 0.4s ease; }
+      .photo-meta { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); transform: translateY(10px); transition: transform 0.4s ease 0.05s; }
+      .photo-item:hover .photo-title, .photo-item:hover .photo-meta { transform: translateY(0); }
+
+      /* Lightbox */
+      .lightbox {
+        position: fixed; inset: 0; display: none; place-items: center;
+        background: rgba(0, 0, 0, 0.95); z-index: 200; padding: 24px; backdrop-filter: blur(10px);
+      }
+      .lightbox.open { display: grid; }
+      .lightbox-stage { position: relative; width: min(1600px, 100%); height: 100%; display: flex; flex-direction: column; justify-content: center; }
+      .lightbox img { max-height: 90vh; max-width: 100%; width: auto; margin: 0 auto; object-fit: contain; border-radius: 4px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+      
+      .lightbox-controls button { position: absolute; top: 50%; transform: translateY(-50%); background: var(--surface); color: var(--text); border: 1px solid var(--line); height: 60px; width: 60px; border-radius: 50%; font-size: 1.5rem; cursor: pointer; transition: all 0.3s ease; display: grid; place-items: center; z-index: 10; }
+      .lightbox-controls button:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+      .lightbox-prev { left: 20px; }
+      .lightbox-next { right: 20px; }
+      
+      .lightbox-close { position: absolute; top: 30px; right: 30px; background: var(--surface); border: 1px solid var(--line); color: var(--text); height: 50px; width: 50px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; z-index: 10; transition: all 0.3s ease; }
+      .lightbox-close:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+      .footer { padding: 40px 0; text-align: center; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--line); font-weight: 500; }
+
+      @media (max-width: 900px) {
+        .nav { display: none; }
+        .lightbox-controls button { height: 44px; width: 44px; font-size: 1.2rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner container">
+        <a href="index.html" aria-label="Alex Skaldsson home">
+          <img src="logo.gif" alt="Skaldsson Photography" class="brand-logo" />
+        </a>
+        <div class="header-right">
+          <nav class="nav">
+            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="services.html" data-i18n="navServices">Services</a>
+          </nav>
+          <div class="lang-switch">
+            <button class="lang-btn active" onclick="setLanguage('en')" id="btn-en">🇬🇧 EN</button>
+            <span style="color: var(--line);">|</span>
+            <button class="lang-btn" onclick="setLanguage('es')" id="btn-es">🇪🇸 ES</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero container">
+        <h1 data-i18n="heroTitle">The Quiet <span>Earth.</span></h1>
+        <p class="hero-copy" data-i18n="heroCopy">
+          My personal refuge. A collection of wide, open spaces, pillowy mountains, and solitary structures captured purely for the love of the craft.
+        </p>
+      </section>
+
+      <section class="container">
+        <div class="photo-grid" id="photoGrid"></div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      © <span id="year"></span> Alex Skaldsson Photography.
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose">✕</button>
+      <div class="lightbox-stage">
+        <img id="lightboxImage" src="" alt="" />
+        <div class="lightbox-controls">
+          <button class="lightbox-prev" id="lightboxPrev">‹</button>
+          <button class="lightbox-next" id="lightboxNext">›</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // i18n for the Nature Page
+      const i18n = {
+        en: {
+          navHome: "Home",
+          navServices: "Services",
+          heroTitle: "The Quiet <span>Earth.</span>",
+          heroCopy: "My personal refuge. A collection of wide, open spaces, pillowy mountains, and solitary structures captured purely for the love of the craft."
+        },
+        es: {
+          navHome: "Inicio",
+          navServices: "Servicios",
+          heroTitle: "La Tierra <span>Silenciosa.</span>",
+          heroCopy: "Mi refugio personal. Una colección de espacios abiertos, montañas acolchadas y estructuras solitarias capturadas puramente por amor al arte."
+        }
+      };
+
+      function setLanguage(lang) {
+        document.getElementById('btn-en').classList.remove('active');
+        document.getElementById('btn-es').classList.remove('active');
+        document.getElementById('btn-' + lang).classList.add('active');
+
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (i18n[lang] && i18n[lang][key]) {
+            el.innerHTML = i18n[lang][key];
+          }
+        });
+      }
+
+      // Your original photography array
+      const photos = [
+        { src: "A lonely sunset.jpg", title: "A Lonely Sunset", meta: "Solitude" },
+        { src: "A simple flower.jpg", title: "A Simple Flower", meta: "Nature" },
+        { src: "An ending day.jpg", title: "An Ending Day", meta: "Landscape" },
+        { src: "Castle at Sunset.jpg", title: "Castle at Sunset", meta: "Landscape" },
+        { src: "Church Tower Spain.jpg", title: "Church Tower", meta: "Spain" },
+        { src: "Spring Green.jpg", title: "Spring Green", meta: "Landscape" },
+        { src: "Fresh Trees.jpg", title: "Fresh Trees", meta: "Nature" },
+        { src: "Grazing Sheep.jpg", title: "Grazing Sheep", meta: "Wildlife" },
+        { src: "Green Desert.jpg", title: "Green Desert", meta: "Landscape" },
+        { src: "Green Fields.jpg", title: "Green Fields", meta: "Landscape" },
+        { src: "Lonely Castle.jpg", title: "Lonely Castle", meta: "Landscape" },
+        { src: "Lonely Christ in the Desert.jpg", title: "Christ in the Desert", meta: "Figure" },
+        { src: "Lonely Church on a Hill.jpg", title: "Lonely Church on a Hill", meta: "Landscape" },
+        { src: "Lonely Road.jpg", title: "Lonely Road", meta: "Landscape" },
+        { src: "Lonely Tower.jpg", title: "Lonely Tower", meta: "Solitude" },
+        { src: "Mid-Flight Stork.jpg", title: "Mid-Flight Stork", meta: "Wildlife" },
+        { src: "Nature Takes All.jpg", title: "Nature Takes All", meta: "Nature" },
+        { src: "Pillowy Mountains.jpg", title: "Pillowy Mountains", meta: "Mountains" },
+        { src: "Red Hill.jpg", title: "Red Hill", meta: "Landscape" },
+        { src: "Road to Nowhere.jpg", title: "Road to Nowhere", meta: "Landscape" },
+        { src: "Rock Pile.jpg", title: "Rock Pile", meta: "Nature" },
+        { src: "Snowy Bliss.jpg", title: "Snowy Bliss", meta: "Landscape" },
+        { src: "Spanish Landscape.jpg", title: "Spanish Landscape", meta: "Spain" },
+        { src: "Spanish Mountain during Sunset.jpg", title: "Mountain Sunset", meta: "Spain" },
+        { src: "Stork Family.jpg", title: "Stork Family", meta: "Wildlife" },
+        { src: "Towering Mountain.jpg", title: "Towering Mountain", meta: "Landscape" },
+        { src: "Water Rush.jpg", title: "Water Rush", meta: "Nature" },
+        { src: "Zaragoza.jpg", title: "Zaragoza", meta: "Spain" },
+        { src: "Mountain Trees.jpg", title: "Mountain Trees", meta: "Landscape" },
+        { src: "Piramid Mountain.jpg", title: "Piramid Mountain", meta: "Mountains" },
+        { src: "Top of the mountain.jpg", title: "Top of the Mountain", meta: "Mountains" },
+        { src: "Framing Hill.jpg", title: "Framing Hill", meta: "Landscape" },
+        { src: "Solitary.jpg", title: "Solitary", meta: "Solitude" },
+        { src: "Lonely Tree.jpg", title: "Lonely Tree", meta: "Nature" },
+        { src: "Sunset Hills.jpg", title: "Sunset Hills", meta: "Landscape" },
+        { src: "Peaceful Hills.jpg", title: "Peaceful Hills", meta: "Landscape" },
+        { src: "lonely storks.jpg", title: "Lonely Storks", meta: "Wildlife" }
+      ];
+
+      // Initialize Gallery
+      const grid = document.getElementById("photoGrid");
+      let currentIndex = 0;
+
+      photos.forEach((photo, index) => {
+        const div = document.createElement("div");
+        div.className = "photo-item";
+        div.innerHTML = `
+          <img src="${encodeURI(photo.src)}" alt="${photo.title}" loading="lazy" />
+          <div class="photo-overlay">
+            <div class="photo-title">${photo.title}</div>
+            <div class="photo-meta">${photo.meta}</div>
+          </div>
+        `;
+        div.addEventListener("click", () => openLightbox(index));
+        grid.appendChild(div);
+      });
+
+      // Lightbox Logic
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImage");
+
+      function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = photos[currentIndex].src;
+        lightboxImg.alt = photos[currentIndex].title;
+        lightbox.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      function navigate(direction) {
+        currentIndex = (currentIndex + direction + photos.length) % photos.length;
+        lightboxImg.src = photos[currentIndex].src;
+        lightboxImg.alt = photos[currentIndex].title;
+      }
+
+      document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+      document.getElementById("lightboxPrev").addEventListener("click", () => navigate(-1));
+      document.getElementById("lightboxNext").addEventListener("click", () => navigate(1));
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (!lightbox.classList.contains("open")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") navigate(-1);
+        if (e.key === "ArrowRight") navigate(1);
+      });
+    </script>
+  </body>
+</html>
