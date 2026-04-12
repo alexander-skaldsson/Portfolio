@@ -36,7 +36,7 @@
         --accent: #ff5e5b; 
         --accent-glow: rgba(255, 94, 91, 0.15);
 
-        --max-width: 1200px;
+        --max-width: 1000px; /* Tighter width for better reading on a manifesto */
         --font-display: "Cormorant Garamond", Georgia, serif;
         --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
       }
@@ -47,7 +47,7 @@
       body {
         background: var(--bg); color: var(--text);
         font-family: var(--font-sans); font-weight: 400; 
-        line-height: 1.7; letter-spacing: 0.02em;
+        line-height: 1.8; letter-spacing: 0.02em;
         -webkit-font-smoothing: antialiased;
       }
 
@@ -75,78 +75,101 @@
       .lang-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 6px; padding: 4px; }
       .lang-btn:hover, .lang-btn.active { color: var(--accent); }
 
-      /* Hero */
-      .hero { padding: 10vh 0 8vh; text-align: center; max-width: 800px; margin: 0 auto; }
-      .hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.05; font-weight: 500; margin-bottom: 24px; }
-      .hero h1 span { color: var(--accent); font-style: italic; }
-      .hero-copy { color: var(--text-muted); font-size: 1.1rem; margin: 0 auto; font-weight: 500; }
-
-      /* Services/Works Layout */
-      .services-list {
-        display: flex;
-        flex-direction: column;
-        gap: 80px;
-        padding-bottom: 100px;
+      /* Manifesto Typography & Layout */
+      .manifesto-header {
+        padding: 12vh 0 8vh;
+        text-align: center;
       }
-
-      .service-block {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: center;
-      }
-
-      .service-block:nth-child(even) { direction: rtl; }
-      .service-block:nth-child(even) > * { direction: ltr; }
-
-      .service-image {
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      }
-
-      .service-image img {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-        transition: transform 0.7s ease;
-      }
-      .service-block:hover .service-image img { transform: scale(1.03); }
-
-      .service-content h2 {
+      
+      .manifesto-title {
         font-family: var(--font-display);
-        font-size: 2.5rem;
-        margin-bottom: 16px;
-        color: var(--text);
-      }
-
-      .service-content p {
-        font-size: 1.1rem;
-        color: var(--text-muted);
+        font-size: clamp(3rem, 6vw, 5rem);
+        line-height: 1.05;
+        font-weight: 500;
         margin-bottom: 24px;
       }
-
-      .service-meta {
-        font-size: 0.85rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
+      
+      .manifesto-title span {
         color: var(--accent);
-        display: block;
-        margin-bottom: 16px;
+        font-style: italic;
+      }
+
+      .manifesto-subtitle {
+        font-size: 1.2rem;
+        color: var(--text-muted);
+        max-width: 700px;
+        margin: 0 auto;
+        font-weight: 500;
+      }
+
+      /* Image Feature */
+      .hero-image {
+        width: 100%;
+        height: 60vh;
+        min-height: 400px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-bottom: 60px;
+        filter: grayscale(20%) contrast(110%);
+      }
+
+      /* Content Blocks */
+      .statement-block {
+        margin-bottom: 80px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .statement-block h2 {
+        font-family: var(--font-display);
+        font-size: 2.5rem;
+        color: var(--text);
+        line-height: 1.2;
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 16px;
+      }
+
+      .statement-block p {
+        font-size: 1.15rem;
+        color: var(--text-muted);
+      }
+
+      .highlight-stat {
+        font-family: var(--font-display);
+        font-size: 2.2rem;
+        color: var(--accent);
+        line-height: 1.3;
+        margin: 32px 0;
+        padding-left: 32px;
+        border-left: 4px solid var(--accent);
+        font-style: italic;
       }
 
       /* Call to Action */
       .cta-section {
+        background: var(--surface);
+        padding: 60px;
+        border-radius: 8px;
         text-align: center;
-        padding: 80px 0 100px;
-        border-top: 1px solid var(--line);
-        max-width: 600px;
-        margin: 0 auto;
+        margin: 40px 0 100px;
+        border: 1px solid var(--line);
       }
 
-      .cta-section h2 { font-family: var(--font-display); font-size: 3rem; margin-bottom: 16px; }
-      .cta-section p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 32px; }
+      .cta-section h3 {
+        font-family: var(--font-display);
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+      }
+
+      .cta-section p {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 32px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
 
       .cta-buttons {
         display: flex;
@@ -167,7 +190,7 @@
       }
 
       .btn-outline {
-        background: var(--surface);
+        background: transparent;
         color: var(--text);
         border: 1px solid var(--line);
         box-shadow: none;
@@ -181,60 +204,26 @@
 
       .footer { padding: 40px 0; text-align: center; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--line); font-weight: 500; }
 
-      /* --- Floating Action Button (FAB) Contact Menu --- */
-      .fab-container {
-        position: fixed; right: 22px; bottom: 22px; z-index: 300;
-        display: flex; flex-direction: column; align-items: center; gap: 12px;
-      }
-
-      .fab-option {
-        width: 50px; height: 50px; border-radius: 50%;
-        background: var(--surface); color: var(--text);
-        display: grid; place-items: center; text-decoration: none;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); opacity: 0;
-        transform: translateY(20px) scale(0.8); pointer-events: none;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 1px solid var(--line);
-      }
-
+      /* --- Floating Action Button (FAB) --- */
+      .fab-container { position: fixed; right: 22px; bottom: 22px; z-index: 300; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+      .fab-option { width: 50px; height: 50px; border-radius: 50%; background: var(--surface); color: var(--text); display: grid; place-items: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); opacity: 0; transform: translateY(20px) scale(0.8); pointer-events: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid var(--line); }
       .fab-option svg { width: 22px; height: 22px; fill: currentColor; }
       .fab-option:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-
-      .fab-main {
-        width: 62px; height: 62px; border-radius: 50%;
-        background: var(--accent); color: #fff; position: relative;
-        display: grid; place-items: center; border: none; cursor: pointer;
-        box-shadow: 0 8px 24px var(--accent-glow);
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease;
-      }
-
-      .fab-main svg { 
-        width: 28px; height: 28px; fill: currentColor; 
-        position: absolute; transition: transform 0.3s ease, opacity 0.3s ease;
-      }
-
+      .fab-main { width: 62px; height: 62px; border-radius: 50%; background: var(--accent); color: #fff; position: relative; display: grid; place-items: center; border: none; cursor: pointer; box-shadow: 0 8px 24px var(--accent-glow); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease; }
+      .fab-main svg { width: 28px; height: 28px; fill: currentColor; position: absolute; transition: transform 0.3s ease, opacity 0.3s ease; }
       .icon-wa { opacity: 1; transform: rotate(0deg); }
       .icon-close { opacity: 0; transform: rotate(-45deg); }
-
-      .fab-main:hover {
-        transform: translateY(-2px) scale(1.04); background: #e64542;
-        box-shadow: 0 12px 28px rgba(255, 94, 91, 0.4);
-      }
-
+      .fab-main:hover { transform: translateY(-2px) scale(1.04); background: #e64542; box-shadow: 0 12px 28px rgba(255, 94, 91, 0.4); }
       .fab-container.active .fab-option { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
       .fab-container.active .fab-option:nth-child(1) { transition-delay: 0.1s; }
       .fab-container.active .fab-option:nth-child(2) { transition-delay: 0.05s; }
-
       .fab-container.active .icon-wa { opacity: 0; transform: rotate(45deg); }
       .fab-container.active .icon-close { opacity: 1; transform: rotate(0deg); }
 
       @media (max-width: 900px) {
         .nav { display: none; }
-        .service-block { grid-template-columns: 1fr; gap: 32px; direction: ltr !important; }
-        .service-image img { height: 350px; }
-        .services-list { gap: 60px; }
-        .fab-container { right: 16px; bottom: 16px; }
-        .fab-main { width: 56px; height: 56px; }
+        .hero-image { height: 40vh; }
+        .cta-section { padding: 40px 20px; }
       }
     </style>
   </head>
@@ -260,37 +249,46 @@
     </header>
 
     <main id="top">
-      <section class="hero container">
-        <h1 data-i18n="heroTitle">Social <span>Works.</span></h1>
-        <p class="hero-copy" data-i18n="heroCopy">
-          Photography as a tool for positive change. Discover my ongoing charity initiatives and community projects dedicated to making an impact.
+      <section class="manifesto-header container">
+        <h1 class="manifesto-title" data-i18n="heroTitle">Photography with <span>Purpose.</span></h1>
+        <p class="manifesto-subtitle" data-i18n="heroCopy">
+          Art is more than observation; it is a tool for change. This space is dedicated to initiatives that use the lens to support vulnerable communities and drive real impact.
         </p>
       </section>
 
-      <section class="container services-list">
+      <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80" alt="A child looking directly into the camera" class="hero-image container" loading="lazy" />
+
+      <div class="container">
         
-        <div class="service-block">
-          <div class="service-image">
-            <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&w=1000&q=80" alt="Art Exhibition Gallery" loading="lazy" />
+        <div class="statement-block">
+          <h2 data-i18n="missionHeading">The Reality: Child Poverty in Spain</h2>
+          <p data-i18n="missionText1">Despite being a strong economy, Spain is facing a structural crisis that often goes unseen. Economic growth has not protected the most vulnerable, and the statistics are a sobering call to action.</p>
+          
+          <div class="highlight-stat" data-i18n="missionQuote">
+            "Currently, almost 1 in 3 children in Spain is at risk of poverty or social exclusion."
           </div>
-          <div class="service-content">
-            <span class="service-meta" data-i18n="metaExhibition">Upcoming Charity Exhibition</span>
-            <h2 data-i18n="titleExhibition">Miradas de Calatayud: Arte por la Infancia</h2>
-            <p data-i18n="descExhibition">I am currently organizing a charity photography exhibition showcasing the beauty of Calatayud and its surroundings. We are in active discussions with Spanish printing providers to sponsor the exhibition materials. The ultimate goal of this initiative is to donate 100% of the net profits from the artwork sales directly to Save the Children, supporting their vital work against child poverty in Spain.</p>
+          
+          <p data-i18n="missionText2">This represents over 2 million minors whose futures, health, and educational opportunities are severely compromised. It is an intergenerational cycle of financial exclusion that requires an active response from all sectors of society, including the arts.</p>
+        </div>
+
+        <div class="statement-block">
+          <h2 data-i18n="projectHeading">The Project: Miradas de Calatayud</h2>
+          <p data-i18n="projectText1">Since moving to Spain, the beauty of Calatayud has profoundly inspired my work. "Miradas de Calatayud: Arte por la Infancia" is an upcoming charity exhibition designed to turn that beauty into tangible help.</p>
+          <p data-i18n="projectText2">The concept is entirely transparent: I am donating my time, my portfolio, and the rights to these images for this event. <strong>100% of the net profits from the sale of the artwork will be donated directly to Save the Children Spain</strong> to fund their vital programs combating child poverty.</p>
+          <p data-i18n="projectText3">Save the Children has officially backed this initiative, and their logo will proudly be displayed as the sole beneficiary of the funds raised.</p>
+        </div>
+
+        <div class="cta-section">
+          <h3 data-i18n="ctaHeading">Call for Sponsors & Partners</h3>
+          <p data-i18n="ctaText">To maximize our donation to Save the Children, we are actively seeking Spanish printing providers and local businesses to sponsor the production materials (printing, framing, exhibition logistics). If you represent a printing company or the Calatayud City Council and wish to support this cause, let's talk.</p>
+          
+          <div class="cta-buttons">
+            <a href="mailto:contact@skaldsson.art" class="btn" data-i18n="btnEmail">Become a Sponsor</a>
+            <a href="https://wa.me/34631557606" class="btn btn-outline" target="_blank" rel="noopener noreferrer">WhatsApp Me</a>
           </div>
         </div>
 
-      </section>
-
-      <section class="cta-section container">
-        <h2 data-i18n="ctaTitle">Want to support the cause?</h2>
-        <p data-i18n="ctaDesc">Whether you are a printing provider, a local business, or an individual wanting to help make this charity exhibition a reality, I would love to hear from you.</p>
-        
-        <div class="cta-buttons">
-          <a href="mailto:contact@skaldsson.art" class="btn btn-outline" data-i18n="btnEmail">Email Me</a>
-          <a href="https://wa.me/34631557606" class="btn" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-        </div>
-      </section>
+      </div>
     </main>
 
     <footer class="footer container">
@@ -321,37 +319,51 @@
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // i18n for the Social Works Page
+      // i18n for the Mission Page
       const i18n = {
         en: {
           navHome: "Home",
           navNature: "Nature",
           navSocial: "Social Works",
-          heroTitle: "Social <span>Works.</span>",
-          heroCopy: "Photography as a tool for positive change. Discover my ongoing charity initiatives and community projects dedicated to making an impact.",
           
-          metaExhibition: "Upcoming Charity Exhibition",
-          titleExhibition: "Miradas de Calatayud: Arte por la Infancia",
-          descExhibition: "I am currently organizing a charity photography exhibition showcasing the beauty of Calatayud and its surroundings. We are in active discussions with Spanish printing providers to sponsor the exhibition materials. The ultimate goal of this initiative is to donate 100% of the net profits from the artwork sales directly to Save the Children, supporting their vital work against child poverty in Spain.",
+          heroTitle: "Photography with <span>Purpose.</span>",
+          heroCopy: "Art is more than observation; it is a tool for change. This space is dedicated to initiatives that use the lens to support vulnerable communities and drive real impact.",
           
-          ctaTitle: "Want to support the cause?",
-          ctaDesc: "Whether you are a printing provider, a local business, or an individual wanting to help make this charity exhibition a reality, I would love to hear from you.",
-          btnEmail: "Email Me"
+          missionHeading: "The Reality: Child Poverty in Spain",
+          missionText1: "Despite being a strong economy, Spain is facing a structural crisis that often goes unseen. Economic growth has not protected the most vulnerable, and the statistics are a sobering call to action.",
+          missionQuote: "\"Currently, almost 1 in 3 children in Spain is at risk of poverty or social exclusion.\"",
+          missionText2: "This represents over 2 million minors whose futures, health, and educational opportunities are severely compromised. It is an intergenerational cycle of financial exclusion that requires an active response from all sectors of society, including the arts.",
+          
+          projectHeading: "The Project: Miradas de Calatayud",
+          projectText1: "Since moving to Spain, the beauty of Calatayud has profoundly inspired my work. \"Miradas de Calatayud: Arte por la Infancia\" is an upcoming charity exhibition designed to turn that beauty into tangible help.",
+          projectText2: "The concept is entirely transparent: I am donating my time, my portfolio, and the rights to these images for this event. <strong>100% of the net profits from the sale of the artwork will be donated directly to Save the Children Spain</strong> to fund their vital programs combating child poverty.",
+          projectText3: "Save the Children has officially backed this initiative, and their logo will proudly be displayed as the sole beneficiary of the funds raised.",
+          
+          ctaHeading: "Call for Sponsors & Partners",
+          ctaText: "To maximize our donation to Save the Children, we are actively seeking Spanish printing providers and local businesses to sponsor the production materials (printing, framing, exhibition logistics). If you represent a printing company or the Calatayud City Council and wish to support this cause, let's talk.",
+          btnEmail: "Become a Sponsor"
         },
         es: {
           navHome: "Inicio",
           navNature: "Naturaleza",
           navSocial: "Obra Social",
-          heroTitle: "Obra <span>Social.</span>",
-          heroCopy: "La fotografía como herramienta para el cambio positivo. Descubre mis iniciativas solidarias y proyectos comunitarios actuales dedicados a generar un impacto.",
           
-          metaExhibition: "Próxima Exposición Benéfica",
-          titleExhibition: "Miradas de Calatayud: Arte por la Infancia",
-          descExhibition: "Actualmente estoy organizando una exposición fotográfica benéfica que muestra la belleza de Calatayud y su entorno. Estamos en conversaciones activas con imprentas españolas para patrocinar los materiales de la exposición. El objetivo principal de esta iniciativa es donar el 100% de los beneficios netos de la venta de las obras directamente a Save the Children, apoyando su labor vital contra la pobreza infantil en España.",
+          heroTitle: "Fotografía con <span>Propósito.</span>",
+          heroCopy: "El arte es más que observación; es una herramienta para el cambio. Este espacio está dedicado a iniciativas que utilizan la lente para apoyar a comunidades vulnerables y generar un impacto real.",
           
-          ctaTitle: "¿Quieres apoyar la causa?",
-          ctaDesc: "Si eres una imprenta, una empresa local o un particular que quiere ayudar a hacer realidad esta exposición solidaria, me encantaría hablar contigo.",
-          btnEmail: "Contáctame"
+          missionHeading: "La Realidad: Pobreza Infantil en España",
+          missionText1: "A pesar de ser una economía fuerte, España se enfrenta a una crisis estructural que a menudo pasa desapercibida. El crecimiento económico no ha protegido a los más vulnerables, y las estadísticas son una llamada a la acción.",
+          missionQuote: "\"Actualmente, casi 1 de cada 3 niños en España se encuentra en riesgo de pobreza o exclusión social.\"",
+          missionText2: "Esto representa a más de 2 millones de menores cuyos futuros, salud y oportunidades educativas están gravemente comprometidos. Es un ciclo intergeneracional de exclusión financiera que requiere una respuesta activa de todos los sectores de la sociedad, incluidas las artes.",
+          
+          projectHeading: "El Proyecto: Miradas de Calatayud",
+          projectText1: "Desde que me mudé a España, la belleza de Calatayud ha inspirado profundamente mi trabajo. \"Miradas de Calatayud: Arte por la Infancia\" es una próxima exposición benéfica diseñada para convertir esa belleza en ayuda tangible.",
+          projectText2: "El concepto es totalmente transparente: donaré mi tiempo, mi portafolio y los derechos de estas imágenes para este evento. <strong>El 100% de los beneficios netos de la venta de las obras se donará directamente a Save the Children España</strong> para financiar sus programas vitales contra la pobreza infantil.",
+          projectText3: "Save the Children ha respaldado oficialmente esta iniciativa, y su logotipo se mostrará con orgullo como el único beneficiario de los fondos recaudados.",
+          
+          ctaHeading: "Llamamiento a Patrocinadores",
+          ctaText: "Para maximizar nuestra donación a Save the Children, buscamos activamente imprentas españolas y empresas locales que patrocinen los materiales de producción (impresión, enmarcado, logística). Si representas a una imprenta o al Ayuntamiento de Calatayud y deseas apoyar esta causa, hablemos.",
+          btnEmail: "Ser Patrocinador"
         }
       };
 
@@ -377,7 +389,6 @@
         fabContainer.classList.toggle('active');
       });
 
-      // Close FAB when clicking anywhere outside of it
       document.addEventListener('click', (event) => {
         if (!fabContainer.contains(event.target)) {
           fabContainer.classList.remove('active');
