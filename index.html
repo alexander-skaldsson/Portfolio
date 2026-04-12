@@ -141,6 +141,11 @@
         .portal-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
       }
 
+      /* New breakpoint to fit 3 cards evenly on desktop */
+      @media (min-width: 1024px) {
+        .portal-grid { grid-template-columns: 1fr 1fr 1fr; }
+      }
+
       .portal-card {
         position: relative;
         border-radius: 12px;
@@ -228,6 +233,7 @@
           <nav class="nav">
             <a href="Nature&Wildlife.html" data-i18n="navNature">Nature</a>
             <a href="services.html" data-i18n="navServices">Services</a>
+            <a href="SocialWorks.html" data-i18n="navSocial">Social Works</a>
             <a href="mailto:contact@skaldsson.art" data-i18n="navContact">Contact</a>
           </nav>
           <div class="lang-switch">
@@ -265,6 +271,15 @@
             <div class="portal-btn" data-i18n="portalBtn">View Services</div>
           </div>
         </a>
+
+        <a href="SocialWorks.html" class="portal-card">
+          <img src="spanish-children.jpg" alt="Social Works Photography" />
+          <div class="portal-overlay">
+            <h2 class="portal-title" data-i18n="portalSocialTitle">Social Works</h2>
+            <p class="portal-desc" data-i18n="portalSocialDesc">Photography with purpose. Charity exhibitions and initiatives to drive real change.</p>
+            <div class="portal-btn" data-i18n="portalBtn">Explore</div>
+          </div>
+        </a>
       </section>
     </main>
 
@@ -279,25 +294,39 @@
         en: {
           navNature: "Nature",
           navServices: "Services",
+          navSocial: "Social Works",
           navContact: "Contact",
           heroTitle: "Capturing life, <span>still and moving.</span>",
           heroCopy: "Welcome to Alex Skaldsson Photography. Choose a gallery below to explore my fine art landscapes or to view my commercial and personal photography services.",
+          
           portalNatureTitle: "Nature & Wildlife",
           portalNatureDesc: "Personal works focused on wide open spaces, quiet mountains, and natural refuge.",
+          
           portalServicesTitle: "Services & Booking",
           portalServicesDesc: "Professional bookings for weddings, private events, personal portraits, and commercial work.",
+          
+          portalSocialTitle: "Social Works",
+          portalSocialDesc: "Photography with purpose. Charity exhibitions and initiatives to drive real change.",
+          
           portalBtn: "Explore"
         },
         es: {
           navNature: "Naturaleza",
           navServices: "Servicios",
+          navSocial: "Obra Social",
           navContact: "Contacto",
           heroTitle: "Capturando la vida, <span>en calma y en movimiento.</span>",
           heroCopy: "Bienvenido a Alex Skaldsson Photography. Elige una galería a continuación para explorar mis paisajes artísticos o ver mis servicios de fotografía comercial y personal.",
+          
           portalNatureTitle: "Naturaleza y Vida Salvaje",
           portalNatureDesc: "Trabajos personales centrados en espacios abiertos, montañas tranquilas y refugios naturales.",
+          
           portalServicesTitle: "Servicios y Reservas",
           portalServicesDesc: "Reservas profesionales para bodas, eventos privados, retratos personales y trabajo comercial.",
+          
+          portalSocialTitle: "Obra Social",
+          portalSocialDesc: "Fotografía con propósito. Exposiciones benéficas e iniciativas para impulsar un cambio real.",
+          
           portalBtn: "Explorar"
         }
       };
