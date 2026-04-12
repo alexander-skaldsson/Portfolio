@@ -36,7 +36,7 @@
         --accent: #ff5e5b; 
         --accent-glow: rgba(255, 94, 91, 0.15);
 
-        --max-width: 1000px; /* Tighter width for better reading on a manifesto */
+        --max-width: 1100px; /* Widened from 1000px to feel less 'skinny' */
         --font-display: "Cormorant Garamond", Georgia, serif;
         --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
       }
@@ -106,11 +106,12 @@
       .hero-image {
         width: 100%;
         height: 60vh;
-        min-height: 400px;
+        min-height: 450px;
         object-fit: cover;
-        border-radius: 4px;
-        margin-bottom: 60px;
-        filter: grayscale(20%) contrast(110%);
+        border-radius: 8px;
+        margin-bottom: 80px;
+        filter: grayscale(15%) contrast(105%);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
       }
 
       /* Content Blocks */
@@ -128,6 +129,7 @@
         line-height: 1.2;
         border-bottom: 1px solid var(--line);
         padding-bottom: 16px;
+        margin-bottom: 8px;
       }
 
       .statement-block p {
@@ -135,15 +137,43 @@
         color: var(--text-muted);
       }
 
-      .highlight-stat {
-        font-family: var(--font-display);
-        font-size: 2.2rem;
-        color: var(--accent);
-        line-height: 1.3;
-        margin: 32px 0;
-        padding-left: 32px;
-        border-left: 4px solid var(--accent);
+      .source-text {
+        font-size: 0.85rem !important;
         font-style: italic;
+        opacity: 0.8;
+        margin-top: -8px;
+      }
+
+      /* Stats Grid */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin: 32px 0;
+      }
+
+      .stat-box {
+        background: var(--surface);
+        padding: 32px 24px;
+        border-radius: 8px;
+        border-left: 4px solid var(--accent);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      }
+
+      .stat-number {
+        font-family: var(--font-display);
+        font-size: 3rem;
+        color: var(--accent);
+        line-height: 1;
+        margin-bottom: 12px;
+        font-weight: 600;
+      }
+
+      .stat-desc {
+        font-size: 1rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+        font-weight: 500;
       }
 
       /* Call to Action */
@@ -222,7 +252,7 @@
 
       @media (max-width: 900px) {
         .nav { display: none; }
-        .hero-image { height: 40vh; }
+        .hero-image { height: 40vh; margin-bottom: 40px; }
         .cta-section { padding: 40px 20px; }
       }
     </style>
@@ -256,31 +286,44 @@
         </p>
       </section>
 
-      <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80" alt="A child looking directly into the camera" class="hero-image container" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1400&q=80" alt="Children gathering in a community setting" class="hero-image container" loading="lazy" />
 
       <div class="container">
         
         <div class="statement-block">
           <h2 data-i18n="missionHeading">The Reality: Child Poverty in Spain</h2>
-          <p data-i18n="missionText1">Despite being a strong economy, Spain is facing a structural crisis that often goes unseen. Economic growth has not protected the most vulnerable, and the statistics are a sobering call to action.</p>
+          <p data-i18n="missionText1">Despite its status as a major European economy, Spain harbors a silent structural crisis. According to the latest AROPE (At Risk of Poverty or Social Exclusion) indicator, Spain consistently ranks among the countries with the highest child poverty rates in the European Union. Economic growth has unfortunately bypassed the most vulnerable families, leaving millions of minors exposed.</p>
           
-          <div class="highlight-stat" data-i18n="missionQuote">
-            "Currently, almost 1 in 3 children in Spain is at risk of poverty or social exclusion."
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-number" data-i18n="stat1Num">28.9%</div>
+              <div class="stat-desc" data-i18n="stat1Text">Of children in Spain are at risk of poverty or social exclusion—over 2.1 million minors.</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number" data-i18n="stat2Num">7%</div>
+              <div class="stat-desc" data-i18n="stat2Text">Is the total poverty reduction achieved by Spain's social transfers, compared to the EU average of 15%.</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number" data-i18n="stat3Num">1 in 3</div>
+              <div class="stat-desc" data-i18n="stat3Text">Single-parent households (the vast majority led by women) face extreme financial vulnerability.</div>
+            </div>
           </div>
-          
-          <p data-i18n="missionText2">This represents over 2 million minors whose futures, health, and educational opportunities are severely compromised. It is an intergenerational cycle of financial exclusion that requires an active response from all sectors of society, including the arts.</p>
+
+          <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-top: 16px;" data-i18n="missionCausesHeading">The Root of the Crisis</h3>
+          <p data-i18n="missionCausesText">This crisis is fueled by a perfect storm of precarious employment, skyrocketing housing costs that consume over half of a vulnerable family's income, and an inadequate social protection system that fails to reach those who need it most. The result is an intergenerational cycle of inequality that compromises children's nutrition, mental health, and educational outcomes.</p>
+          <p class="source-text" data-i18n="missionSource">Sources: UNICEF Report on Child Poverty in Spain (2024); Save the Children AROPE Analysis.</p>
         </div>
 
         <div class="statement-block">
           <h2 data-i18n="projectHeading">The Project: Miradas de Calatayud</h2>
-          <p data-i18n="projectText1">Since moving to Spain, the beauty of Calatayud has profoundly inspired my work. "Miradas de Calatayud: Arte por la Infancia" is an upcoming charity exhibition designed to turn that beauty into tangible help.</p>
-          <p data-i18n="projectText2">The concept is entirely transparent: I am donating my time, my portfolio, and the rights to these images for this event. <strong>100% of the net profits from the sale of the artwork will be donated directly to Save the Children Spain</strong> to fund their vital programs combating child poverty.</p>
-          <p data-i18n="projectText3">Save the Children has officially backed this initiative, and their logo will proudly be displayed as the sole beneficiary of the funds raised.</p>
+          <p data-i18n="projectText1">Since moving to Spain, the landscape and people of Calatayud have profoundly inspired my photography. "Miradas de Calatayud: Arte por la Infancia" is an upcoming charity exhibition designed to turn that artistic inspiration into tangible, structural help.</p>
+          <p data-i18n="projectText2">The concept is entirely transparent: I am donating my time, my portfolio, and the full rights to these images for this event. <strong>100% of the net profits from the sale of the artwork will be donated directly to Save the Children Spain</strong> to fund their vital, on-the-ground programs combating child poverty and educational exclusion.</p>
+          <p data-i18n="projectText3">Save the Children has officially backed this initiative, and their logo will proudly be displayed as the sole beneficiary of the funds raised by the local community.</p>
         </div>
 
         <div class="cta-section">
           <h3 data-i18n="ctaHeading">Call for Sponsors & Partners</h3>
-          <p data-i18n="ctaText">To maximize our donation to Save the Children, we are actively seeking Spanish printing providers and local businesses to sponsor the production materials (printing, framing, exhibition logistics). If you represent a printing company or the Calatayud City Council and wish to support this cause, let's talk.</p>
+          <p data-i18n="ctaText">To maximize our donation to Save the Children, we are actively seeking Spanish printing providers and local businesses to sponsor the production materials (printing, framing, exhibition logistics). If you represent a printing company, a local business, or the Calatayud City Council and wish to support this cause, let's talk.</p>
           
           <div class="cta-buttons">
             <a href="mailto:contact@skaldsson.art" class="btn" data-i18n="btnEmail">Become a Sponsor</a>
@@ -319,7 +362,7 @@
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // i18n for the Mission Page
+      // Expanded i18n for the updated Mission Page
       const i18n = {
         en: {
           navHome: "Home",
@@ -330,17 +373,26 @@
           heroCopy: "Art is more than observation; it is a tool for change. This space is dedicated to initiatives that use the lens to support vulnerable communities and drive real impact.",
           
           missionHeading: "The Reality: Child Poverty in Spain",
-          missionText1: "Despite being a strong economy, Spain is facing a structural crisis that often goes unseen. Economic growth has not protected the most vulnerable, and the statistics are a sobering call to action.",
-          missionQuote: "\"Currently, almost 1 in 3 children in Spain is at risk of poverty or social exclusion.\"",
-          missionText2: "This represents over 2 million minors whose futures, health, and educational opportunities are severely compromised. It is an intergenerational cycle of financial exclusion that requires an active response from all sectors of society, including the arts.",
+          missionText1: "Despite its status as a major European economy, Spain harbors a silent structural crisis. According to the latest AROPE (At Risk of Poverty or Social Exclusion) indicator, Spain consistently ranks among the countries with the highest child poverty rates in the European Union. Economic growth has unfortunately bypassed the most vulnerable families, leaving millions of minors exposed.",
           
+          stat1Num: "28.9%",
+          stat1Text: "Of children in Spain are at risk of poverty or social exclusion—over 2.1 million minors.",
+          stat2Num: "7%",
+          stat2Text: "Is the total poverty reduction achieved by Spain's social transfers, compared to the EU average of 15%.",
+          stat3Num: "1 in 3",
+          stat3Text: "Single-parent households (the vast majority led by women) face extreme financial vulnerability.",
+          
+          missionCausesHeading: "The Root of the Crisis",
+          missionCausesText: "This crisis is fueled by a perfect storm of precarious employment, skyrocketing housing costs that consume over half of a vulnerable family's income, and an inadequate social protection system that fails to reach those who need it most. The result is an intergenerational cycle of inequality that compromises children's nutrition, mental health, and educational outcomes.",
+          missionSource: "Sources: UNICEF Report on Child Poverty in Spain (2024); Save the Children AROPE Analysis.",
+
           projectHeading: "The Project: Miradas de Calatayud",
-          projectText1: "Since moving to Spain, the beauty of Calatayud has profoundly inspired my work. \"Miradas de Calatayud: Arte por la Infancia\" is an upcoming charity exhibition designed to turn that beauty into tangible help.",
-          projectText2: "The concept is entirely transparent: I am donating my time, my portfolio, and the rights to these images for this event. <strong>100% of the net profits from the sale of the artwork will be donated directly to Save the Children Spain</strong> to fund their vital programs combating child poverty.",
-          projectText3: "Save the Children has officially backed this initiative, and their logo will proudly be displayed as the sole beneficiary of the funds raised.",
+          projectText1: "Since moving to Spain, the landscape and people of Calatayud have profoundly inspired my photography. \"Miradas de Calatayud: Arte por la Infancia\" is an upcoming charity exhibition designed to turn that artistic inspiration into tangible, structural help.",
+          projectText2: "The concept is entirely transparent: I am donating my time, my portfolio, and the full rights to these images for this event. <strong>100% of the net profits from the sale of the artwork will be donated directly to Save the Children Spain</strong> to fund their vital, on-the-ground programs combating child poverty and educational exclusion.",
+          projectText3: "Save the Children has officially backed this initiative, and their logo will proudly be displayed as the sole beneficiary of the funds raised by the local community.",
           
           ctaHeading: "Call for Sponsors & Partners",
-          ctaText: "To maximize our donation to Save the Children, we are actively seeking Spanish printing providers and local businesses to sponsor the production materials (printing, framing, exhibition logistics). If you represent a printing company or the Calatayud City Council and wish to support this cause, let's talk.",
+          ctaText: "To maximize our donation to Save the Children, we are actively seeking Spanish printing providers and local businesses to sponsor the production materials (printing, framing, exhibition logistics). If you represent a printing company, a local business, or the Calatayud City Council and wish to support this cause, let's talk.",
           btnEmail: "Become a Sponsor"
         },
         es: {
@@ -352,17 +404,26 @@
           heroCopy: "El arte es más que observación; es una herramienta para el cambio. Este espacio está dedicado a iniciativas que utilizan la lente para apoyar a comunidades vulnerables y generar un impacto real.",
           
           missionHeading: "La Realidad: Pobreza Infantil en España",
-          missionText1: "A pesar de ser una economía fuerte, España se enfrenta a una crisis estructural que a menudo pasa desapercibida. El crecimiento económico no ha protegido a los más vulnerables, y las estadísticas son una llamada a la acción.",
-          missionQuote: "\"Actualmente, casi 1 de cada 3 niños en España se encuentra en riesgo de pobreza o exclusión social.\"",
-          missionText2: "Esto representa a más de 2 millones de menores cuyos futuros, salud y oportunidades educativas están gravemente comprometidos. Es un ciclo intergeneracional de exclusión financiera que requiere una respuesta activa de todos los sectores de la sociedad, incluidas las artes.",
+          missionText1: "A pesar de su estatus como gran economía europea, España alberga una crisis estructural silenciosa. Según el último indicador AROPE (Riesgo de Pobreza o Exclusión Social), España se sitúa sistemáticamente entre los países con mayores tasas de pobreza infantil de la Unión Europea. Lamentablemente, el crecimiento económico ha eludido a las familias más vulnerables, dejando expuestos a millones de menores.",
           
+          stat1Num: "28,9%",
+          stat1Text: "De los niños en España están en riesgo de pobreza o exclusión social: más de 2,1 millones de menores.",
+          stat2Num: "7%",
+          stat2Text: "Es la reducción total de la pobreza lograda por las transferencias sociales de España, frente a la media del 15% de la UE.",
+          stat3Num: "1 de 3",
+          stat3Text: "Hogares monoparentales (la inmensa mayoría encabezados por mujeres) se enfrentan a una extrema vulnerabilidad financiera.",
+          
+          missionCausesHeading: "La Raíz de la Crisis",
+          missionCausesText: "Esta crisis está alimentada por una tormenta perfecta de empleo precario, costes de vivienda desorbitados que consumen más de la mitad de los ingresos de una familia vulnerable, y un sistema de protección social inadecuado que no llega a quienes más lo necesitan. El resultado es un ciclo intergeneracional de desigualdad que compromete la nutrición, la salud mental y los resultados educativos de los niños.",
+          missionSource: "Fuentes: Informe de UNICEF sobre la Pobreza Infantil en España (2024); Análisis AROPE de Save the Children.",
+
           projectHeading: "El Proyecto: Miradas de Calatayud",
-          projectText1: "Desde que me mudé a España, la belleza de Calatayud ha inspirado profundamente mi trabajo. \"Miradas de Calatayud: Arte por la Infancia\" es una próxima exposición benéfica diseñada para convertir esa belleza en ayuda tangible.",
-          projectText2: "El concepto es totalmente transparente: donaré mi tiempo, mi portafolio y los derechos de estas imágenes para este evento. <strong>El 100% de los beneficios netos de la venta de las obras se donará directamente a Save the Children España</strong> para financiar sus programas vitales contra la pobreza infantil.",
-          projectText3: "Save the Children ha respaldado oficialmente esta iniciativa, y su logotipo se mostrará con orgullo como el único beneficiario de los fondos recaudados.",
+          projectText1: "Desde que me mudé a España, el paisaje y la gente de Calatayud han inspirado profundamente mi fotografía. \"Miradas de Calatayud: Arte por la Infancia\" es una próxima exposición benéfica diseñada para convertir esa inspiración artística en ayuda tangible y estructural.",
+          projectText2: "El concepto es totalmente transparente: donaré mi tiempo, mi portafolio y los plenos derechos de estas imágenes para este evento. <strong>El 100% de los beneficios netos de la venta de las obras se donará directamente a Save the Children España</strong> para financiar sus programas vitales sobre el terreno contra la pobreza infantil y la exclusión educativa.",
+          projectText3: "Save the Children ha respaldado oficialmente esta iniciativa, y su logotipo se mostrará con orgullo como el único beneficiario de los fondos recaudados por la comunidad local.",
           
           ctaHeading: "Llamamiento a Patrocinadores",
-          ctaText: "Para maximizar nuestra donación a Save the Children, buscamos activamente imprentas españolas y empresas locales que patrocinen los materiales de producción (impresión, enmarcado, logística). Si representas a una imprenta o al Ayuntamiento de Calatayud y deseas apoyar esta causa, hablemos.",
+          ctaText: "Para maximizar nuestra donación a Save the Children, buscamos activamente imprentas españolas y empresas locales que patrocinen los materiales de producción (impresión, enmarcado, logística). Si representas a una imprenta, un comercio local o al Ayuntamiento de Calatayud y deseas apoyar esta causa, hablemos.",
           btnEmail: "Ser Patrocinador"
         }
       };
