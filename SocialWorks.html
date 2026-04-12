@@ -36,7 +36,7 @@
         --accent: #ff5e5b; 
         --accent-glow: rgba(255, 94, 91, 0.15);
 
-        --max-width: 1100px; /* Widened from 1000px to feel less 'skinny' */
+        --max-width: 1100px;
         --font-display: "Cormorant Garamond", Georgia, serif;
         --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
       }
@@ -105,8 +105,8 @@
       /* Image Feature */
       .hero-image {
         width: 100%;
-        height: 60vh;
-        min-height: 450px;
+        height: auto;
+        aspect-ratio: 1024 / 683;
         object-fit: cover;
         border-radius: 8px;
         margin-bottom: 80px;
@@ -252,7 +252,7 @@
 
       @media (max-width: 900px) {
         .nav { display: none; }
-        .hero-image { height: 40vh; margin-bottom: 40px; }
+        .hero-image { margin-bottom: 40px; }
         .cta-section { padding: 40px 20px; }
       }
     </style>
@@ -286,7 +286,7 @@
         </p>
       </section>
 
-      <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1400&q=80" alt="Children gathering in a community setting" class="hero-image container" loading="lazy" />
+      <img src="spanish-children.jpg" width="1024" height="683" alt="Children gathering in Spain" class="hero-image container" loading="lazy" />
 
       <div class="container">
         
@@ -316,9 +316,8 @@
 
         <div class="statement-block">
           <h2 data-i18n="projectHeading">The Project: Miradas de Calatayud</h2>
-          <p data-i18n="projectText1">Since moving to Spain, the landscape and people of Calatayud have profoundly inspired my photography. "Miradas de Calatayud: Arte por la Infancia" is an upcoming charity exhibition designed to turn that artistic inspiration into tangible, structural help.</p>
+          <p data-i18n="projectText1">Since moving to Spain, the landscape and people of Calatayud have profoundly inspired my photography. "Miradas de Calatayud: Arte por la Infancia" is a charity exhibition I am currently planning, designed to turn that artistic inspiration into tangible, structural help.</p>
           <p data-i18n="projectText2">The concept is entirely transparent: I am donating my time, my portfolio, and the full rights to these images for this event. <strong>100% of the net profits from the sale of the artwork will be donated directly to Save the Children Spain</strong> to fund their vital, on-the-ground programs combating child poverty and educational exclusion.</p>
-          <p data-i18n="projectText3">Save the Children has officially backed this initiative, and their logo will proudly be displayed as the sole beneficiary of the funds raised by the local community.</p>
         </div>
 
         <div class="cta-section">
@@ -362,7 +361,6 @@
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // Expanded i18n for the updated Mission Page
       const i18n = {
         en: {
           navHome: "Home",
@@ -387,9 +385,8 @@
           missionSource: "Sources: UNICEF Report on Child Poverty in Spain (2024); Save the Children AROPE Analysis.",
 
           projectHeading: "The Project: Miradas de Calatayud",
-          projectText1: "Since moving to Spain, the landscape and people of Calatayud have profoundly inspired my photography. \"Miradas de Calatayud: Arte por la Infancia\" is an upcoming charity exhibition designed to turn that artistic inspiration into tangible, structural help.",
+          projectText1: "Since moving to Spain, the landscape and people of Calatayud have profoundly inspired my photography. \"Miradas de Calatayud: Arte por la Infancia\" is a charity exhibition I am planning, designed to turn that artistic inspiration into tangible, structural help.",
           projectText2: "The concept is entirely transparent: I am donating my time, my portfolio, and the full rights to these images for this event. <strong>100% of the net profits from the sale of the artwork will be donated directly to Save the Children Spain</strong> to fund their vital, on-the-ground programs combating child poverty and educational exclusion.",
-          projectText3: "Save the Children has officially backed this initiative, and their logo will proudly be displayed as the sole beneficiary of the funds raised by the local community.",
           
           ctaHeading: "Call for Sponsors & Partners",
           ctaText: "To maximize our donation to Save the Children, we are actively seeking Spanish printing providers and local businesses to sponsor the production materials (printing, framing, exhibition logistics). If you represent a printing company, a local business, or the Calatayud City Council and wish to support this cause, let's talk.",
@@ -418,9 +415,8 @@
           missionSource: "Fuentes: Informe de UNICEF sobre la Pobreza Infantil en España (2024); Análisis AROPE de Save the Children.",
 
           projectHeading: "El Proyecto: Miradas de Calatayud",
-          projectText1: "Desde que me mudé a España, el paisaje y la gente de Calatayud han inspirado profundamente mi fotografía. \"Miradas de Calatayud: Arte por la Infancia\" es una próxima exposición benéfica diseñada para convertir esa inspiración artística en ayuda tangible y estructural.",
+          projectText1: "Desde que me mudé a España, el paisaje y la gente de Calatayud han inspirado profundamente mi fotografía. \"Miradas de Calatayud: Arte por la Infancia\" es una exposición benéfica que estoy planificando, diseñada para convertir esa inspiración artística en ayuda tangible y estructural.",
           projectText2: "El concepto es totalmente transparente: donaré mi tiempo, mi portafolio y los plenos derechos de estas imágenes para este evento. <strong>El 100% de los beneficios netos de la venta de las obras se donará directamente a Save the Children España</strong> para financiar sus programas vitales sobre el terreno contra la pobreza infantil y la exclusión educativa.",
-          projectText3: "Save the Children ha respaldado oficialmente esta iniciativa, y su logotipo se mostrará con orgullo como el único beneficiario de los fondos recaudados por la comunidad local.",
           
           ctaHeading: "Llamamiento a Patrocinadores",
           ctaText: "Para maximizar nuestra donación a Save the Children, buscamos activamente imprentas españolas y empresas locales que patrocinen los materiales de producción (impresión, enmarcado, logística). Si representas a una imprenta, un comercio local o al Ayuntamiento de Calatayud y deseas apoyar esta causa, hablemos.",
