@@ -272,23 +272,25 @@
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // i18n for the Nature Page
-      const i18n = {
-        en: {
-          navHome: "Home",
-          navServices: "Services",
-          heroTitle: "The Quiet <span>Earth.</span>",
-          heroCopy: "My personal refuge. A collection of wide, open spaces, pillowy mountains, and solitary structures captured purely for the love of the craft.",
-          supportBubble: "All my images are <strong>free to use</strong> — consider supporting my work if you can."
-        },
-        es: {
-          navHome: "Inicio",
-          navServices: "Servicios",
-          heroTitle: "La Tierra <span>Silenciosa.</span>",
-          heroCopy: "Mi refugio personal. Una colección de espacios abiertos, montañas acolchadas y estructuras solitarias capturadas puramente por amor al arte.",
-          supportBubble: "Todas mis imágenes son de <strong>uso gratuito</strong> — considera apoyar mi trabajo si puedes."
-        }
-      };
+     // i18n for the Nature Page
+const i18n = {
+  en: {
+    navHome: "Home",
+    navServices: "Services",
+    navSocialWorks: "Social Works", // Added this line
+    heroTitle: "The Quiet <span>Earth.</span>",
+    heroCopy: "My personal refuge. A collection of wide, open spaces, pillowy mountains, and solitary structures captured purely for the love of the craft.",
+    supportBubble: "All my images are <strong>free to use</strong> — consider supporting my work if you can."
+  },
+  es: {
+    navHome: "Inicio",
+    navServices: "Servicios",
+    navSocialWorks: "Obra Social", // Added this line (you can change this to "Proyectos Sociales" or "Redes Sociales" depending on context)
+    heroTitle: "La Tierra <span>Silenciosa.</span>",
+    heroCopy: "Mi refugio personal. Una colección de espacios abiertos, montañas acolchadas y estructuras solitarias capturadas puramente por amor al arte.",
+    supportBubble: "Todas mis imágenes son de <strong>uso gratuito</strong> — considera apoyar mi trabajo si puedes."
+  }
+};
 
       function setLanguage(lang) {
         document.getElementById('btn-en').classList.remove('active');
