@@ -11,6 +11,9 @@
       gtag("config", "G-TW28G0WP3P");
     </script>
 
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6209354407417435" crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-6209354407417435">
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nature & Wildlife | Alex Skaldsson</title>
@@ -18,6 +21,13 @@
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png" />
+    <link rel="manifest" href="favicon_io/site.webmanifest" />
+
+    <meta name="description" content="Alex Skaldsson Photography. Nature & Wildlife portfolio and professional photography services including weddings, events, and personal photoshoots." />
+    <meta name="author" content="Alex Skaldsson" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#dad4cb" />
+    <link rel="canonical" href="https://skaldsson.art/" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,6 +40,7 @@
       :root {
         --bg: #dad4cb; 
         --surface: #e4dfd6; 
+        --surface-hover: #eee9e0;
         --line: rgba(0, 0, 0, 0.12);
         --text: #11100f; 
         --text-muted: #47423c;
@@ -56,15 +67,18 @@
 
       .container { width: min(var(--max-width), calc(100% - 48px)); margin: 0 auto; }
 
-      /* Header */
+      /* Header (Synced to Index) */
       .site-header {
         position: sticky; top: 0; z-index: 100;
         background: rgba(218, 212, 203, 0.85); 
         backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
         border-bottom: 1px solid var(--line); padding: 16px 0;
+        transition: transform 0.3s ease;
       }
       .site-header-inner { display: flex; align-items: center; justify-content: space-between; }
-      .brand-logo { height: 60px; width: auto; display: block; transition: opacity 0.3s ease; }
+      
+      /* Logo size synced to 85px */
+      .brand-logo { height: 85px; width: auto; display: block; transition: opacity 0.3s ease; }
       .brand-logo:hover { opacity: 0.8; }
 
       .header-right { display: flex; align-items: center; gap: 40px; }
@@ -72,7 +86,7 @@
       .nav a:hover { color: var(--accent); }
 
       .lang-switch { display: flex; align-items: center; gap: 12px; }
-      .lang-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 6px; padding: 4px; }
+      .lang-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.85rem; font-weight: 600; font-family: var(--font-sans); transition: color 0.3s ease; display: flex; align-items: center; gap: 6px; padding: 4px; }
       .lang-btn:hover, .lang-btn.active { color: var(--accent); }
 
       /* Hero */
@@ -213,10 +227,10 @@
         </a>
         <div class="header-right">
           <nav class="nav">
-            <a href="index.html" data-i18n="navHome">Home</a>
+            <a href="Nature&Wildlife.html" data-i18n="navNature">Nature</a>
             <a href="services.html" data-i18n="navServices">Services</a>
-            <a href="SocialWorks.html" data-i18n="navSocialWorks">Services</a>
-
+            <a href="SocialWorks.html" data-i18n="navSocial">Social Works</a>
+            <a href="mailto:contact@skaldsson.art" data-i18n="navContact">Contact</a>
           </nav>
           <div class="lang-switch">
             <button class="lang-btn active" onclick="setLanguage('en')" id="btn-en">🇬🇧 EN</button>
@@ -272,25 +286,27 @@
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
 
-     // i18n for the Nature Page
-const i18n = {
-  en: {
-    navHome: "Home",
-    navServices: "Services",
-    navSocialWorks: "Social Works", // Added this line
-    heroTitle: "The Quiet <span>Earth.</span>",
-    heroCopy: "My personal refuge. A collection of wide, open spaces, pillowy mountains, and solitary structures captured purely for the love of the craft.",
-    supportBubble: "All my images are <strong>free to use</strong> — consider supporting my work if you can."
-  },
-  es: {
-    navHome: "Inicio",
-    navServices: "Servicios",
-    navSocialWorks: "Obra Social", // Added this line (you can change this to "Proyectos Sociales" or "Redes Sociales" depending on context)
-    heroTitle: "La Tierra <span>Silenciosa.</span>",
-    heroCopy: "Mi refugio personal. Una colección de espacios abiertos, montañas acolchadas y estructuras solitarias capturadas puramente por amor al arte.",
-    supportBubble: "Todas mis imágenes son de <strong>uso gratuito</strong> — considera apoyar mi trabajo si puedes."
-  }
-};
+      // i18n updated to match exact Nav links from Index
+      const i18n = {
+        en: {
+          navNature: "Nature",
+          navServices: "Services",
+          navSocial: "Social Works",
+          navContact: "Contact",
+          heroTitle: "The Quiet <span>Earth.</span>",
+          heroCopy: "My personal refuge. A collection of wide, open spaces, pillowy mountains, and solitary structures captured purely for the love of the craft.",
+          supportBubble: "All my images are <strong>free to use</strong> — consider supporting my work if you can."
+        },
+        es: {
+          navNature: "Naturaleza",
+          navServices: "Servicios",
+          navSocial: "Obra Social",
+          navContact: "Contacto",
+          heroTitle: "La Tierra <span>Silenciosa.</span>",
+          heroCopy: "Mi refugio personal. Una colección de espacios abiertos, montañas acolchadas y estructuras solitarias capturadas puramente por amor al arte.",
+          supportBubble: "Todas mis imágenes son de <strong>uso gratuito</strong> — considera apoyar mi trabajo si puedes."
+        }
+      };
 
       function setLanguage(lang) {
         document.getElementById('btn-en').classList.remove('active');
@@ -347,8 +363,6 @@ const i18n = {
         { src: "lonely storks.jpg", title: "Lonely Storks", meta: "Wildlife" },
         { src: "Grey Skies.jpg", title: "Grey Skies", meta: "Landscape" },
         { src: "Roads.jpg", title: "Roads", meta: "Landscape" }
-
-
       ];
 
       // Initialize Gallery
