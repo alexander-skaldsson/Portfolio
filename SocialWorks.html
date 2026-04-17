@@ -4,116 +4,136 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW28G0WP3P"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
+      function gtag() { dataLayer.push(arguments); }
       gtag("js", new Date());
       gtag("config", "G-TW28G0WP3P");
     </script>
-
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6209354407417435" crossorigin="anonymous"></script>
-    <meta name="google-adsense-account" content="ca-pub-6209354407417435">
-
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Social Works | Alex Skaldsson</title>
+    
+    <meta name="google-adsense-account" content="ca-pub-6209354407417435">
+    <meta name="description" content="Photography with purpose. Charity projects and initiatives that create positive change by Alex Skaldsson." />
+    <meta name="author" content="Alex Skaldsson" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#1c1512" />
+    <link rel="canonical" href="https://skaldsson.art/social-works.html" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png" />
     <link rel="manifest" href="favicon_io/site.webmanifest" />
 
-    <meta name="description" content="Alex Skaldsson Photography. Nature & Wildlife portfolio and professional photography services including weddings, events, and personal photoshoots." />
-    <meta name="author" content="Alex Skaldsson" />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="theme-color" content="#dad4cb" />
-    <link rel="canonical" href="https://skaldsson.art/" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,600&family=Montserrat:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
     <style>
-      :root {
-        --bg: #dad4cb; 
-        --surface: #e4dfd6; 
-        --surface-hover: #eee9e0;
-        --line: rgba(0, 0, 0, 0.12);
-        --text: #11100f; 
-        --text-muted: #47423c;
-        --accent: #ff5e5b; 
-        --accent-glow: rgba(255, 94, 91, 0.15);
+      /* --- LOAD LOCAL FONT --- */
+      @font-face {
+        font-family: 'Calfine';
+        src: url('Calfinedemo.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
 
-        --max-width: 1100px;
-        --font-display: "Cormorant Garamond", Georgia, serif;
-        --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
+      :root {
+        /* Warm, earthy palette */
+        --bg: #1c1512; 
+        --bg-surface: #2a1f1b;
+        --accent: #d88c62; /* Terracotta */
+        --accent-hover: #e8a078;
+        --text: #f4eee1; /* Warm cream */
+        --text-muted: #bdae9e;
+        --border: rgba(244, 238, 225, 0.08);
+        --max-width: 1100px; /* Kept slightly narrower for reading comfort */
       }
 
       * { box-sizing: border-box; margin: 0; padding: 0; }
       html { scroll-behavior: smooth; }
 
       body {
-        background: var(--bg); color: var(--text);
-        font-family: var(--font-sans); font-weight: 400; 
-        line-height: 1.8; letter-spacing: 0.02em;
+        background: var(--bg);
+        color: var(--text);
+        font-family: 'Inter', sans-serif;
+        font-weight: 300; 
+        line-height: 1.7;
         -webkit-font-smoothing: antialiased;
       }
 
       img { display: block; width: 100%; height: auto; }
       a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 
-      .container { width: min(var(--max-width), calc(100% - 48px)); margin: 0 auto; }
-
-      /* Header (Synced to Index) */
-      .site-header {
-        position: sticky; top: 0; z-index: 100;
-        background: rgba(218, 212, 203, 0.85); 
-        backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-        border-bottom: 1px solid var(--line); padding: 16px 0;
-        transition: transform 0.3s ease;
+      /* --- APPLY CUSTOM FONT --- */
+      h1, h2, h3, .logo, .stat-number {
+        font-family: 'Calfine', Georgia, serif !important;
+        font-weight: normal;
+        color: var(--text);
+        line-height: 1.1;
       }
-      .site-header-inner { display: flex; align-items: center; justify-content: space-between; }
+
+      .container { width: min(var(--max-width), 100% - 48px); margin: 0 auto; }
+
+      /* Header */
+      .site-header {
+        position: fixed; top: 0; left: 0; right: 0;
+        z-index: 1000;
+        background: rgba(28, 21, 18, 0.85);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: 1.2rem 0;
+        border-bottom: 1px solid var(--border);
+        transition: all 0.3s ease;
+      }
+      .header-inner { display: flex; align-items: center; justify-content: space-between; }
       
-      /* Logo size synced to 85px */
-      .brand-logo { height: 85px; width: auto; display: block; transition: opacity 0.3s ease; }
-      .brand-logo:hover { opacity: 0.8; }
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+      }
 
-      .header-right { display: flex; align-items: center; gap: 40px; }
-      .nav { display: flex; gap: 40px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
-      .nav a:hover, .nav a.active-link { color: var(--accent); }
+      .logo { 
+        font-size: 2.8rem; 
+        letter-spacing: -0.01em; 
+        text-transform: none; 
+      }
 
-      .lang-switch { display: flex; align-items: center; gap: 12px; }
-      .lang-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 0.85rem; font-weight: 600; font-family: var(--font-sans); display: flex; align-items: center; gap: 6px; padding: 4px; transition: color 0.3s ease;}
-      .lang-btn:hover, .lang-btn.active { color: var(--accent); }
+      .nav { display: flex; gap: 3rem; }
+      .nav a { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 500; color: var(--text-muted); transition: color 0.3s ease; }
+      .nav a:hover, .nav a.active { color: var(--accent); }
+
+      /* Language Switcher */
+      .lang-switch { display: flex; align-items: center; background: rgba(244, 238, 225, 0.03); border: 1px solid var(--border); border-radius: 30px; padding: 4px; }
+      .lang-btn { background: transparent; border: none; color: var(--text-muted); cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; padding: 6px 12px; border-radius: 20px; transition: all 0.3s ease; }
+      .lang-btn.active { background: var(--text); color: var(--bg); }
+      .lang-btn:not(.active):hover { color: var(--text); }
 
       /* Manifesto Typography & Layout */
       .manifesto-header {
-        padding: 12vh 0 8vh;
+        padding: 180px 0 80px;
         text-align: center;
+        animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0;
+        transform: translateY(30px);
       }
+
+      @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
       
       .manifesto-title {
-        font-family: var(--font-display);
-        font-size: clamp(3rem, 6vw, 5rem);
-        line-height: 1.05;
-        font-weight: 500;
+        font-size: clamp(3.5rem, 8vw, 6.5rem);
         margin-bottom: 24px;
-      }
-      
-      .manifesto-title span {
-        color: var(--accent);
-        font-style: italic;
+        letter-spacing: 0.01em;
       }
 
       .manifesto-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         color: var(--text-muted);
         max-width: 700px;
         margin: 0 auto;
-        font-weight: 500;
       }
 
       /* Image Feature */
@@ -123,27 +143,29 @@
         aspect-ratio: 1024 / 683;
         object-fit: cover;
         border-radius: 8px;
-        margin-bottom: 80px;
-        filter: grayscale(15%) contrast(105%);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        margin-bottom: 100px;
+        filter: grayscale(25%) contrast(110%) brightness(0.8);
+        border: 1px solid var(--border);
       }
 
       /* Content Blocks */
       .statement-block {
-        margin-bottom: 80px;
+        margin-bottom: 100px;
         display: grid;
         grid-template-columns: 1fr;
         gap: 24px;
       }
 
       .statement-block h2 {
-        font-family: var(--font-display);
-        font-size: 2.5rem;
-        color: var(--text);
-        line-height: 1.2;
-        border-bottom: 1px solid var(--line);
-        padding-bottom: 16px;
-        margin-bottom: 8px;
+        font-size: 3rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 20px;
+        margin-bottom: 12px;
+      }
+
+      .statement-block h3 {
+        font-size: 2.2rem;
+        margin-top: 24px;
       }
 
       .statement-block p {
@@ -154,7 +176,7 @@
       .source-text {
         font-size: 0.85rem !important;
         font-style: italic;
-        opacity: 0.8;
+        color: rgba(189, 174, 158, 0.6) !important;
         margin-top: -8px;
       }
 
@@ -163,53 +185,50 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 24px;
-        margin: 32px 0;
+        margin: 40px 0;
       }
 
       .stat-box {
-        background: var(--surface);
-        padding: 32px 24px;
+        background: var(--bg-surface);
+        padding: 40px 32px;
         border-radius: 8px;
-        border-left: 4px solid var(--accent);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        border-left: 2px solid var(--accent);
+        border-top: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
       }
 
       .stat-number {
-        font-family: var(--font-display);
-        font-size: 3rem;
+        font-size: 4.5rem;
         color: var(--accent);
-        line-height: 1;
-        margin-bottom: 12px;
-        font-weight: 600;
+        margin-bottom: 16px;
       }
 
       .stat-desc {
         font-size: 1rem;
         color: var(--text-muted);
-        line-height: 1.5;
-        font-weight: 500;
+        line-height: 1.6;
       }
 
       /* Call to Action */
       .cta-section {
-        background: var(--surface);
-        padding: 60px;
+        background: var(--bg-surface);
+        padding: 80px 60px;
         border-radius: 8px;
         text-align: center;
         margin: 40px 0 100px;
-        border: 1px solid var(--line);
+        border: 1px solid var(--border);
       }
 
       .cta-section h3 {
-        font-family: var(--font-display);
-        font-size: 2.5rem;
-        margin-bottom: 16px;
+        font-size: 3.5rem;
+        margin-bottom: 20px;
       }
 
       .cta-section p {
         color: var(--text-muted);
         font-size: 1.1rem;
-        margin-bottom: 32px;
+        margin-bottom: 40px;
         max-width: 600px;
         margin-left: auto;
         margin-right: auto;
@@ -217,47 +236,39 @@
 
       .cta-buttons {
         display: flex;
-        gap: 16px;
+        gap: 20px;
         justify-content: center;
         flex-wrap: wrap;
       }
 
       .btn {
         display: inline-flex; align-items: center; justify-content: center;
-        height: 54px; padding: 0 40px; border-radius: 100px;
-        font-size: 0.9rem; font-weight: 600; transition: all 0.3s ease;
-        background: var(--accent); color: #fff; box-shadow: 0 4px 15px var(--accent-glow);
-        border: 1px solid transparent;
+        padding: 16px 40px; border-radius: 40px;
+        font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+        transition: all 0.3s ease;
+        background: var(--accent); color: var(--bg);
+        border: 1px solid var(--accent);
       }
-      .btn:hover {
-        background: #e64542; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 94, 91, 0.4);
-      }
+      
+      .btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); transform: translateY(-2px); }
 
-      .btn-outline {
-        background: transparent;
-        color: var(--text);
-        border: 1px solid var(--line);
-        box-shadow: none;
-      }
-      .btn-outline:hover {
-        border-color: var(--accent);
-        color: var(--accent);
-        background: rgba(255, 94, 91, 0.05);
-        transform: translateY(-2px);
-      }
+      .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+      .btn-outline:hover { border-color: var(--accent); color: var(--bg); background: var(--accent); }
 
-      .footer { padding: 40px 0; text-align: center; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--line); font-weight: 500; }
+      .footer { padding: 40px 0 60px; text-align: center; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border); }
 
       /* --- Floating Action Button (FAB) --- */
       .fab-container { position: fixed; right: 22px; bottom: 22px; z-index: 300; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-      .fab-option { width: 50px; height: 50px; border-radius: 50%; background: var(--surface); color: var(--text); display: grid; place-items: center; text-decoration: none; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); opacity: 0; transform: translateY(20px) scale(0.8); pointer-events: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid var(--line); }
+      .fab-option { width: 50px; height: 50px; border-radius: 50%; background: var(--bg-surface); color: var(--text); display: grid; place-items: center; text-decoration: none; opacity: 0; transform: translateY(20px) scale(0.8); pointer-events: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid var(--border); }
       .fab-option svg { width: 22px; height: 22px; fill: currentColor; }
-      .fab-option:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
-      .fab-main { width: 62px; height: 62px; border-radius: 50%; background: var(--accent); color: #fff; position: relative; display: grid; place-items: center; border: none; cursor: pointer; box-shadow: 0 8px 24px var(--accent-glow); transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease; }
+      .fab-option:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+      
+      .fab-main { width: 62px; height: 62px; border-radius: 50%; background: var(--accent); color: var(--bg); position: relative; display: grid; place-items: center; border: none; cursor: pointer; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease; }
       .fab-main svg { width: 28px; height: 28px; fill: currentColor; position: absolute; transition: transform 0.3s ease, opacity 0.3s ease; }
       .icon-wa { opacity: 1; transform: rotate(0deg); }
       .icon-close { opacity: 0; transform: rotate(-45deg); }
-      .fab-main:hover { transform: translateY(-2px) scale(1.04); background: #e64542; box-shadow: 0 12px 28px rgba(255, 94, 91, 0.4); }
+      .fab-main:hover { transform: translateY(-2px) scale(1.04); background: var(--accent-hover); }
+      
       .fab-container.active .fab-option { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
       .fab-container.active .fab-option:nth-child(1) { transition-delay: 0.1s; }
       .fab-container.active .fab-option:nth-child(2) { transition-delay: 0.05s; }
@@ -266,28 +277,26 @@
 
       @media (max-width: 900px) {
         .nav { display: none; }
-        .hero-image { margin-bottom: 40px; }
-        .cta-section { padding: 40px 20px; }
+        .hero-image { margin-bottom: 60px; }
+        .cta-section { padding: 60px 30px; }
+        .statement-block h2 { font-size: 2.5rem; }
       }
     </style>
   </head>
   <body>
     <header class="site-header">
-      <div class="site-header-inner container">
-        <a href="index.html" aria-label="Alex Skaldsson home">
-          <img src="logo.gif" alt="Skaldsson Photography" class="brand-logo" />
-        </a>
+      <div class="container header-inner">
+        <a href="index.html" class="logo">Skaldsson</a>
+        
         <div class="header-right">
           <nav class="nav">
-            <a href="Nature&Wildlife.html" data-i18n="navNature">Nature</a>
-            <a href="services.html" data-i18n="navServices">Services</a>
-            <a href="SocialWorks.html" class="active-link" data-i18n="navSocial">Social Works</a>
+            <a href="nature-wildlife.html" data-i18n="navNature">Nature & Wildlife</a>
+            <a href="social-works.html" class="active" data-i18n="navSocial">Social Works</a>
             <a href="mailto:contact@skaldsson.art" data-i18n="navContact">Contact</a>
           </nav>
           <div class="lang-switch">
-            <button class="lang-btn active" onclick="setLanguage('en')" id="btn-en">🇬🇧 EN</button>
-            <span style="color: var(--line);">|</span>
-            <button class="lang-btn" onclick="setLanguage('es')" id="btn-es">🇪🇸 ES</button>
+            <button class="lang-btn active" onclick="setLanguage('en')" id="btn-en">EN</button>
+            <button class="lang-btn" onclick="setLanguage('es')" id="btn-es">ES</button>
           </div>
         </div>
       </div>
@@ -295,7 +304,7 @@
 
     <main id="top">
       <section class="manifesto-header container">
-        <h1 class="manifesto-title" data-i18n="heroTitle">Photography with <span>Purpose.</span></h1>
+        <h1 class="manifesto-title" data-i18n="heroTitle">Photography with Purpose</h1>
         <p class="manifesto-subtitle" data-i18n="heroCopy">
           Art is more than observation; it is a tool for change. This space is dedicated to initiatives that use the lens to support vulnerable communities and drive real impact.
         </p>
@@ -324,7 +333,7 @@
             </div>
           </div>
 
-          <h3 style="font-family: var(--font-display); font-size: 1.8rem; margin-top: 16px;" data-i18n="missionCausesHeading">The Root of the Crisis</h3>
+          <h3 data-i18n="missionCausesHeading">The Root of the Crisis</h3>
           <p data-i18n="missionCausesText">This crisis is fueled by a perfect storm of precarious employment, skyrocketing housing costs that consume over half of a vulnerable family's income, and an inadequate social protection system that fails to reach those who need it most. The result is an intergenerational cycle of inequality that compromises children's nutrition, mental health, and educational outcomes.</p>
           <p class="source-text" data-i18n="missionSource">Sources: UNICEF Report on Child Poverty in Spain (2024); Save the Children AROPE Analysis.</p>
         </div>
@@ -376,15 +385,13 @@
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // i18n updated to match exact Nav links from Index
       const i18n = {
         en: {
-          navNature: "Nature",
-          navServices: "Services",
+          navNature: "Nature & Wildlife",
           navSocial: "Social Works",
           navContact: "Contact",
           
-          heroTitle: "Photography with <span>Purpose.</span>",
+          heroTitle: "Photography with Purpose",
           heroCopy: "Art is more than observation; it is a tool for change. This space is dedicated to initiatives that use the lens to support vulnerable communities and drive real impact.",
           
           missionHeading: "The Reality: Child Poverty in Spain",
@@ -410,12 +417,11 @@
           btnEmail: "Become a Sponsor"
         },
         es: {
-          navNature: "Naturaleza",
-          navServices: "Servicios",
+          navNature: "Naturaleza y Vida Salvaje",
           navSocial: "Obra Social",
           navContact: "Contacto",
           
-          heroTitle: "Fotografía con <span>Propósito.</span>",
+          heroTitle: "Fotografía con Propósito",
           heroCopy: "El arte es más que observación; es una herramienta para el cambio. Este espacio está dedicado a iniciativas que utilizan la lente para apoyar a comunidades vulnerables y generar un impacto real.",
           
           missionHeading: "La Realidad: Pobreza Infantil en España",
@@ -447,14 +453,29 @@
         document.getElementById('btn-es').classList.remove('active');
         document.getElementById('btn-' + lang).classList.add('active');
 
-        const elements = document.querySelectorAll('[data-i18n]');
-        elements.forEach(el => {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
           const key = el.getAttribute('data-i18n');
           if (i18n[lang] && i18n[lang][key]) {
-            el.innerHTML = i18n[lang][key];
+            el.style.opacity = 0;
+            setTimeout(() => {
+              el.innerHTML = i18n[lang][key];
+              el.style.opacity = 1;
+            }, 200);
           }
         });
       }
+
+      // Header scroll effect
+      window.addEventListener('scroll', () => {
+        const header = document.querySelector('.site-header');
+        if (window.scrollY > 50) {
+          header.style.padding = '0.8rem 0';
+          header.style.background = 'rgba(28, 21, 18, 0.98)';
+        } else {
+          header.style.padding = '1.2rem 0';
+          header.style.background = 'rgba(28, 21, 18, 0.85)';
+        }
+      });
 
       // FAB Logic
       const fabMain = document.getElementById('fabMain');
