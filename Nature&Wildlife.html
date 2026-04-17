@@ -66,8 +66,9 @@
       img { display: block; width: 100%; height: auto; }
       a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 
+      /* --- APPLY CUSTOM FONT --- */
       h1, h2, h3, .logo, .photo-title {
-        font-family: 'Calfine', serif;
+        font-family: 'Calfine', Georgia, serif !important;
         font-weight: normal;
         color: var(--text);
       }
@@ -87,7 +88,19 @@
       }
       .header-inner { display: flex; align-items: center; justify-content: space-between; }
       
-      .logo { font-size: 2.6rem; letter-spacing: -0.01em; text-decoration: none; }
+      /* Fixed Layout Grouping */
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 3rem; /* Controls spacing between nav and lang switcher */
+      }
+
+      .logo { 
+        font-size: 2.8rem; 
+        letter-spacing: -0.01em; 
+        text-decoration: none; 
+        text-transform: none; /* Preserves specific font ligatures */
+      }
 
       .nav { display: flex; gap: 3rem; }
       .nav a { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; }
@@ -180,9 +193,8 @@
         
         <div class="header-right">
           <nav class="nav">
-            <a href="Nature&Wildlife.html" class="active" data-i18n="navNature">Nature</a>
-            <a href="services.html" data-i18n="navServices">Services</a>
-            <a href="SocialWorks.html" data-i18n="navSocial">Social Works</a>
+            <a href="Nature&Wildlife.html" class="active" data-i18n="navNature">Nature & Wildlife</a>
+            <a href="social-works.html" data-i18n="navSocial">Social Works</a>
             <a href="mailto:contact@skaldsson.art" data-i18n="navContact">Contact</a>
           </nav>
           <div class="lang-switch">
@@ -236,8 +248,7 @@
       // i18n Dictionary
       const i18n = {
         en: {
-          navNature: "Nature",
-          navServices: "Services",
+          navNature: "Nature & Wildlife",
           navSocial: "Social Works",
           navContact: "Contact",
           heroEyebrow: "✦ Portfolio ✦",
@@ -246,8 +257,7 @@
           supportBubble: "All my images are <strong>free to use</strong> — consider supporting my work if you can."
         },
         es: {
-          navNature: "Naturaleza",
-          navServices: "Servicios",
+          navNature: "Naturaleza y Vida Salvaje",
           navSocial: "Obra Social",
           navContact: "Contacto",
           heroEyebrow: "✦ Portafolio ✦",
