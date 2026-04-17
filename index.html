@@ -327,12 +327,12 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="/" class="logo">Skaldsson</a>
+      <a href="index.html" class="logo">Skaldsson</a>
       
       <nav class="nav">
-        <a href="nature-wildlife">Nature & Wildlife</a>
-        <a href="social-works">Social Works</a>
-        <a href="mailto:contact@skaldsson.art">Contact</a>
+        <a href="nature-wildlife.html" data-i18n="navNature">Nature & Wildlife</a>
+        <a href="social-works.html" data-i18n="navSocial">Social Works</a>
+        <a href="mailto:contact@skaldsson.art" data-i18n="navContact">Contact</a>
       </nav>
 
       <div class="header-right">
@@ -347,19 +347,19 @@
   <main>
     <section class="hero">
       <div class="hero-content">
-        <span class="eyebrow">✦ Proudly Presenting ✦</span>
-        <h1>Capturing life,<br>still & moving</h1>
-        <p>Fine art nature photography and images created with purpose. Quiet moments in the wild and stories that matter.</p>
-        <a href="#work" class="btn">Explore the Work</a>
+        <span class="eyebrow" data-i18n="heroEyebrow">✦ Proudly Presenting ✦</span>
+        <h1 data-i18n="heroTitle">Capturing life,<br>still & moving</h1>
+        <p data-i18n="heroDesc">Fine art nature photography and images created with purpose. Quiet moments in the wild and stories that matter.</p>
+        <a href="#work" class="btn" data-i18n="heroBtn">Explore the Work</a>
       </div>
     </section>
 
     <section id="work" class="section">
       <div class="container">
-        <h2 class="section-title">Selected Works</h2>
+        <h2 class="section-title" data-i18n="sectionTitle">Selected Works</h2>
         
         <div class="portfolio-grid">
-          <a href="nature-wildlife" class="portal-card">
+          <a href="nature-wildlife.html" class="portal-card">
             <img src="A lonely sunset.jpg" alt="Nature and Wildlife Photography" loading="lazy" />
             <div class="portal-overlay">
               <h3 class="portal-title" data-i18n="portalNatureTitle">Nature & Wildlife</h3>
@@ -367,7 +367,7 @@
             </div>
           </a>
           
-          <a href="social-works" class="portal-card">
+          <a href="social-works.html" class="portal-card">
             <img src="spanish-children.jpg" alt="Social Works Photography" loading="lazy" />
             <div class="portal-overlay">
               <h3 class="portal-title" data-i18n="portalSocialTitle">Social Works</h3>
@@ -382,7 +382,7 @@
   <footer>
     <div class="container">
       <p>© <span id="year"></span> Alex Skaldsson Photography</p>
-      <p style="max-width: 500px; margin: 0 auto 1.5rem;">Dedicated to the beauty of the natural world and using photography to support meaningful causes.</p>
+      <p style="max-width: 500px; margin: 0 auto 1.5rem;" data-i18n="footerDesc">Dedicated to the beauty of the natural world and using photography to support meaningful causes.</p>
       <p><a href="mailto:contact@skaldsson.art">contact@skaldsson.art</a></p>
     </div>
   </footer>
@@ -394,16 +394,34 @@
     // Multi-language System
     const i18n = {
       en: {
+        navNature: "Nature & Wildlife",
+        navSocial: "Social Works",
+        navContact: "Contact",
+        heroEyebrow: "✦ Proudly Presenting ✦",
+        heroTitle: "Capturing life,<br>still & moving",
+        heroDesc: "Fine art nature photography and images created with purpose. Quiet moments in the wild and stories that matter.",
+        heroBtn: "Explore the Work",
+        sectionTitle: "Selected Works",
         portalNatureTitle: "Nature & Wildlife",
         portalNatureDesc: "Personal fine art photographs of open landscapes, mountains, and the natural world.",
         portalSocialTitle: "Social Works",
-        portalSocialDesc: "Photography with purpose — charity projects and initiatives that create positive change."
+        portalSocialDesc: "Photography with purpose — charity projects and initiatives that create positive change.",
+        footerDesc: "Dedicated to the beauty of the natural world and using photography to support meaningful causes."
       },
       es: {
+        navNature: "Naturaleza y Vida Salvaje",
+        navSocial: "Obra Social",
+        navContact: "Contacto",
+        heroEyebrow: "✦ Presentando con Orgullo ✦",
+        heroTitle: "Capturando la vida,<br>inmóvil y en movimiento",
+        heroDesc: "Fotografía de naturaleza de bellas artes e imágenes creadas con propósito. Momentos tranquilos en la naturaleza e historias que importan.",
+        heroBtn: "Explorar el Trabajo",
+        sectionTitle: "Obras Seleccionadas",
         portalNatureTitle: "Naturaleza y Vida Salvaje",
         portalNatureDesc: "Fotografías de arte personal de paisajes abiertos, montañas y el mundo natural.",
         portalSocialTitle: "Obra Social",
-        portalSocialDesc: "Fotografía con propósito — proyectos benéficos e iniciativas que generan cambio positivo."
+        portalSocialDesc: "Fotografía con propósito — proyectos benéficos e iniciativas que generan cambio positivo.",
+        footerDesc: "Dedicado a la belleza del mundo natural y al uso de la fotografía para apoyar causas significativas."
       }
     };
 
@@ -415,10 +433,10 @@
       document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (i18n[lang] && i18n[lang][key]) {
-            el.style.opacity = 0;
+            el.style.opacity = 0; 
             setTimeout(() => {
-                el.textContent = i18n[lang][key];
-                el.style.opacity = 1;
+                el.innerHTML = i18n[lang][key]; 
+                el.style.opacity = 1; 
             }, 200);
         }
       });
