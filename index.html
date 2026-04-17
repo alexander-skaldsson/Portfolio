@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alex Skaldsson | Photography</title>
-  <meta name="description" content="Fine art nature & wildlife photography by Alex Skaldsson. Professional services for weddings, events, portraits and commercial work. Photography with purpose." />
+  <meta name="description" content="Fine art nature and wildlife photography with purpose. Personal work and charity photography projects by Alex Skaldsson." />
   <meta name="author" content="Alex Skaldsson" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0f0e0c" />
   <link rel="canonical" href="https://skaldsson.art/" />
 
-  <!-- Favicon (keep your existing ones) -->
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" />
 
-  <!-- Google Analytics & AdSense (kept from your original) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TW28G0WP3P"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -26,8 +26,6 @@
     gtag('js', new Date());
     gtag('config', 'G-TW28G0WP3P');
   </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6209354407417435" crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-6209354407417435">
 
   <style>
     :root {
@@ -62,13 +60,13 @@
       backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
       padding: 1.25rem 0;
+      transition: padding 0.3s ease;
     }
     .header-inner { display: flex; align-items: center; justify-content: space-between; }
     .logo {
       font-size: 1.85rem;
       letter-spacing: -0.03em;
       font-weight: 500;
-      color: var(--text);
     }
     .nav {
       display: flex;
@@ -141,10 +139,9 @@
       font-size: 2.8rem;
       text-align: center;
       margin-bottom: 4rem;
-      color: var(--text);
     }
 
-    /* Masonry Teaser */
+    /* Masonry Grid */
     .masonry {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -198,22 +195,21 @@
     .footer-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
     @media (max-width: 900px) {
-      .nav { display: none; } /* Add mobile menu later if needed */
+      .nav { display: none; }
       .section { padding: 100px 0; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER (use this same structure on all pages) -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="logo">SKALDSSON</a>
       
       <nav class="nav">
-        <a href="Nature&Wildlife.html">Nature & Wildlife</a>
-        <a href="services.html">Services</a>
-        <a href="SocialWorks.html">Social Works</a>
+        <a href="nature-wildlife">Nature & Wildlife</a>
+        <a href="social-works">Social Works</a>
         <a href="mailto:contact@skaldsson.art">Contact</a>
       </nav>
 
@@ -232,41 +228,32 @@
     <section class="hero">
       <div class="hero-content">
         <h1>Capturing life,<br><span class="accent">still and moving.</span></h1>
-        <p>Welcome to Alex Skaldsson Photography.<br>Explore fine art nature work and professional photography services.</p>
+        <p>Fine art nature photography and photography with purpose.<br>Personal work dedicated to beauty and positive change.</p>
         <a href="#work" class="btn">Explore the Work</a>
       </div>
     </section>
 
-    <!-- SELECTED WORKS / PORTALS -->
+    <!-- SELECTED WORKS -->
     <section id="work" class="section">
       <div class="container">
         <h2 class="section-title">Selected Works</h2>
         
         <div class="masonry">
           <!-- Nature & Wildlife -->
-          <a href="Nature&Wildlife.html" class="portal-card">
+          <a href="nature-wildlife" class="portal-card">
             <img src="A lonely sunset.jpg" alt="Nature and Wildlife Photography" loading="lazy" />
             <div class="portal-overlay">
               <h3 class="portal-title" data-i18n="portalNatureTitle">Nature & Wildlife</h3>
-              <p class="portal-desc" data-i18n="portalNatureDesc">Personal works focused on wide open spaces, quiet mountains, and natural refuge.</p>
-            </div>
-          </a>
-
-          <!-- Services -->
-          <a href="services.html" class="portal-card">
-            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Photography Services" loading="lazy" />
-            <div class="portal-overlay">
-              <h3 class="portal-title" data-i18n="portalServicesTitle">Services & Booking</h3>
-              <p class="portal-desc" data-i18n="portalServicesDesc">Professional bookings for weddings, events, portraits, and commercial work.</p>
+              <p class="portal-desc" data-i18n="portalNatureDesc">Personal fine art works focused on wide open spaces, quiet mountains, and natural refuge.</p>
             </div>
           </a>
 
           <!-- Social Works -->
-          <a href="SocialWorks.html" class="portal-card">
+          <a href="social-works" class="portal-card">
             <img src="spanish-children.jpg" alt="Social Works Photography" loading="lazy" />
             <div class="portal-overlay">
               <h3 class="portal-title" data-i18n="portalSocialTitle">Social Works</h3>
-              <p class="portal-desc" data-i18n="portalSocialDesc">Photography with purpose. Charity exhibitions and initiatives that drive change.</p>
+              <p class="portal-desc" data-i18n="portalSocialDesc">Photography with purpose. Charity projects and initiatives that aim to drive real change.</p>
             </div>
           </a>
         </div>
@@ -274,37 +261,36 @@
     </section>
   </main>
 
-  <!-- FOOTER (use this same structure on all pages) -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner container">
-      <p>© <span id="year"></span> Alex Skaldsson Photography. All rights reserved.</p>
+      <p>© <span id="year"></span> Alex Skaldsson Photography</p>
       <p style="margin-top: 12px; font-size: 0.9rem;">
+        Dedicated to beauty in nature and positive impact through photography.
+      </p>
+      <p style="margin-top: 8px;">
         <a href="mailto:contact@skaldsson.art" style="color: var(--accent);">contact@skaldsson.art</a>
       </p>
     </div>
   </footer>
 
   <script>
-    // Year in footer
+    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Simple i18n (same as your original, expanded a bit)
+    // i18n translations
     const i18n = {
       en: {
         portalNatureTitle: "Nature & Wildlife",
-        portalNatureDesc: "Personal works focused on wide open spaces, quiet mountains, and natural refuge.",
-        portalServicesTitle: "Services & Booking",
-        portalServicesDesc: "Professional bookings for weddings, private events, personal portraits, and commercial work.",
+        portalNatureDesc: "Personal fine art works focused on wide open spaces, quiet mountains, and natural refuge.",
         portalSocialTitle: "Social Works",
-        portalSocialDesc: "Photography with purpose. Charity exhibitions and initiatives to drive real change."
+        portalSocialDesc: "Photography with purpose. Charity projects and initiatives that aim to drive real change."
       },
       es: {
         portalNatureTitle: "Naturaleza y Vida Salvaje",
-        portalNatureDesc: "Trabajos personales centrados en espacios abiertos, montañas tranquilas y refugios naturales.",
-        portalServicesTitle: "Servicios y Reservas",
-        portalServicesDesc: "Reservas profesionales para bodas, eventos privados, retratos personales y trabajo comercial.",
+        portalNatureDesc: "Trabajos personales de arte centrados en espacios abiertos, montañas tranquilas y refugios naturales.",
         portalSocialTitle: "Obra Social",
-        portalSocialDesc: "Fotografía con propósito. Exposiciones benéficas e iniciativas para impulsar un cambio real."
+        portalSocialDesc: "Fotografía con propósito. Proyectos benéficos e iniciativas para impulsar un cambio real."
       }
     };
 
@@ -321,12 +307,13 @@
       });
     }
 
-    // Optional: Add a simple scroll effect for header (shrink on scroll)
+    // Header shrink on scroll
     window.addEventListener('scroll', () => {
+      const header = document.querySelector('.site-header');
       if (window.scrollY > 100) {
-        document.querySelector('.site-header').style.padding = '0.75rem 0';
+        header.style.padding = '0.75rem 0';
       } else {
-        document.querySelector('.site-header').style.padding = '1.25rem 0';
+        header.style.padding = '1.25rem 0';
       }
     });
   </script>
