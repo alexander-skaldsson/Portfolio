@@ -12,14 +12,14 @@
     
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nature & Wildlife | Alex Skaldsson</title>
+    <title>Social Works | Alex Skaldsson</title>
     
     <meta name="google-adsense-account" content="ca-pub-6209354407417435">
-    <meta name="description" content="Alex Skaldsson Photography. Nature & Wildlife portfolio and professional photography services including weddings, events, and personal photoshoots." />
+    <meta name="description" content="Photography with purpose. Charity projects and initiatives that create positive change by Alex Skaldsson." />
     <meta name="author" content="Alex Skaldsson" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="theme-color" content="#1c1512" />
-    <link rel="canonical" href="https://skaldsson.art/Nature&Wildlife.html" />
+    <link rel="canonical" href="https://skaldsson.art/social-works.html" />
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png" />
@@ -45,10 +45,11 @@
         --bg: #1c1512; 
         --bg-surface: #2a1f1b;
         --accent: #d88c62; /* Terracotta */
+        --accent-hover: #e8a078;
         --text: #f4eee1; /* Warm cream */
         --text-muted: #bdae9e;
         --border: rgba(244, 238, 225, 0.08);
-        --max-width: 1280px;
+        --max-width: 1100px; /* Kept slightly narrower for reading comfort */
       }
 
       * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -59,7 +60,7 @@
         color: var(--text);
         font-family: 'Inter', sans-serif;
         font-weight: 300; 
-        line-height: 1.6;
+        line-height: 1.7;
         -webkit-font-smoothing: antialiased;
       }
 
@@ -67,15 +68,16 @@
       a { color: inherit; text-decoration: none; transition: all 0.3s ease; }
 
       /* --- APPLY CUSTOM FONT --- */
-      h1, h2, h3, .logo, .photo-title {
+      h1, h2, h3, .logo, .stat-number {
         font-family: 'Calfine', Georgia, serif !important;
         font-weight: normal;
         color: var(--text);
+        line-height: 1.1;
       }
 
       .container { width: min(var(--max-width), 100% - 48px); margin: 0 auto; }
 
-      /* Header (Synced to Index) */
+      /* Header */
       .site-header {
         position: fixed; top: 0; left: 0; right: 0;
         z-index: 1000;
@@ -88,22 +90,20 @@
       }
       .header-inner { display: flex; align-items: center; justify-content: space-between; }
       
-      /* Fixed Layout Grouping */
       .header-right {
         display: flex;
         align-items: center;
-        gap: 3rem; /* Controls spacing between nav and lang switcher */
+        gap: 3rem;
       }
 
       .logo { 
         font-size: 2.8rem; 
         letter-spacing: -0.01em; 
-        text-decoration: none; 
-        text-transform: none; /* Preserves specific font ligatures */
+        text-transform: none; 
       }
 
       .nav { display: flex; gap: 3rem; }
-      .nav a { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 500; color: var(--text-muted); text-decoration: none; transition: color 0.3s ease; }
+      .nav a { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 500; color: var(--text-muted); transition: color 0.3s ease; }
       .nav a:hover, .nav a.active { color: var(--accent); }
 
       /* Language Switcher */
@@ -112,78 +112,175 @@
       .lang-btn.active { background: var(--text); color: var(--bg); }
       .lang-btn:not(.active):hover { color: var(--text); }
 
-      /* Hero Section */
-      .hero { padding: 180px 0 80px; text-align: center; max-width: 800px; margin: 0 auto; animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: translateY(30px); }
-      
+      /* Manifesto Typography & Layout */
+      .manifesto-header {
+        padding: 180px 0 80px;
+        text-align: center;
+        animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
       @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
-
-      .eyebrow { font-family: 'Inter', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--accent); margin-bottom: 1.5rem; display: block; font-weight: 500; }
-      .hero h1 { font-size: clamp(3.5rem, 8vw, 6.5rem); line-height: 1.05; margin-bottom: 1.5rem; letter-spacing: 0.01em; }
-      .hero-copy { color: var(--text-muted); font-size: 1.15rem; max-width: 600px; margin: 0 auto; }
-
-      /* Gallery Grid (Masonry) */
-      .photo-grid { column-count: 1; column-gap: 24px; padding-bottom: 100px; margin-top: 40px; }
-      @media (min-width: 768px) { .photo-grid { column-count: 2; } }
-      @media (min-width: 1024px) { .photo-grid { column-count: 3; } }
-
-      .photo-item {
-        position: relative; break-inside: avoid; margin-bottom: 24px;
-        border-radius: 8px; overflow: hidden; cursor: pointer;
-        background: var(--bg-surface); border: 1px solid var(--border);
-      }
-      .photo-item img { transition: transform 0.8s ease, opacity 0.8s ease; opacity: 0.85; }
-      .photo-item:hover img { transform: scale(1.03); opacity: 1; }
-
-      .photo-overlay {
-        position: absolute; inset: 0; padding: 32px 24px;
-        background: linear-gradient(to top, rgba(28, 21, 18, 0.95) 0%, rgba(28, 21, 18, 0.2) 50%, transparent 100%);
-        opacity: 0; display: flex; flex-direction: column; justify-content: flex-end;
-        transition: opacity 0.4s ease; pointer-events: none; z-index: 2;
-      }
-      .photo-item:hover .photo-overlay { opacity: 1; }
       
-      .photo-title { font-size: 2.2rem; line-height: 1.1; margin-bottom: 6px; transform: translateY(10px); transition: transform 0.4s ease; }
-      .photo-meta { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); transform: translateY(10px); transition: transform 0.4s ease 0.05s; }
-      .photo-item:hover .photo-title, .photo-item:hover .photo-meta { transform: translateY(0); }
-
-      /* Lightbox */
-      .lightbox {
-        position: fixed; inset: 0; display: none; place-items: center;
-        background: rgba(28, 21, 18, 0.98); z-index: 2000; padding: 24px; 
+      .manifesto-title {
+        font-size: clamp(3.5rem, 8vw, 6.5rem);
+        margin-bottom: 24px;
+        letter-spacing: 0.01em;
       }
-      .lightbox.open { display: grid; }
-      .lightbox-stage { position: relative; width: min(1600px, 100%); height: 100%; display: flex; flex-direction: column; justify-content: center; }
-      .lightbox img { max-height: 90vh; max-width: 100%; width: auto; margin: 0 auto; object-fit: contain; border-radius: 4px; box-shadow: 0 15px 50px rgba(0,0,0,0.6); }
-      
-      .lightbox-controls button, .lightbox-close { 
-        background: transparent; color: var(--text); border: 1px solid var(--border); 
-        cursor: pointer; transition: all 0.3s ease; display: grid; place-items: center; z-index: 10; 
+
+      .manifesto-subtitle {
+        font-size: 1.15rem;
+        color: var(--text-muted);
+        max-width: 700px;
+        margin: 0 auto;
       }
-      .lightbox-controls button { position: absolute; top: 50%; transform: translateY(-50%); height: 60px; width: 60px; border-radius: 50%; font-size: 1.5rem; }
-      .lightbox-controls button:hover, .lightbox-close:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
-      .lightbox-prev { left: 20px; }
-      .lightbox-next { right: 20px; }
+
+      /* Image Feature */
+      .hero-image {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1024 / 683;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 100px;
+        filter: grayscale(25%) contrast(110%) brightness(0.8);
+        border: 1px solid var(--border);
+      }
+
+      /* Content Blocks */
+      .statement-block {
+        margin-bottom: 100px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .statement-block h2 {
+        font-size: 3rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 20px;
+        margin-bottom: 12px;
+      }
+
+      .statement-block h3 {
+        font-size: 2.2rem;
+        margin-top: 24px;
+      }
+
+      .statement-block p {
+        font-size: 1.15rem;
+        color: var(--text-muted);
+      }
+
+      .source-text {
+        font-size: 0.85rem !important;
+        font-style: italic;
+        color: rgba(189, 174, 158, 0.6) !important;
+        margin-top: -8px;
+      }
+
+      /* Stats Grid */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+        margin: 40px 0;
+      }
+
+      .stat-box {
+        background: var(--bg-surface);
+        padding: 40px 32px;
+        border-radius: 8px;
+        border-left: 2px solid var(--accent);
+        border-top: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .stat-number {
+        font-size: 4.5rem;
+        color: var(--accent);
+        margin-bottom: 16px;
+      }
+
+      .stat-desc {
+        font-size: 1rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      /* Call to Action */
+      .cta-section {
+        background: var(--bg-surface);
+        padding: 80px 60px;
+        border-radius: 8px;
+        text-align: center;
+        margin: 40px 0 100px;
+        border: 1px solid var(--border);
+      }
+
+      .cta-section h3 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+      }
+
+      .cta-section p {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        padding: 16px 40px; border-radius: 40px;
+        font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+        transition: all 0.3s ease;
+        background: var(--accent); color: var(--bg);
+        border: 1px solid var(--accent);
+      }
       
-      .lightbox-close { position: absolute; top: 30px; right: 30px; height: 50px; width: 50px; border-radius: 50%; font-size: 1.2rem; }
+      .btn:hover { background: var(--accent-hover); border-color: var(--accent-hover); transform: translateY(-2px); }
 
-      /* Floating support bubble */
-      .support-bubble { position: fixed; right: 22px; bottom: 22px; z-index: 300; display: flex; align-items: end; gap: 12px; }
-      .support-bubble-text { max-width: 260px; background: var(--bg-surface); color: var(--text-muted); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; font-size: 0.85rem; line-height: 1.5; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); }
-      .support-bubble-text strong { color: var(--text); font-weight: 500; }
-      .support-bubble-link { width: 60px; height: 60px; border-radius: 50%; background: var(--accent); color: var(--bg); display: grid; place-items: center; font-size: 1.5rem; font-weight: 600; border: none; transition: transform 0.3s ease; }
-      .support-bubble-link:hover { transform: translateY(-4px); background: var(--accent-hover); }
+      .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+      .btn-outline:hover { border-color: var(--accent); color: var(--bg); background: var(--accent); }
 
-      /* Footer */
       .footer { padding: 40px 0 60px; text-align: center; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid var(--border); }
+
+      /* --- Floating Action Button (FAB) --- */
+      .fab-container { position: fixed; right: 22px; bottom: 22px; z-index: 300; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+      .fab-option { width: 50px; height: 50px; border-radius: 50%; background: var(--bg-surface); color: var(--text); display: grid; place-items: center; text-decoration: none; opacity: 0; transform: translateY(20px) scale(0.8); pointer-events: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid var(--border); }
+      .fab-option svg { width: 22px; height: 22px; fill: currentColor; }
+      .fab-option:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+      
+      .fab-main { width: 62px; height: 62px; border-radius: 50%; background: var(--accent); color: var(--bg); position: relative; display: grid; place-items: center; border: none; cursor: pointer; transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease; }
+      .fab-main svg { width: 28px; height: 28px; fill: currentColor; position: absolute; transition: transform 0.3s ease, opacity 0.3s ease; }
+      .icon-wa { opacity: 1; transform: rotate(0deg); }
+      .icon-close { opacity: 0; transform: rotate(-45deg); }
+      .fab-main:hover { transform: translateY(-2px) scale(1.04); background: var(--accent-hover); }
+      
+      .fab-container.active .fab-option { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+      .fab-container.active .fab-option:nth-child(1) { transition-delay: 0.1s; }
+      .fab-container.active .fab-option:nth-child(2) { transition-delay: 0.05s; }
+      .fab-container.active .icon-wa { opacity: 0; transform: rotate(45deg); }
+      .fab-container.active .icon-close { opacity: 1; transform: rotate(0deg); }
 
       @media (max-width: 900px) {
         .nav { display: none; }
-        .lightbox-controls button { height: 44px; width: 44px; font-size: 1.2rem; }
-        .support-bubble { right: 16px; bottom: 16px; left: 16px; justify-content: flex-end; }
-        .support-bubble-text { max-width: 200px; font-size: 0.82rem; padding: 12px 14px; }
-        .support-bubble-link { width: 50px; height: 50px; font-size: 1.2rem; }
+        .hero-image { margin-bottom: 60px; }
+        .cta-section { padding: 60px 30px; }
+        .statement-block h2 { font-size: 2.5rem; }
       }
-      @media (max-width: 560px) { .support-bubble-text { display: none; } }
     </style>
   </head>
   <body>
@@ -193,8 +290,8 @@
         
         <div class="header-right">
           <nav class="nav">
-            <a href="Nature&Wildlife.html" class="active" data-i18n="navNature">Nature & Wildlife</a>
-            <a href="SocialWorks.html" data-i18n="navSocial">Social Works</a>
+            <a href="nature&wildlife.html" data-i18n="navNature">Nature & Wildlife</a>
+            <a href="social-works.html" class="active" data-i18n="navSocial">Social Works</a>
             <a href="mailto:contact@skaldsson.art" data-i18n="navContact">Contact</a>
           </nav>
           <div class="lang-switch">
@@ -206,64 +303,148 @@
     </header>
 
     <main id="top">
-      <section class="hero container">
-        <span class="eyebrow" data-i18n="heroEyebrow">✦ Portfolio ✦</span>
-        <h1 data-i18n="heroTitle">The Quiet Earth</h1>
-        <p class="hero-copy" data-i18n="heroCopy">
-          My personal refuge. A collection of wide, open spaces, pillowy mountains, and solitary structures captured purely for the love of the craft.
+      <section class="manifesto-header container">
+        <h1 class="manifesto-title" data-i18n="heroTitle">Photography with Purpose</h1>
+        <p class="manifesto-subtitle" data-i18n="heroCopy">
+          Art is more than observation; it is a tool for change. This space is dedicated to initiatives that use the lens to support vulnerable communities and drive real impact.
         </p>
       </section>
 
-      <section class="container">
-        <div class="photo-grid" id="photoGrid"></div>
-      </section>
+      <img src="spanish-children.jpg" width="1024" height="683" alt="Children gathering in Spain" class="hero-image container" loading="lazy" />
+
+      <div class="container">
+        
+        <div class="statement-block">
+          <h2 data-i18n="missionHeading">The Reality: Child Poverty in Spain</h2>
+          <p data-i18n="missionText1">Despite its status as a major European economy, Spain harbors a silent structural crisis. According to the latest AROPE (At Risk of Poverty or Social Exclusion) indicator, Spain consistently ranks among the countries with the highest child poverty rates in the European Union. Economic growth has unfortunately bypassed the most vulnerable families, leaving millions of minors exposed.</p>
+          
+          <div class="stats-grid">
+            <div class="stat-box">
+              <div class="stat-number" data-i18n="stat1Num">28.9%</div>
+              <div class="stat-desc" data-i18n="stat1Text">Of children in Spain are at risk of poverty or social exclusion—over 2.1 million minors.</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number" data-i18n="stat2Num">7%</div>
+              <div class="stat-desc" data-i18n="stat2Text">Is the total poverty reduction achieved by Spain's social transfers, compared to the EU average of 15%.</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number" data-i18n="stat3Num">1 in 3</div>
+              <div class="stat-desc" data-i18n="stat3Text">Single-parent households (the vast majority led by women) face extreme financial vulnerability.</div>
+            </div>
+          </div>
+
+          <h3 data-i18n="missionCausesHeading">The Root of the Crisis</h3>
+          <p data-i18n="missionCausesText">This crisis is fueled by a perfect storm of precarious employment, skyrocketing housing costs that consume over half of a vulnerable family's income, and an inadequate social protection system that fails to reach those who need it most. The result is an intergenerational cycle of inequality that compromises children's nutrition, mental health, and educational outcomes.</p>
+          <p class="source-text" data-i18n="missionSource">Sources: UNICEF Report on Child Poverty in Spain (2024); Save the Children AROPE Analysis.</p>
+        </div>
+
+        <div class="statement-block">
+          <h2 data-i18n="projectHeading">The Project: Miradas de Calatayud</h2>
+          <p data-i18n="projectText1">Since moving to Spain, the landscape and people of Calatayud have profoundly inspired my photography. "Miradas de Calatayud: Arte por la Infancia" is a charity exhibition I am planning, designed to turn that artistic inspiration into tangible, structural help.</p>
+          <p data-i18n="projectText2">The concept is entirely transparent: I am donating my time, my portfolio, and the full rights to these images for this event. <strong>100% of the net profits from the sale of the artwork will be donated directly to Save the Children Spain</strong> to fund their vital, on-the-ground programs combating child poverty and educational exclusion.</p>
+        </div>
+
+        <div class="cta-section">
+          <h3 data-i18n="ctaHeading">Call for Sponsors & Partners</h3>
+          <p data-i18n="ctaText">To maximize our donation to Save the Children, we are actively seeking Spanish printing providers and local businesses to sponsor the production materials (printing, framing, exhibition logistics). If you represent a printing company, a local business, or the Calatayud City Council and wish to support this cause, let's talk.</p>
+          
+          <div class="cta-buttons">
+            <a href="mailto:contact@skaldsson.art" class="btn" data-i18n="btnEmail">Become a Sponsor</a>
+            <a href="https://wa.me/34631557606" class="btn btn-outline" target="_blank" rel="noopener noreferrer">WhatsApp Me</a>
+          </div>
+        </div>
+
+      </div>
     </main>
 
     <footer class="footer container">
       © <span id="year"></span> Alex Skaldsson Photography.
     </footer>
 
-    <div class="lightbox" id="lightbox">
-      <button class="lightbox-close" id="lightboxClose">✕</button>
-      <div class="lightbox-stage">
-        <img id="lightboxImage" src="" alt="" />
-        <div class="lightbox-controls">
-          <button class="lightbox-prev" id="lightboxPrev">‹</button>
-          <button class="lightbox-next" id="lightboxNext">›</button>
-        </div>
-      </div>
+    <div class="fab-container" id="fabContainer">
+      <a href="https://wa.me/34631557606" class="fab-option" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24">
+          <path d="M12.031 0C5.385 0 .003 5.385.003 12.031c0 2.128.552 4.198 1.6 6.02L.002 24l6.104-1.602c1.761.942 3.753 1.439 5.925 1.439 6.645 0 12.029-5.386 12.029-12.031C24.06 5.385 18.675 0 12.031 0zm0 21.84c-1.782 0-3.528-.48-5.056-1.385l-.363-.214-3.75 .984.998-3.658-.236-.375a9.986 9.986 0 0 1-1.523-5.35c0-5.513 4.488-10.001 10.003-10.001 5.514 0 10.001 4.488 10.001 10.001 0 5.513-4.487 10.001-10.001 10.001zM17.52 14.3c-.301-.151-1.78-.881-2.057-.981-.275-.101-.478-.151-.678.151-.2.302-.777.981-.952 1.182-.175.201-.351.226-.653.076-.301-.151-1.272-.469-2.423-1.498-.897-.801-1.503-1.79-1.678-2.091-.176-.302-.019-.465.132-.616.136-.135.301-.351.452-.527.151-.175.201-.301.301-.502.101-.201.05-.376-.025-.527-.075-.151-.678-1.631-.928-2.233-.244-.588-.492-.508-.678-.517-.176-.009-.376-.009-.577-.009-.2 0-.527.075-.802.376-.275.302-1.053 1.03-1.053 2.511 0 1.482 1.078 2.914 1.229 3.115.151.201 2.124 3.242 5.143 4.544 2.176.938 2.87.802 3.397.676.671-.161 1.78-.727 2.031-1.431.251-.703.251-1.306.175-1.432-.075-.126-.276-.201-.577-.352z"/>
+        </svg>
+      </a>
+      <a href="mailto:contact@skaldsson.art" class="fab-option" aria-label="Email">
+        <svg viewBox="0 0 24 24">
+          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+      </a>
+      <button class="fab-main" id="fabMain" aria-label="Contact options">
+        <svg class="icon-wa" viewBox="0 0 24 24">
+          <path d="M12.031 0C5.385 0 .003 5.385.003 12.031c0 2.128.552 4.198 1.6 6.02L.002 24l6.104-1.602c1.761.942 3.753 1.439 5.925 1.439 6.645 0 12.029-5.386 12.029-12.031C24.06 5.385 18.675 0 12.031 0zm0 21.84c-1.782 0-3.528-.48-5.056-1.385l-.363-.214-3.75 .984.998-3.658-.236-.375a9.986 9.986 0 0 1-1.523-5.35c0-5.513 4.488-10.001 10.003-10.001 5.514 0 10.001 4.488 10.001 10.001 0 5.513-4.487 10.001-10.001 10.001zM17.52 14.3c-.301-.151-1.78-.881-2.057-.981-.275-.101-.478-.151-.678.151-.2.302-.777.981-.952 1.182-.175.201-.351.226-.653.076-.301-.151-1.272-.469-2.423-1.498-.897-.801-1.503-1.79-1.678-2.091-.176-.302-.019-.465.132-.616.136-.135.301-.351.452-.527.151-.175.201-.301.301-.502.101-.201.05-.376-.025-.527-.075-.151-.678-1.631-.928-2.233-.244-.588-.492-.508-.678-.517-.176-.009-.376-.009-.577-.009-.2 0-.527.075-.802.376-.275.302-1.053 1.03-1.053 2.511 0 1.482 1.078 2.914 1.229 3.115.151.201 2.124 3.242 5.143 4.544 2.176.938 2.87.802 3.397.676.671-.161 1.78-.727 2.031-1.431.251-.703.251-1.306.175-1.432-.075-.126-.276-.201-.577-.352z"/>
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
     </div>
 
-    <a href="https://www.buymeacoffee.com/alexandersw9" target="_blank" rel="noopener noreferrer" class="support-bubble" aria-label="Support my work">
-      <div class="support-bubble-text" data-i18n="supportBubble">
-        All my images are <strong>free to use</strong> — consider supporting my work if you can.
-      </div>
-      <div class="support-bubble-link">♥</div>
-    </a>
-
     <script>
-      // Copyright Year
       document.getElementById("year").textContent = new Date().getFullYear();
 
-      // i18n Dictionary
       const i18n = {
         en: {
           navNature: "Nature & Wildlife",
           navSocial: "Social Works",
           navContact: "Contact",
-          heroEyebrow: "✦ Portfolio ✦",
-          heroTitle: "The Quiet Earth",
-          heroCopy: "My personal refuge. A collection of wide, open spaces, pillowy mountains, and solitary structures captured purely for the love of the craft.",
-          supportBubble: "All my images are <strong>free to use</strong> — consider supporting my work if you can."
+          
+          heroTitle: "Photography with Purpose",
+          heroCopy: "Art is more than observation; it is a tool for change. This space is dedicated to initiatives that use the lens to support vulnerable communities and drive real impact.",
+          
+          missionHeading: "The Reality: Child Poverty in Spain",
+          missionText1: "Despite its status as a major European economy, Spain harbors a silent structural crisis. According to the latest AROPE (At Risk of Poverty or Social Exclusion) indicator, Spain consistently ranks among the countries with the highest child poverty rates in the European Union. Economic growth has unfortunately bypassed the most vulnerable families, leaving millions of minors exposed.",
+          
+          stat1Num: "28.9%",
+          stat1Text: "Of children in Spain are at risk of poverty or social exclusion—over 2.1 million minors.",
+          stat2Num: "7%",
+          stat2Text: "Is the total poverty reduction achieved by Spain's social transfers, compared to the EU average of 15%.",
+          stat3Num: "1 in 3",
+          stat3Text: "Single-parent households (the vast majority led by women) face extreme financial vulnerability.",
+          
+          missionCausesHeading: "The Root of the Crisis",
+          missionCausesText: "This crisis is fueled by a perfect storm of precarious employment, skyrocketing housing costs that consume over half of a vulnerable family's income, and an inadequate social protection system that fails to reach those who need it most. The result is an intergenerational cycle of inequality that compromises children's nutrition, mental health, and educational outcomes.",
+          missionSource: "Sources: UNICEF Report on Child Poverty in Spain (2024); Save the Children AROPE Analysis.",
+
+          projectHeading: "The Project: Miradas de Calatayud",
+          projectText1: "Since moving to Spain, the landscape and people of Calatayud have profoundly inspired my photography. \"Miradas de Calatayud: Arte por la Infancia\" is a charity exhibition I am planning, designed to turn that artistic inspiration into tangible, structural help.",
+          projectText2: "The concept is entirely transparent: I am donating my time, my portfolio, and the full rights to these images for this event. <strong>100% of the net profits from the sale of the artwork will be donated directly to Save the Children Spain</strong> to fund their vital, on-the-ground programs combating child poverty and educational exclusion.",
+          
+          ctaHeading: "Call for Sponsors & Partners",
+          ctaText: "To maximize our donation to Save the Children, we are actively seeking Spanish printing providers and local businesses to sponsor the production materials (printing, framing, exhibition logistics). If you represent a printing company, a local business, or the Calatayud City Council and wish to support this cause, let's talk.",
+          btnEmail: "Become a Sponsor"
         },
         es: {
           navNature: "Naturaleza y Vida Salvaje",
           navSocial: "Obra Social",
           navContact: "Contacto",
-          heroEyebrow: "✦ Portafolio ✦",
-          heroTitle: "La Tierra Silenciosa",
-          heroCopy: "Mi refugio personal. Una colección de espacios abiertos, montañas acolchadas y estructuras solitarias capturadas puramente por amor al arte.",
-          supportBubble: "Todas mis imágenes son de <strong>uso gratuito</strong> — considera apoyar mi trabajo si puedes."
+          
+          heroTitle: "Fotografía con Propósito",
+          heroCopy: "El arte es más que observación; es una herramienta para el cambio. Este espacio está dedicado a iniciativas que utilizan la lente para apoyar a comunidades vulnerables y generar un impacto real.",
+          
+          missionHeading: "La Realidad: Pobreza Infantil en España",
+          missionText1: "A pesar de su estatus como gran economía europea, España alberga una crisis estructural silenciosa. Según el último indicador AROPE (Riesgo de Pobreza o Exclusión Social), España se sitúa sistemáticamente entre los países con mayores tasas de pobreza infantil de la Unión Europea. Lamentablemente, el crecimiento económico ha eludido a las familias más vulnerables, dejando expuestos a millones de menores.",
+          
+          stat1Num: "28,9%",
+          stat1Text: "De los niños en España están en riesgo de pobreza o exclusión social: más de 2,1 millones de menores.",
+          stat2Num: "7%",
+          stat2Text: "Es la reducción total de la pobreza lograda por las transferencias sociales de España, frente a la media del 15% de la UE.",
+          stat3Num: "1 de 3",
+          stat3Text: "Hogares monoparentales (la inmensa mayoría encabezados por mujeres) se enfrentan a una extrema vulnerabilidad financiera.",
+          
+          missionCausesHeading: "La Raíz de la Crisis",
+          missionCausesText: "Esta crisis está alimentada por una tormenta perfecta de empleo precario, costes de vivienda desorbitados que consumen más de la mitad de los ingresos de una familia vulnerable, y un sistema de protección social inadecuado que no llega a quienes más lo necesitan. El resultado es un ciclo intergeneracional de desigualdad que compromete la nutrición, la salud mental y los resultados educativos de los niños.",
+          missionSource: "Fuentes: Informe de UNICEF sobre la Pobreza Infantil en España (2024); Análisis AROPE de Save the Children.",
+
+          projectHeading: "El Proyecto: Miradas de Calatayud",
+          projectText1: "Desde que me mudé a España, el paisaje y la gente de Calatayud han inspirado profundamente mi fotografía. \"Miradas de Calatayud: Arte por la Infancia\" es una exposición benéfica que estoy planificando, diseñada para convertir esa inspiración artística en ayuda tangible y estructural.",
+          projectText2: "El concepto es totalmente transparente: donaré mi tiempo, mi portafolio y los plenos derechos de estas imágenes para este evento. <strong>El 100% de los beneficios netos de la venta de las obras se donará directamente a Save the Children España</strong> para financiar sus programas vitales sobre el terreno contra la pobreza infantil y la exclusión educativa.",
+          
+          ctaHeading: "Llamamiento a Patrocinadores",
+          ctaText: "Para maximizar nuestra donación a Save the Children, buscamos activamente imprentas españolas y empresas locales que patrocinen los materiales de producción (impresión, enmarcado, logística). Si representas a una imprenta, un comercio local o al Ayuntamiento de Calatayud y deseas apoyar esta causa, hablemos.",
+          btnEmail: "Ser Patrocinador"
         }
       };
 
@@ -275,11 +456,11 @@
         document.querySelectorAll('[data-i18n]').forEach(el => {
           const key = el.getAttribute('data-i18n');
           if (i18n[lang] && i18n[lang][key]) {
-             el.style.opacity = 0; 
-             setTimeout(() => {
-                 el.innerHTML = i18n[lang][key]; 
-                 el.style.opacity = 1; 
-             }, 200);
+            el.style.opacity = 0;
+            setTimeout(() => {
+              el.innerHTML = i18n[lang][key];
+              el.style.opacity = 1;
+            }, 200);
           }
         });
       }
@@ -296,111 +477,18 @@
         }
       });
 
-      // Photography Array
-      const photos = [
-        { src: "A lonely sunset.jpg", title: "A Lonely Sunset", meta: "Solitude" },
-        { src: "A simple flower.jpg", title: "A Simple Flower", meta: "Nature" },
-        { src: "An ending day.jpg", title: "An Ending Day", meta: "Landscape" },
-        { src: "Castle at Sunset.jpg", title: "Castle at Sunset", meta: "Landscape" },
-        { src: "Church Tower Spain.jpg", title: "Church Tower", meta: "Spain" },
-        { src: "Spring Green.jpg", title: "Spring Green", meta: "Landscape" },
-        { src: "Fresh Trees.jpg", title: "Fresh Trees", meta: "Nature" },
-        { src: "Grazing Sheep.jpg", title: "Grazing Sheep", meta: "Wildlife" },
-        { src: "Green Desert.jpg", title: "Green Desert", meta: "Landscape" },
-        { src: "Green Fields.jpg", title: "Green Fields", meta: "Landscape" },
-        { src: "Lonely Castle.jpg", title: "Lonely Castle", meta: "Landscape" },
-        { src: "Lonely Christ in the Desert.jpg", title: "Christ in the Desert", meta: "Figure" },
-        { src: "Lonely Church on a Hill.jpg", title: "Lonely Church on a Hill", meta: "Landscape" },
-        { src: "Lonely Road.jpg", title: "Lonely Road", meta: "Landscape" },
-        { src: "Lonely Tower.jpg", title: "Lonely Tower", meta: "Solitude" },
-        { src: "Mid-Flight Stork.jpg", title: "Mid-Flight Stork", meta: "Wildlife" },
-        { src: "Nature Takes All.jpg", title: "Nature Takes All", meta: "Nature" },
-        { src: "Pillowy Mountains.jpg", title: "Pillowy Mountains", meta: "Mountains" },
-        { src: "Red Hill.jpg", title: "Red Hill", meta: "Landscape" },
-        { src: "Road to Nowhere.jpg", title: "Road to Nowhere", meta: "Landscape" },
-        { src: "Rock Pile.jpg", title: "Rock Pile", meta: "Nature" },
-        { src: "Snowy Bliss.jpg", title: "Snowy Bliss", meta: "Landscape" },
-        { src: "Spanish Landscape.jpg", title: "Spanish Landscape", meta: "Spain" },
-        { src: "Spanish Mountain during Sunset.jpg", title: "Mountain Sunset", meta: "Spain" },
-        { src: "Stork Family.jpg", title: "Stork Family", meta: "Wildlife" },
-        { src: "Towering Mountain.jpg", title: "Towering Mountain", meta: "Landscape" },
-        { src: "Water Rush.jpg", title: "Water Rush", meta: "Nature" },
-        { src: "Zaragoza.jpg", title: "Zaragoza", meta: "Spain" },
-        { src: "Mountain Trees.jpg", title: "Mountain Trees", meta: "Landscape" },
-        { src: "Piramid Mountain.jpg", title: "Piramid Mountain", meta: "Mountains" },
-        { src: "Top of the mountain.jpg", title: "Top of the Mountain", meta: "Mountains" },
-        { src: "Framing Hill.jpg", title: "Framing Hill", meta: "Landscape" },
-        { src: "Solitary.jpg", title: "Solitary", meta: "Solitude" },
-        { src: "Lonely Tree.jpg", title: "Lonely Tree", meta: "Nature" },
-        { src: "Sunset Hills.jpg", title: "Sunset Hills", meta: "Landscape" },
-        { src: "Peaceful Hills.jpg", title: "Peaceful Hills", meta: "Landscape" },
-        { src: "lonely storks.jpg", title: "Lonely Storks", meta: "Wildlife" },
-        { src: "Grey Skies.jpg", title: "Grey Skies", meta: "Landscape" },
-        { src: "Roads.jpg", title: "Roads", meta: "Landscape" },
-        { src: "Green Hills.jpg", title: "Green Hills", meta: "Landscape" },
-        { src: "He looks after you.jpg", title: "He Looks After You", meta: "Solitude" },
-        { src: "Mountain Path.jpg", title: "Mountain Path", meta: "Landscape" },
-        { src: "Rainy Sunset.jpg", title: "Rainy Sunset", meta: "Landscape" },
-        { src: "Thunderous Sky above mountains.jpg", title: "Thunderous Sky Above Mountains", meta: "Mountains" },
-        { src: "Thunderous Sky.jpg", title: "Thunderous Sky", meta: "Nature" },
-        { src: "Approaching Storm.jpg", title: "Approaching Storm", meta: "Nature" },
-        { src: "It Shines on You.jpg", title: "It Shines On You", meta: "Solitude" }
-      ];
+      // FAB Logic
+      const fabMain = document.getElementById('fabMain');
+      const fabContainer = document.getElementById('fabContainer');
 
-      // Initialize Gallery
-      const grid = document.getElementById("photoGrid");
-      let currentIndex = 0;
-
-      photos.forEach((photo, index) => {
-        const div = document.createElement("div");
-        div.className = "photo-item";
-        div.innerHTML = `
-          <img src="${encodeURI(photo.src)}" alt="${photo.title}" loading="lazy" />
-          <div class="photo-overlay">
-            <div class="photo-title">${photo.title}</div>
-            <div class="photo-meta">${photo.meta}</div>
-          </div>
-        `;
-        div.addEventListener("click", () => openLightbox(index));
-        grid.appendChild(div);
+      fabMain.addEventListener('click', () => {
+        fabContainer.classList.toggle('active');
       });
 
-      // Lightbox Logic
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightboxImage");
-
-      function openLightbox(index) {
-        currentIndex = index;
-        lightboxImg.src = photos[currentIndex].src;
-        lightboxImg.alt = photos[currentIndex].title;
-        lightbox.classList.add("open");
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeLightbox() {
-        lightbox.classList.remove("open");
-        document.body.style.overflow = "";
-      }
-
-      function navigate(direction) {
-        currentIndex = (currentIndex + direction + photos.length) % photos.length;
-        lightboxImg.src = photos[currentIndex].src;
-        lightboxImg.alt = photos[currentIndex].title;
-      }
-
-      document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
-      document.getElementById("lightboxPrev").addEventListener("click", () => navigate(-1));
-      document.getElementById("lightboxNext").addEventListener("click", () => navigate(1));
-
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) closeLightbox();
-      });
-
-      document.addEventListener("keydown", (e) => {
-        if (!lightbox.classList.contains("open")) return;
-        if (e.key === "Escape") closeLightbox();
-        if (e.key === "ArrowLeft") navigate(-1);
-        if (e.key === "ArrowRight") navigate(1);
+      document.addEventListener('click', (event) => {
+        if (!fabContainer.contains(event.target)) {
+          fabContainer.classList.remove('active');
+        }
       });
     </script>
   </body>
